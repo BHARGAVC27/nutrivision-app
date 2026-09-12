@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .cs { font-family: 'Public Sans', system-ui, -apple-system, sans-serif; color: #1C2B29; background: #F7F9F8; }
+    .cs a { color: #2C7A6E; }
+  </style>
+</helmet>
+
+<div class="cs" style="width:100%; padding:40px 48px 64px; display:flex; flex-direction:column; gap:40px;">
+
+  <div>
+    <div style="font-size:22px; font-weight:800;">NutriVision — Components</div>
+    <div style="font-size:13.5px; color:#5B6D69; margin-top:4px;">Clinical &amp; Calm direction · reference sheet for the interactive prototype on the left</div>
+  </div>
+
+  <!-- COLOR -->
+  <div>
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#5B6D69; margin-bottom:14px;">Color</div>
+    <div style="display:grid; grid-template-columns:repeat(8, minmax(0, 1fr)); gap:14px;">
+      <div><div style="height:56px; border-radius:12px; background:#F7F9F8; border:1px solid #E4EAE8;"></div><div style="font-size:11.5px; font-weight:600; margin-top:6px;">Ground</div><div style="font-size:10.5px; color:#9BA9A5;">#F7F9F8</div></div>
+      <div><div style="height:56px; border-radius:12px; background:#FFFFFF; border:1px solid #E4EAE8;"></div><div style="font-size:11.5px; font-weight:600; margin-top:6px;">Surface</div><div style="font-size:10.5px; color:#9BA9A5;">#FFFFFF</div></div>
+      <div><div style="height:56px; border-radius:12px; background:#1C2B29;"></div><div style="font-size:11.5px; font-weight:600; margin-top:6px;">Ink</div><div style="font-size:10.5px; color:#9BA9A5;">#1C2B29</div></div>
+      <div><div style="height:56px; border-radius:12px; background:#2C7A6E;"></div><div style="font-size:11.5px; font-weight:600; margin-top:6px;">Accent</div><div style="font-size:10.5px; color:#9BA9A5;">#2C7A6E</div></div>
+      <div><div style="height:56px; border-radius:12px; background:#2E9E5B;"></div><div style="font-size:11.5px; font-weight:600; margin-top:6px;">Good</div><div style="font-size:10.5px; color:#9BA9A5;">#2E9E5B</div></div>
+      <div><div style="height:56px; border-radius:12px; background:#B9820A;"></div><div style="font-size:11.5px; font-weight:600; margin-top:6px;">Amber</div><div style="font-size:10.5px; color:#9BA9A5;">#B9820A</div></div>
+      <div><div style="height:56px; border-radius:12px; background:#C4453B;"></div><div style="font-size:11.5px; font-weight:600; margin-top:6px;">Red</div><div style="font-size:10.5px; color:#9BA9A5;">#C4453B</div></div>
+      <div><div style="height:56px; border-radius:12px; background:#E4EAE8;"></div><div style="font-size:11.5px; font-weight:600; margin-top:6px;">Border</div><div style="font-size:10.5px; color:#9BA9A5;">#E4EAE8</div></div>
+    </div>
+  </div>
+
+  <!-- TYPE -->
+  <div>
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#5B6D69; margin-bottom:14px;">Type — Public Sans</div>
+    <div style="background:#fff; border:1px solid #E4EAE8; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:14px;">
+      <div style="font-size:32px; font-weight:800; line-height:1;">Result value 32/800</div>
+      <div style="font-size:20px; font-weight:800;">Screen title 20/800</div>
+      <div style="font-size:16px; font-weight:700;">Section heading 16/700</div>
+      <div style="font-size:15px; font-weight:400; color:#1C2B29;">Body copy 15/400 — used for explanations and descriptions throughout the app.</div>
+      <div style="font-size:13px; font-weight:600; color:#5B6D69;">Meta / caption 13/600</div>
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#5B6D69;">Section label 12/700 uppercase</div>
+    </div>
+  </div>
+
+  <!-- STATUS BADGES -->
+  <div>
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#5B6D69; margin-bottom:14px;">Status badge — 3 states, never color alone</div>
+    <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <div style="background:#E5F5EA; border-radius:16px; padding:16px 20px; display:flex; align-items:center; gap:10px;">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" style="color:#2E9E5B;"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M7.2 11.3L9.7 13.8L14.8 8.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span style="font-weight:700; color:#2E9E5B; font-size:14px;">Healthy</span>
+      </div>
+      <div style="background:#FBF3DE; border-radius:16px; padding:16px 20px; display:flex; align-items:center; gap:10px;">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" style="color:#B9820A;"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M8.6 8.4C8.9 7.1 10 6.4 11.2 6.6C12.4 6.8 13.2 7.8 13 9C12.85 9.85 12.2 10.3 11.6 10.7C11.05 11.05 10.8 11.4 10.8 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10.8" cy="14.4" r="0.9" fill="currentColor"/></svg>
+        <span style="font-weight:700; color:#B9820A; font-size:14px;">Not sure</span>
+      </div>
+      <div style="background:#FBEAE8; border-radius:16px; padding:16px 20px; display:flex; align-items:center; gap:10px;">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" style="color:#C4453B;"><path d="M11 3.5L20 18.5H2L11 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 9V13.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="16" r="0.9" fill="currentColor"/></svg>
+        <span style="font-weight:700; color:#C4453B; font-size:14px;">Refer</span>
+      </div>
+      <div style="background:#EEF1F0; border-radius:16px; padding:16px 20px; display:flex; align-items:center; gap:10px;">
+        <svg width="22" height="22" viewBox="0 0 26 26" fill="none" style="color:#5B6D69;"><circle cx="13" cy="13" r="10.5" stroke="currentColor" stroke-width="1.8"/><path d="M13 11.5V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="8.3" r="1" fill="currentColor"/></svg>
+        <span style="font-weight:700; color:#5B6D69; font-size:14px;">Cannot assess</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUTTONS -->
+  <div>
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#5B6D69; margin-bottom:14px;">Buttons — 44px+ hit target</div>
+    <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
+      <div style="background:#2C7A6E; color:#fff; border-radius:15px; padding:15px 26px; font-weight:800; font-size:15px;">Primary action</div>
+      <div style="background:#fff; border:1.5px solid #E4EAE8; color:#1C2B29; border-radius:15px; padding:14px 26px; font-weight:700; font-size:14.5px;">Secondary action</div>
+      <div style="background:#B7C4C0; color:#fff; border-radius:15px; padding:15px 26px; font-weight:800; font-size:15px;">Disabled</div>
+      <div style="border:1.5px solid #C4453B; color:#C4453B; border-radius:15px; padding:14px 26px; font-weight:700; font-size:14.5px;">Destructive</div>
+    </div>
+  </div>
+
+  <!-- LIVE CHECK INDICATOR -->
+  <div>
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#5B6D69; margin-bottom:14px;">Live check indicator — camera overlay chip</div>
+    <div style="background:#15211E; border-radius:16px; padding:20px; display:flex; gap:10px; flex-wrap:wrap;">
+      <div style="background:rgba(0,0,0,0.42); border-radius:12px; padding:10px 14px; display:flex; align-items:center; gap:7px;"><span style="width:8px; height:8px; border-radius:999px; background:#4CC57F;"></span><span style="color:#fff; font-size:12.5px; font-weight:600;">Sharp</span></div>
+      <div style="background:rgba(0,0,0,0.42); border-radius:12px; padding:10px 14px; display:flex; align-items:center; gap:7px;"><span style="width:8px; height:8px; border-radius:999px; background:#E77268;"></span><span style="color:#fff; font-size:12.5px; font-weight:600;">Too dark</span></div>
+    </div>
+  </div>
+
+  <!-- CONFIDENCE BAND -->
+  <div>
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#5B6D69; margin-bottom:14px;">Confidence band</div>
+    <div style="background:#fff; border:1px solid #E4EAE8; border-radius:16px; padding:20px; max-width:320px;">
+      <div style="position:relative; height:8px; border-radius:999px; background:#EEF1F0; margin:14px 0 4px;">
+        <div style="position:absolute; left:22%; right:30%; top:0; bottom:0; border-radius:999px; background:#E6F1EF;"></div>
+        <div style="position:absolute; left:46%; top:-5px; width:18px; height:18px; border-radius:999px; background:#2C7A6E; border:3px solid #fff;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ICONS -->
+  <div>
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#5B6D69; margin-bottom:14px;">Icon set — inline SVG, 1.6–1.8px stroke, no fills</div>
+    <div style="display:flex; gap:22px; flex-wrap:wrap; background:#fff; border:1px solid #E4EAE8; border-radius:16px; padding:22px; color:#1C2B29;">
+      <svg width="24" height="24" viewBox="0 0 20 20" fill="none"><path d="M12.5 4L6.5 10L12.5 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg width="24" height="24" viewBox="0 0 20 20" fill="none"><path d="M7.5 4L13.5 10L7.5 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 8.5C4 7.67 4.67 7 5.5 7H8L9 5H15L16 7H18.5C19.33 7 20 7.67 20 8.5V17.5C20 18.33 19.33 19 18.5 19H5.5C4.67 19 4 18.33 4 17.5V8.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.8"/></svg>
+      <svg width="24" height="24" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="2.6" stroke="currentColor" stroke-width="1.6"/><path d="M10 2.8V4.6M10 15.4V17.2M17.2 10H15.4M4.6 10H2.8M15.1 4.9L13.8 6.2M6.2 13.8L4.9 15.1M15.1 15.1L13.8 13.8M6.2 6.2L4.9 4.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <svg width="24" height="24" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M10 5.6V10L13 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg width="24" height="24" viewBox="0 0 18 18" fill="none"><path d="M3 7V11H6L10 14.5V3.5L6 7H3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12.3 6.5C13.1 7.3 13.1 10.7 12.3 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <svg width="24" height="24" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="5.6" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 16C3 12.5 5.5 10.5 9 10.5C12.5 10.5 15 12.5 15 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <svg width="24" height="24" viewBox="0 0 18 18" fill="none"><rect x="3" y="12" width="12" height="3.2" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M9 12V4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="3.2" r="1.3" stroke="currentColor" stroke-width="1.6"/></svg>
+      <svg width="24" height="24" viewBox="0 0 18 18" fill="none"><rect x="2.5" y="4" width="13" height="11.5" rx="1.6" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 7.5H15.5M6 2.5V5M12 2.5V5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <svg width="24" height="24" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.2" stroke="currentColor" stroke-width="1.6"/><path d="M12 12L15.5 15.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

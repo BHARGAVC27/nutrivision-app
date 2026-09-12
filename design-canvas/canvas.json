@@ -1,0 +1,14 @@
+{
+  "pages": [
+    { "id": "proto", "name": "Prototype" },
+    { "id": "comps", "name": "Components" }
+  ],
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 844, "title": "NutriVision", "page": "proto", "is_interactive": true },
+    { "file": "Components.dc.html", "x": 0, "y": 0, "w": 1000, "h": 1500, "title": "Component Reference", "page": "comps" }
+  ],
+  "annotations": [
+    { "id": "note-flow", "x": -260, "y": 0, "w": 220, "text": "NutriVision — clickable prototype\n\nTap through: Home → New Screening → Child Info → Camera → Processing → Result → Explain.\n\nThe pill rows on Camera, Result and History are demo controls to preview each state — not part of the real app UI.", "page": "proto" }
+  ],
+  "launch": { "view": "canvas", "page": "proto" }
+}

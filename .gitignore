@@ -41,3 +41,14 @@ example
 # generated native folders
 /ios
 /android
+
+# On-device models (fetched by scripts/fetch-models.mjs)
+native-assets/*.task
+native-assets/*.tflite
+
+# Release keystore + passwords (scripts/make-keystore.sh). Never commit.
+credentials/
+
+# Gradle output of the local Expo module
+modules/*/android/build/
+modules/*/android/.cxx/

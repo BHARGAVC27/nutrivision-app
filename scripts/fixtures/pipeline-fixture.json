@@ -1,0 +1,8192 @@
+[
+ {
+  "tag": "1232",
+  "child": {
+   "ageMonths": 117.0,
+   "sex": "F",
+   "weightKg": 23.6
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2600.0,
+    "widthPx": 933.9999999999999,
+    "areaPx": 1444925.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 514.1088256835936,
+    "hipPx": 276.7355651855467,
+    "torsoPx": 722.2478027343749
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "right",
+    "armLenPx": 315.6624450683592,
+    "armVis": 0.7338128209114074,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 93.99999999999986,
+    "radiusPxIqr": 1.99999999999982,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 89.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 92.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 93.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 99.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 94.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4065248837153117
+  },
+  "expected": {
+   "features": {
+    "Age": 117.0,
+    "sex_male": 0.0,
+    "Weight": 23.6,
+    "f_diam_ratio": 0.0723076923076923,
+    "f_radius_ratio": 0.0361538461538461,
+    "f_radius_iqr_ratio": 0.0007692307692307,
+    "f_armlen_ratio": 0.1214086327185997,
+    "f_area_over_h2": 0.213746449704142,
+    "f_bodywidth_ratio": 0.3592307692307692,
+    "f_shoulder_ratio": 0.1977341637244591,
+    "f_hip_ratio": 0.1064367558405949,
+    "f_torso_ratio": 0.277787616436298,
+    "f_arm_vis": 0.7338128209114074,
+    "f_skin_score": 0.4065248837153117,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0346153846153846,
+    "f_r_f40": 0.0357692307692307,
+    "f_r_f50": 0.0361538461538461,
+    "f_r_f60": 0.0384615384615384,
+    "f_r_f70": 0.0365384615384615,
+    "f_r_min": 0.0346153846153846,
+    "f_r_p25": 0.0357692307692307,
+    "f_r_mean": 0.036307692307692256
+   },
+   "muacCm": 18.340465883075012,
+   "z": -0.7762903344480243,
+   "cutCm": 16.124793622668374,
+   "trueMuacCm": 16.5,
+   "trueZ": -1.7686924846625753
+  }
+ },
+ {
+  "tag": "1769",
+  "child": {
+   "ageMonths": 115.0,
+   "sex": "M",
+   "weightKg": 28.9
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2600.0,
+    "widthPx": 755.0000000000001,
+    "areaPx": 1223604.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 508.5190124511718,
+    "hipPx": 284.9533081054686,
+    "torsoPx": 770.1535034179685
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 386.956604003906,
+    "armVis": 0.9819459438323974,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 58.99999999999976,
+    "radiusPxIqr": 5.9999999999999805,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 63.999999999999964,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 60.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 58.99999999999976,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 54.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 52.0,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2847269115306713
+  },
+  "expected": {
+   "features": {
+    "Age": 115.0,
+    "sex_male": 1.0,
+    "Weight": 28.9,
+    "f_diam_ratio": 0.0453846153846153,
+    "f_radius_ratio": 0.0226923076923076,
+    "f_radius_iqr_ratio": 0.0023076923076923,
+    "f_armlen_ratio": 0.1488294630784254,
+    "f_area_over_h2": 0.1810066568047337,
+    "f_bodywidth_ratio": 0.2903846153846154,
+    "f_shoulder_ratio": 0.195584235558143,
+    "f_hip_ratio": 0.109597426194411,
+    "f_torso_ratio": 0.2962128859299879,
+    "f_arm_vis": 0.9819459438323974,
+    "f_skin_score": 0.2847269115306713,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0246153846153846,
+    "f_r_f40": 0.0234615384615384,
+    "f_r_f50": 0.0226923076923076,
+    "f_r_f60": 0.0211538461538461,
+    "f_r_f70": 0.02,
+    "f_r_min": 0.02,
+    "f_r_p25": 0.0211538461538461,
+    "f_r_mean": 0.02238461538461534
+   },
+   "muacCm": 18.289927153173007,
+   "z": -0.6532628305540489,
+   "cutCm": 16.298303901696972,
+   "trueMuacCm": 18.3,
+   "trueZ": -0.6475509186408136
+  }
+ },
+ {
+  "tag": "646",
+  "child": {
+   "ageMonths": 97.0,
+   "sex": "M",
+   "weightKg": 17.8
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2255.0,
+    "widthPx": 654.9999999999999,
+    "areaPx": 969886.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 423.74902343749983,
+    "hipPx": 231.7503662109373,
+    "torsoPx": 665.2694702148438
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 358.19668579101557,
+    "armVis": 0.9943390369415284,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 52.99999999999993,
+    "radiusPxIqr": 4.999999999999933,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 50.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 50.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 52.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 57.999999999999865,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 55.999999999999844,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.8757192209243775
+  },
+  "expected": {
+   "features": {
+    "Age": 97.0,
+    "sex_male": 1.0,
+    "Weight": 17.8,
+    "f_diam_ratio": 0.0470066518847006,
+    "f_radius_ratio": 0.0235033259423503,
+    "f_radius_iqr_ratio": 0.0022172949002217,
+    "f_armlen_ratio": 0.1588455369361488,
+    "f_area_over_h2": 0.1907339688595434,
+    "f_bodywidth_ratio": 0.2904656319290465,
+    "f_shoulder_ratio": 0.1879153097283813,
+    "f_hip_ratio": 0.1027717810248059,
+    "f_torso_ratio": 0.295019720716117,
+    "f_arm_vis": 0.9943390369415284,
+    "f_skin_score": 0.8757192209243775,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0226164079822616,
+    "f_r_f40": 0.0226164079822616,
+    "f_r_f50": 0.0235033259423503,
+    "f_r_f60": 0.025720620842572,
+    "f_r_f70": 0.0248337028824833,
+    "f_r_min": 0.0226164079822616,
+    "f_r_p25": 0.0226164079822616,
+    "f_r_mean": 0.02385809312638576
+   },
+   "muacCm": 15.441260144175494,
+   "z": -2.1095160190155267,
+   "cutCm": 15.564054767277055,
+   "trueMuacCm": 14.2,
+   "trueZ": -3.3759391617373247
+  }
+ },
+ {
+  "tag": "1719",
+  "child": {
+   "ageMonths": 176.0,
+   "sex": "M",
+   "weightKg": 74.4
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3330.0,
+    "widthPx": 1066.0,
+    "areaPx": 2281781.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 661.5094604492188,
+    "hipPx": 381.34771728515614,
+    "torsoPx": 990.1318359375
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 549.6708374023435,
+    "armVis": 0.9927381992340087,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 105.9999999999999,
+    "radiusPxIqr": 11.99999999999999,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 105.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 106.99999999999989,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 106.99999999999989,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 94.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 84.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2925389485677083
+  },
+  "expected": {
+   "features": {
+    "Age": 176.0,
+    "sex_male": 1.0,
+    "Weight": 74.4,
+    "f_diam_ratio": 0.0636636636636636,
+    "f_radius_ratio": 0.0318318318318318,
+    "f_radius_iqr_ratio": 0.0036036036036036,
+    "f_armlen_ratio": 0.1650663175382413,
+    "f_area_over_h2": 0.2057716274833392,
+    "f_bodywidth_ratio": 0.3201201201201201,
+    "f_shoulder_ratio": 0.19865148962439,
+    "f_hip_ratio": 0.1145188340195664,
+    "f_torso_ratio": 0.2973368876689189,
+    "f_arm_vis": 0.9927381992340087,
+    "f_skin_score": 0.2925389485677083,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0318318318318318,
+    "f_r_f40": 0.0321321321321321,
+    "f_r_f50": 0.0321321321321321,
+    "f_r_f60": 0.0285285285285285,
+    "f_r_f70": 0.0255255255255255,
+    "f_r_min": 0.0255255255255255,
+    "f_r_p25": 0.0285285285285285,
+    "f_r_mean": 0.03003003003003
+   },
+   "muacCm": 29.06979002758584,
+   "z": 1.0242760304181622,
+   "cutCm": 20.715636952781317,
+   "trueMuacCm": 30.5,
+   "trueZ": 1.3654595756310992
+  }
+ },
+ {
+  "tag": "158",
+  "child": {
+   "ageMonths": 128.0,
+   "sex": "M",
+   "weightKg": 22.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3010.0,
+    "widthPx": 807.0,
+    "areaPx": 1498022.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 536.1054687499999,
+    "hipPx": 292.7897949218747,
+    "torsoPx": 778.0347290039062
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 432.35189819335915,
+    "armVis": 0.9940523147583008,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 100.99999999999999,
+    "radiusPxIqr": 4.999999999999963,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 95.99999999999972,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 100.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 104.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 100.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 83.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.8465574001541845
+  },
+  "expected": {
+   "features": {
+    "Age": 128.0,
+    "sex_male": 1.0,
+    "Weight": 22.0,
+    "f_diam_ratio": 0.067109634551495,
+    "f_radius_ratio": 0.0335548172757475,
+    "f_radius_iqr_ratio": 0.0016611295681063,
+    "f_armlen_ratio": 0.1436385043831758,
+    "f_area_over_h2": 0.1653428770101875,
+    "f_bodywidth_ratio": 0.2681063122923588,
+    "f_shoulder_ratio": 0.1781081291528239,
+    "f_hip_ratio": 0.0972723571169019,
+    "f_torso_ratio": 0.2584832986723941,
+    "f_arm_vis": 0.9940523147583008,
+    "f_skin_score": 0.8465574001541845,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0318936877076411,
+    "f_r_f40": 0.0335548172757475,
+    "f_r_f50": 0.0348837209302325,
+    "f_r_f60": 0.0335548172757475,
+    "f_r_f70": 0.027906976744186,
+    "f_r_min": 0.027906976744186,
+    "f_r_p25": 0.0318936877076411,
+    "f_r_mean": 0.03235880398671092
+   },
+   "muacCm": 16.184241180368897,
+   "z": -2.5744212442668877,
+   "cutCm": 16.92094990815363,
+   "trueMuacCm": 16.0,
+   "trueZ": -2.730141222911727
+  }
+ },
+ {
+  "tag": "1255",
+  "child": {
+   "ageMonths": 94.0,
+   "sex": "M",
+   "weightKg": 22.9
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2392.0,
+    "widthPx": 770.9999999999998,
+    "areaPx": 1194323.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 465.87820434570307,
+    "hipPx": 260.485900878906,
+    "torsoPx": 694.0592041015625
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 395.2827758789062,
+    "armVis": 0.9920906782150268,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 76.99999999999997,
+    "radiusPxIqr": 0.9999999999997695,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 77.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 76.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 76.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 75.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 75.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.410926077192801
+  },
+  "expected": {
+   "features": {
+    "Age": 94.0,
+    "sex_male": 1.0,
+    "Weight": 22.9,
+    "f_diam_ratio": 0.06438127090301,
+    "f_radius_ratio": 0.032190635451505,
+    "f_radius_iqr_ratio": 0.0004180602006688,
+    "f_armlen_ratio": 0.1652519966048939,
+    "f_area_over_h2": 0.2087371785550497,
+    "f_bodywidth_ratio": 0.322324414715719,
+    "f_shoulder_ratio": 0.1947651355960297,
+    "f_hip_ratio": 0.1088987879928537,
+    "f_torso_ratio": 0.2901585301427937,
+    "f_arm_vis": 0.9920906782150268,
+    "f_skin_score": 0.410926077192801,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0326086956521739,
+    "f_r_f40": 0.032190635451505,
+    "f_r_f50": 0.032190635451505,
+    "f_r_f60": 0.0317725752508361,
+    "f_r_f70": 0.0317725752508361,
+    "f_r_min": 0.0317725752508361,
+    "f_r_p25": 0.0317725752508361,
+    "f_r_mean": 0.03210702341137122
+   },
+   "muacCm": 17.81535594480237,
+   "z": -0.27086265464340853,
+   "cutCm": 15.438929552101115,
+   "trueMuacCm": 17.0,
+   "trueZ": -0.7867541601117972
+  }
+ },
+ {
+  "tag": "1905",
+  "child": {
+   "ageMonths": 85.0,
+   "sex": "M",
+   "weightKg": 22.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2277.0,
+    "widthPx": 683.9999999999999,
+    "areaPx": 1036147.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 444.54626464843733,
+    "hipPx": 251.22834777832017,
+    "torsoPx": 674.9302978515624
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 377.25964355468744,
+    "armVis": 0.992088270187378,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 74.9999999999998,
+    "radiusPxIqr": 8.999999999999831,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 66.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 69.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 74.9999999999998,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 78.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 78.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4582251289844513
+  },
+  "expected": {
+   "features": {
+    "Age": 85.0,
+    "sex_male": 1.0,
+    "Weight": 22.0,
+    "f_diam_ratio": 0.0658761528326745,
+    "f_radius_ratio": 0.0329380764163372,
+    "f_radius_iqr_ratio": 0.0039525691699604,
+    "f_armlen_ratio": 0.1656827595760595,
+    "f_area_over_h2": 0.1998459321596172,
+    "f_bodywidth_ratio": 0.300395256916996,
+    "f_shoulder_ratio": 0.1952333178078337,
+    "f_hip_ratio": 0.1103330468942996,
+    "f_torso_ratio": 0.2964120763511473,
+    "f_arm_vis": 0.992088270187378,
+    "f_skin_score": 0.4582251289844513,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0294246815985946,
+    "f_r_f40": 0.0307422046552481,
+    "f_r_f50": 0.0329380764163372,
+    "f_r_f60": 0.0346947738252086,
+    "f_r_f70": 0.0346947738252086,
+    "f_r_min": 0.0294246815985946,
+    "f_r_p25": 0.0307422046552481,
+    "f_r_mean": 0.03249890206411942
+   },
+   "muacCm": 17.07420842256468,
+   "z": -0.4267924155255841,
+   "cutCm": 15.040130717532374,
+   "trueMuacCm": 18.6,
+   "trueZ": 0.46488366786966256
+  }
+ },
+ {
+  "tag": "315",
+  "child": {
+   "ageMonths": 184.0,
+   "sex": "F",
+   "weightKg": 31.9
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2385.0,
+    "widthPx": 599.0,
+    "areaPx": 963206.9999999997,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 417.2852783203125,
+    "hipPx": 236.13777160644506,
+    "torsoPx": 656.2340698242186
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 367.13894653320295,
+    "armVis": 0.9869816541671754,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 48.999999999999865,
+    "radiusPxIqr": 1.9999999999998,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 46.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 48.999999999999865,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 48.999999999999865,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 50.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 53.99999999999985,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.1312276692708333
+  },
+  "expected": {
+   "features": {
+    "Age": 184.0,
+    "sex_male": 0.0,
+    "Weight": 31.9,
+    "f_diam_ratio": 0.0410901467505241,
+    "f_radius_ratio": 0.020545073375262,
+    "f_radius_iqr_ratio": 0.00083857442348,
+    "f_armlen_ratio": 0.153936665213083,
+    "f_area_over_h2": 0.1693334915549226,
+    "f_bodywidth_ratio": 0.2511530398322851,
+    "f_shoulder_ratio": 0.1749623808470912,
+    "f_hip_ratio": 0.0990095478433732,
+    "f_torso_ratio": 0.2751505533854166,
+    "f_arm_vis": 0.9869816541671754,
+    "f_skin_score": 0.1312276692708333,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0197064989517819,
+    "f_r_f40": 0.020545073375262,
+    "f_r_f50": 0.020545073375262,
+    "f_r_f60": 0.0213836477987421,
+    "f_r_f70": 0.0226415094339622,
+    "f_r_min": 0.0197064989517819,
+    "f_r_p25": 0.020545073375262,
+    "f_r_mean": 0.02096436058700204
+   },
+   "muacCm": 17.55378319420785,
+   "z": -3.8568867830815075,
+   "cutCm": 20.382851468896348,
+   "trueMuacCm": 15.6,
+   "trueZ": -5.644472887094374
+  }
+ },
+ {
+  "tag": "1141",
+  "child": {
+   "ageMonths": 190.0,
+   "sex": "M",
+   "weightKg": 60.5
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3453.0,
+    "widthPx": 938.0,
+    "areaPx": 2050959.9999999993,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 629.9422607421875,
+    "hipPx": 347.2123107910156,
+    "torsoPx": 1009.4982299804686
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 569.0049438476561,
+    "armVis": 0.9848322868347168,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 87.99999999999983,
+    "radiusPxIqr": 2.9999999999997113,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 87.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 84.99999999999977,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 83.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 88.99999999999973,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 87.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2959398600260416
+  },
+  "expected": {
+   "features": {
+    "Age": 190.0,
+    "sex_male": 1.0,
+    "Weight": 60.5,
+    "f_diam_ratio": 0.0509701708659137,
+    "f_radius_ratio": 0.0254850854329568,
+    "f_radius_iqr_ratio": 0.0008688097306689,
+    "f_armlen_ratio": 0.1647856773378674,
+    "f_area_over_h2": 0.1720140945277399,
+    "f_bodywidth_ratio": 0.2716478424558355,
+    "f_shoulder_ratio": 0.1824333219641435,
+    "f_hip_ratio": 0.1005538114077659,
+    "f_torso_ratio": 0.2923539617667155,
+    "f_arm_vis": 0.9848322868347168,
+    "f_skin_score": 0.2959398600260416,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0254850854329568,
+    "f_r_f40": 0.0246162757022878,
+    "f_r_f50": 0.0243266724587315,
+    "f_r_f60": 0.0257746886765131,
+    "f_r_f70": 0.0254850854329568,
+    "f_r_min": 0.0243266724587315,
+    "f_r_p25": 0.0246162757022878,
+    "f_r_mean": 0.0251375615406892
+   },
+   "muacCm": 24.650390381192665,
+   "z": -0.8247392508462299,
+   "cutCm": 22.029583929580827,
+   "trueMuacCm": 21.1,
+   "trueZ": -2.4923263084607457
+  }
+ },
+ {
+  "tag": "2112",
+  "child": {
+   "ageMonths": 117.0,
+   "sex": "M",
+   "weightKg": 33.2
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2795.0,
+    "widthPx": 803.9999999999999,
+    "areaPx": 1468842.9999999993,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 543.0502929687498,
+    "hipPx": 285.5901184082029,
+    "torsoPx": 809.1544799804685
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 460.8244934082031,
+    "armVis": 0.9960330486297608,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 85.99999999999982,
+    "radiusPxIqr": 1.9999999999997744,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 87.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 85.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 90.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 85.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 79.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4297730033733226
+  },
+  "expected": {
+   "features": {
+    "Age": 117.0,
+    "sex_male": 1.0,
+    "Weight": 33.2,
+    "f_diam_ratio": 0.0615384615384615,
+    "f_radius_ratio": 0.0307692307692307,
+    "f_radius_iqr_ratio": 0.0007155635062611,
+    "f_armlen_ratio": 0.1648745951371031,
+    "f_area_over_h2": 0.1880233358188177,
+    "f_bodywidth_ratio": 0.2876565295169946,
+    "f_shoulder_ratio": 0.19429348585644,
+    "f_hip_ratio": 0.1021789332408597,
+    "f_torso_ratio": 0.2895007084008832,
+    "f_arm_vis": 0.9960330486297608,
+    "f_skin_score": 0.4297730033733226,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0314847942754919,
+    "f_r_f40": 0.0307692307692307,
+    "f_r_f50": 0.0325581395348837,
+    "f_r_f60": 0.0307692307692307,
+    "f_r_f70": 0.0286225402504472,
+    "f_r_min": 0.0286225402504472,
+    "f_r_p25": 0.0307692307692307,
+    "f_r_mean": 0.030840787119856838
+   },
+   "muacCm": 19.236180307833358,
+   "z": -0.21859474602909468,
+   "cutCm": 16.385965889515614,
+   "trueMuacCm": 19.7,
+   "trueZ": 0.0006248043942806769
+  }
+ },
+ {
+  "tag": "1864",
+  "child": {
+   "ageMonths": 171.0,
+   "sex": "F",
+   "weightKg": 43.2
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2882.0,
+    "widthPx": 884.9999999999998,
+    "areaPx": 1555101.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 532.3822631835935,
+    "hipPx": 320.3334045410155,
+    "torsoPx": 799.556457519531
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 426.8427429199218,
+    "armVis": 0.9948431968688966,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 76.99999999999972,
+    "radiusPxIqr": 0.9999999999997193,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 77.99999999999973,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 76.99999999999972,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 76.0,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 75.0,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 76.99999999999972,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2860502604166666
+  },
+  "expected": {
+   "features": {
+    "Age": 171.0,
+    "sex_male": 0.0,
+    "Weight": 43.2,
+    "f_diam_ratio": 0.0534351145038167,
+    "f_radius_ratio": 0.0267175572519083,
+    "f_radius_iqr_ratio": 0.0003469812630117,
+    "f_armlen_ratio": 0.1481064340457744,
+    "f_area_over_h2": 0.1872280555420444,
+    "f_bodywidth_ratio": 0.3070784177654406,
+    "f_shoulder_ratio": 0.1847266700845224,
+    "f_hip_ratio": 0.1111496892925106,
+    "f_torso_ratio": 0.2774311094793654,
+    "f_arm_vis": 0.9948431968688966,
+    "f_skin_score": 0.2860502604166666,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0270645385149201,
+    "f_r_f40": 0.0267175572519083,
+    "f_r_f50": 0.0263705759888966,
+    "f_r_f60": 0.0260235947258848,
+    "f_r_f70": 0.0267175572519083,
+    "f_r_min": 0.0260235947258848,
+    "f_r_p25": 0.0263705759888966,
+    "f_r_mean": 0.02657876474670362
+   },
+   "muacCm": 21.789875375955667,
+   "z": -0.9901480343240548,
+   "cutCm": 19.712707235743935,
+   "trueMuacCm": 22.8,
+   "trueZ": -0.5787660320548663
+  }
+ },
+ {
+  "tag": "537",
+  "child": {
+   "ageMonths": 108.0,
+   "sex": "M",
+   "weightKg": 22.6
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2255.0,
+    "widthPx": 653.9999999999999,
+    "areaPx": 879473.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 415.3724365234375,
+    "hipPx": 220.67245483398438,
+    "torsoPx": 668.9843139648438
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "right",
+    "armLenPx": 367.00552368164045,
+    "armVis": 0.982154679298401,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 70.99999999999986,
+    "radiusPxIqr": 14.999999999999801,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 70.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 73.99999999999977,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 70.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 55.999999999999844,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 46.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.8955522697448731
+  },
+  "expected": {
+   "features": {
+    "Age": 108.0,
+    "sex_male": 1.0,
+    "Weight": 22.6,
+    "f_diam_ratio": 0.0629711751662971,
+    "f_radius_ratio": 0.0314855875831485,
+    "f_radius_iqr_ratio": 0.0066518847006651,
+    "f_armlen_ratio": 0.1627518952025013,
+    "f_area_over_h2": 0.1729537219581024,
+    "f_bodywidth_ratio": 0.2900221729490022,
+    "f_shoulder_ratio": 0.1842006370392184,
+    "f_hip_ratio": 0.0978591817445607,
+    "f_torso_ratio": 0.2966671015365161,
+    "f_arm_vis": 0.982154679298401,
+    "f_skin_score": 0.8955522697448731,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0314855875831485,
+    "f_r_f40": 0.0328159645232815,
+    "f_r_f50": 0.0314855875831485,
+    "f_r_f60": 0.0248337028824833,
+    "f_r_f70": 0.0208425720620842,
+    "f_r_min": 0.0208425720620842,
+    "f_r_p25": 0.0248337028824833,
+    "f_r_mean": 0.0282926829268292
+   },
+   "muacCm": 16.266831169282028,
+   "z": -1.7867838947319605,
+   "cutCm": 16.00591962659185,
+   "trueMuacCm": 15.5,
+   "trueZ": -2.444704144984311
+  }
+ },
+ {
+  "tag": "1046",
+  "child": {
+   "ageMonths": 208.0,
+   "sex": "M",
+   "weightKg": 36.6
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2788.0,
+    "widthPx": 748.0,
+    "areaPx": 1387603.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 504.7838134765625,
+    "hipPx": 296.8246459960935,
+    "torsoPx": 842.1688232421874
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 456.5518798828125,
+    "armVis": 0.9842617988586426,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 67.99999999999993,
+    "radiusPxIqr": 8.999999999999769,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 60.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 71.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 71.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 67.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 62.99999999999978,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.1811485746878164
+  },
+  "expected": {
+   "features": {
+    "Age": 208.0,
+    "sex_male": 1.0,
+    "Weight": 36.6,
+    "f_diam_ratio": 0.048780487804878,
+    "f_radius_ratio": 0.024390243902439,
+    "f_radius_iqr_ratio": 0.0032281205164992,
+    "f_armlen_ratio": 0.1637560544773359,
+    "f_area_over_h2": 0.1785171744451008,
+    "f_bodywidth_ratio": 0.2682926829268293,
+    "f_shoulder_ratio": 0.1810558871867154,
+    "f_hip_ratio": 0.1064650810602918,
+    "f_torso_ratio": 0.3020691618515737,
+    "f_arm_vis": 0.9842617988586426,
+    "f_skin_score": 0.1811485746878164,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0218794835007173,
+    "f_r_f40": 0.0258249641319942,
+    "f_r_f50": 0.0258249641319942,
+    "f_r_f60": 0.024390243902439,
+    "f_r_f70": 0.0225968436154949,
+    "f_r_min": 0.0218794835007173,
+    "f_r_p25": 0.0225968436154949,
+    "f_r_mean": 0.02410329985652792
+   },
+   "muacCm": 18.402709307135765,
+   "z": -5.406006725907644,
+   "cutCm": 23.494616928185764,
+   "trueMuacCm": 17.6,
+   "trueZ": -6.151845360873814
+  }
+ },
+ {
+  "tag": "997",
+  "child": {
+   "ageMonths": 142.0,
+   "sex": "F",
+   "weightKg": 23.8
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2306.0,
+    "widthPx": 757.9999999999999,
+    "areaPx": 1145069.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 456.50592041015625,
+    "hipPx": 235.66688537597642,
+    "torsoPx": 606.2723999023436
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "right",
+    "armLenPx": 378.234375,
+    "armVis": 0.969012975692749,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 56.99999999999991,
+    "radiusPxIqr": 8.999999999999986,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 65.99999999999989,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 61.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 56.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 52.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 49.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2904678891782407
+  },
+  "expected": {
+   "features": {
+    "Age": 142.0,
+    "sex_male": 0.0,
+    "Weight": 23.8,
+    "f_diam_ratio": 0.049436253252385,
+    "f_radius_ratio": 0.0247181266261925,
+    "f_radius_iqr_ratio": 0.0039028620988725,
+    "f_armlen_ratio": 0.1640218451864701,
+    "f_area_over_h2": 0.2153342199428468,
+    "f_bodywidth_ratio": 0.3287077189939288,
+    "f_shoulder_ratio": 0.1979644060755231,
+    "f_hip_ratio": 0.1021972616548033,
+    "f_torso_ratio": 0.2629108412412592,
+    "f_arm_vis": 0.969012975692749,
+    "f_skin_score": 0.2904678891782407,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.028620988725065,
+    "f_r_f40": 0.0268863833477883,
+    "f_r_f50": 0.0247181266261925,
+    "f_r_f60": 0.0229835212489158,
+    "f_r_f70": 0.0216825672159583,
+    "f_r_min": 0.0216825672159583,
+    "f_r_p25": 0.0229835212489158,
+    "f_r_mean": 0.024978317432783982
+   },
+   "muacCm": 17.35076166736023,
+   "z": -2.203324322297052,
+   "cutCm": 17.695887165294334,
+   "trueMuacCm": 17.0,
+   "trueZ": -2.419570907810331
+  }
+ },
+ {
+  "tag": "101",
+  "child": {
+   "ageMonths": 119.0,
+   "sex": "M",
+   "weightKg": 37.6
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3309.0,
+    "widthPx": 1011.9999999999999,
+    "areaPx": 2107435.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 691.7844848632811,
+    "hipPx": 365.39276123046875,
+    "torsoPx": 937.978820800781
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 523.9075927734374,
+    "armVis": 0.9926770925521852,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 92.9999999999999,
+    "radiusPxIqr": 6.999999999999718,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 90.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 91.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 92.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 98.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 100.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2859917343987359
+  },
+  "expected": {
+   "features": {
+    "Age": 119.0,
+    "sex_male": 1.0,
+    "Weight": 37.6,
+    "f_diam_ratio": 0.056210335448776,
+    "f_radius_ratio": 0.028105167724388,
+    "f_radius_iqr_ratio": 0.0021154427319431,
+    "f_armlen_ratio": 0.1583280727632026,
+    "f_area_over_h2": 0.1924690311805646,
+    "f_bodywidth_ratio": 0.3058325778180719,
+    "f_shoulder_ratio": 0.2090614943678698,
+    "f_hip_ratio": 0.1104239230070924,
+    "f_torso_ratio": 0.2834629255970931,
+    "f_arm_vis": 0.9926770925521852,
+    "f_skin_score": 0.2859917343987359,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0275007555152614,
+    "f_r_f40": 0.0278029616198247,
+    "f_r_f50": 0.028105167724388,
+    "f_r_f60": 0.0299184043517679,
+    "f_r_f70": 0.0305228165608945,
+    "f_r_min": 0.0275007555152614,
+    "f_r_p25": 0.0278029616198247,
+    "f_r_mean": 0.0287700211544273
+   },
+   "muacCm": 20.878242179193613,
+   "z": 0.4327396087771375,
+   "cutCm": 16.476390066464713,
+   "trueMuacCm": 24.1,
+   "trueZ": 1.4374579623690749
+  }
+ },
+ {
+  "tag": "995",
+  "child": {
+   "ageMonths": 154.0,
+   "sex": "F",
+   "weightKg": 37.5
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2861.0,
+    "widthPx": 797.9999999999999,
+    "areaPx": 1447595.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 508.10028076171875,
+    "hipPx": 295.64373779296875,
+    "torsoPx": 823.5252685546874
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 489.64224243164034,
+    "armVis": 0.9918056249618532,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 76.99999999999974,
+    "radiusPxIqr": 5.999999999999776,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 105.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 81.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 74.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 75.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 76.99999999999974,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.9532324267987852
+  },
+  "expected": {
+   "features": {
+    "Age": 154.0,
+    "sex_male": 0.0,
+    "Weight": 37.5,
+    "f_diam_ratio": 0.0538273331003145,
+    "f_radius_ratio": 0.0269136665501572,
+    "f_radius_iqr_ratio": 0.0020971688220901,
+    "f_armlen_ratio": 0.1711437408009928,
+    "f_area_over_h2": 0.1768526854353054,
+    "f_bodywidth_ratio": 0.2789234533379937,
+    "f_shoulder_ratio": 0.1775953445514571,
+    "f_hip_ratio": 0.1033358048909363,
+    "f_torso_ratio": 0.2878452529027219,
+    "f_arm_vis": 0.9918056249618532,
+    "f_skin_score": 0.9532324267987852,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0370499825235931,
+    "f_r_f40": 0.0286613072352324,
+    "f_r_f50": 0.0262146102761272,
+    "f_r_f60": 0.0265641384131422,
+    "f_r_f70": 0.0269136665501572,
+    "f_r_min": 0.0262146102761272,
+    "f_r_p25": 0.0265641384131422,
+    "f_r_mean": 0.029080740999650422
+   },
+   "muacCm": 19.669884374240624,
+   "z": -1.4245389135576128,
+   "cutCm": 18.572458644429684,
+   "trueMuacCm": 17.6,
+   "trueZ": -2.580721977890965
+  }
+ },
+ {
+  "tag": "782",
+  "child": {
+   "ageMonths": 135.0,
+   "sex": "M",
+   "weightKg": 26.8
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2333.0,
+    "widthPx": 634.9999999999999,
+    "areaPx": 1041957.9999999999,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 498.09637451171875,
+    "hipPx": 277.4791259765625,
+    "torsoPx": 735.1470336914062
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "right",
+    "armLenPx": 388.7846374511717,
+    "armVis": 0.5927877008914948,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 65.99999999999984,
+    "radiusPxIqr": 1.9999999999998608,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 63.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 67.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 67.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 65.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 65.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4094336731027674
+  },
+  "expected": {
+   "features": {
+    "Age": 135.0,
+    "sex_male": 1.0,
+    "Weight": 26.8,
+    "f_diam_ratio": 0.0565795113587655,
+    "f_radius_ratio": 0.0282897556793827,
+    "f_radius_iqr_ratio": 0.0008572653236176,
+    "f_armlen_ratio": 0.1666457940210766,
+    "f_area_over_h2": 0.1914347325473659,
+    "f_bodywidth_ratio": 0.2721817402486069,
+    "f_shoulder_ratio": 0.2135003748442858,
+    "f_hip_ratio": 0.1189366163637216,
+    "f_torso_ratio": 0.315108029872013,
+    "f_arm_vis": 0.5927877008914948,
+    "f_skin_score": 0.4094336731027674,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0274324903557651,
+    "f_r_f40": 0.0291470210030004,
+    "f_r_f50": 0.0291470210030004,
+    "f_r_f60": 0.0282897556793827,
+    "f_r_f70": 0.0282897556793827,
+    "f_r_min": 0.0274324903557651,
+    "f_r_p25": 0.0282897556793827,
+    "f_r_mean": 0.028461208744106258
+   },
+   "muacCm": 17.669278084112932,
+   "z": -1.7656573866727623,
+   "cutCm": 17.320412469154768,
+   "trueMuacCm": 16.6,
+   "trueZ": -2.5278591699470163
+  }
+ },
+ {
+  "tag": "2128",
+  "child": {
+   "ageMonths": 85.0,
+   "sex": "F",
+   "weightKg": 23.3
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2296.0,
+    "widthPx": 704.9999999999999,
+    "areaPx": 1054845.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 438.7101745605467,
+    "hipPx": 243.08656311035156,
+    "torsoPx": 648.6686401367186
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 356.9729614257812,
+    "armVis": 0.9951788663864136,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 60.999999999999815,
+    "radiusPxIqr": 0.9999999999999744,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 60.999999999999815,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 57.99999999999989,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 60.999999999999815,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 64.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 61.999999999999794,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4822634290885043
+  },
+  "expected": {
+   "features": {
+    "Age": 85.0,
+    "sex_male": 0.0,
+    "Weight": 23.3,
+    "f_diam_ratio": 0.0531358885017421,
+    "f_radius_ratio": 0.026567944250871,
+    "f_radius_iqr_ratio": 0.0004355400696864,
+    "f_armlen_ratio": 0.1554760284955493,
+    "f_area_over_h2": 0.2000989829304714,
+    "f_bodywidth_ratio": 0.3070557491289198,
+    "f_shoulder_ratio": 0.1910758600002381,
+    "f_hip_ratio": 0.1058739386369127,
+    "f_torso_ratio": 0.282521184728536,
+    "f_arm_vis": 0.9951788663864136,
+    "f_skin_score": 0.4822634290885043,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.026567944250871,
+    "f_r_f40": 0.0252613240418118,
+    "f_r_f50": 0.026567944250871,
+    "f_r_f60": 0.0283101045296167,
+    "f_r_f70": 0.0270034843205574,
+    "f_r_min": 0.0252613240418118,
+    "f_r_p25": 0.026567944250871,
+    "f_r_mean": 0.02674216027874558
+   },
+   "muacCm": 17.597554995446227,
+   "z": -0.22239044535144123,
+   "cutCm": 14.802371128733247,
+   "trueMuacCm": 19.0,
+   "trueZ": 0.49218168914177957
+  }
+ },
+ {
+  "tag": "600",
+  "child": {
+   "ageMonths": 78.0,
+   "sex": "M",
+   "weightKg": 24.6
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2221.0,
+    "widthPx": 765.0,
+    "areaPx": 1041986.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 449.872314453125,
+    "hipPx": 254.23284912109372,
+    "torsoPx": 669.2587890624998
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 336.80520629882795,
+    "armVis": 0.9715596914291382,
+    "nOk": 3,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 97.99999999999984,
+    "radiusPxIqr": 8.999999999999801,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 87.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 97.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 105.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2865473108362268
+  },
+  "expected": {
+   "features": {
+    "Age": 78.0,
+    "sex_male": 1.0,
+    "Weight": 24.6,
+    "f_diam_ratio": 0.0882485366951823,
+    "f_radius_ratio": 0.0441242683475911,
+    "f_radius_iqr_ratio": 0.0040522287257991,
+    "f_armlen_ratio": 0.1516457479958703,
+    "f_area_over_h2": 0.2112346617294171,
+    "f_bodywidth_ratio": 0.3444394416929311,
+    "f_shoulder_ratio": 0.2025539461743021,
+    "f_hip_ratio": 0.1144677393611408,
+    "f_torso_ratio": 0.3013321877814047,
+    "f_arm_vis": 0.9715596914291382,
+    "f_skin_score": 0.2865473108362268,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.039621791985592,
+    "f_r_f40": 0.0441242683475911,
+    "f_r_f50": 0.0477262494371904,
+    "f_r_f60": null,
+    "f_r_f70": null,
+    "f_r_min": 0.039621791985592,
+    "f_r_p25": 0.04187303016659155,
+    "f_r_mean": 0.04382410325679117
+   },
+   "muacCm": 18.399527651938474,
+   "z": 0.6057925898811858,
+   "cutCm": 14.715845361322618,
+   "trueMuacCm": 17.6,
+   "trueZ": 0.14998100965188751
+  }
+ },
+ {
+  "tag": "1056",
+  "child": {
+   "ageMonths": 151.0,
+   "sex": "M",
+   "weightKg": 41.6
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2812.0,
+    "widthPx": 861.0,
+    "areaPx": 1478819.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 527.3265991210935,
+    "hipPx": 304.65063476562483,
+    "torsoPx": 850.004943847656
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 421.35400390625,
+    "armVis": 0.9330594420433044,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 103.99999999999983,
+    "radiusPxIqr": 14.999999999999932,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 90.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 103.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 109.0,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 113.99999999999989,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 93.99999999999979,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.6755889559710467
+  },
+  "expected": {
+   "features": {
+    "Age": 151.0,
+    "sex_male": 1.0,
+    "Weight": 41.6,
+    "f_diam_ratio": 0.0739687055476529,
+    "f_radius_ratio": 0.0369843527738264,
+    "f_radius_iqr_ratio": 0.0053342816500711,
+    "f_armlen_ratio": 0.1498413954147404,
+    "f_area_over_h2": 0.1870185488325789,
+    "f_bodywidth_ratio": 0.3061877667140825,
+    "f_shoulder_ratio": 0.1875272400857374,
+    "f_hip_ratio": 0.1083394860475195,
+    "f_torso_ratio": 0.3022777182957525,
+    "f_arm_vis": 0.9330594420433044,
+    "f_skin_score": 0.6755889559710467,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0323613086770981,
+    "f_r_f40": 0.0369843527738264,
+    "f_r_f50": 0.0387624466571835,
+    "f_r_f60": 0.0405405405405405,
+    "f_r_f70": 0.0334281650071123,
+    "f_r_min": 0.0323613086770981,
+    "f_r_p25": 0.0334281650071123,
+    "f_r_mean": 0.03641536273115216
+   },
+   "muacCm": 20.826478821573303,
+   "z": -0.764055734751629,
+   "cutCm": 18.45137372898255,
+   "trueMuacCm": 20.3,
+   "trueZ": -1.0072234100799444
+  }
+ },
+ {
+  "tag": "293",
+  "child": {
+   "ageMonths": 184.0,
+   "sex": "F",
+   "weightKg": 39.2
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2570.0,
+    "widthPx": 633.0,
+    "areaPx": 1145126.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 415.76538085937494,
+    "hipPx": 227.47790527343741,
+    "torsoPx": 627.1160278320312
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 388.71878051757807,
+    "armVis": 0.9934196472167968,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 64.99999999999994,
+    "radiusPxIqr": 1.999999999999955,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 66.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 65.9999999999998,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 61.999999999999886,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 63.999999999999844,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 64.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2757486400462963
+  },
+  "expected": {
+   "features": {
+    "Age": 184.0,
+    "sex_male": 0.0,
+    "Weight": 39.2,
+    "f_diam_ratio": 0.0505836575875486,
+    "f_radius_ratio": 0.0252918287937743,
+    "f_radius_iqr_ratio": 0.0007782101167315,
+    "f_armlen_ratio": 0.1512524437811588,
+    "f_area_over_h2": 0.1733753728292631,
+    "f_bodywidth_ratio": 0.2463035019455253,
+    "f_shoulder_ratio": 0.161776412785749,
+    "f_hip_ratio": 0.0885128036083414,
+    "f_torso_ratio": 0.2440140186116853,
+    "f_arm_vis": 0.9934196472167968,
+    "f_skin_score": 0.2757486400462963,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0260700389105058,
+    "f_r_f40": 0.02568093385214,
+    "f_r_f50": 0.024124513618677,
+    "f_r_f60": 0.0249027237354085,
+    "f_r_f70": 0.0252918287937743,
+    "f_r_min": 0.024124513618677,
+    "f_r_p25": 0.0249027237354085,
+    "f_r_mean": 0.025214007782101124
+   },
+   "muacCm": 19.38042173321945,
+   "z": -2.5811613324531164,
+   "cutCm": 20.382851468896348,
+   "trueMuacCm": 17.4,
+   "trueZ": -3.9796359172497655
+  }
+ },
+ {
+  "tag": "1510",
+  "child": {
+   "ageMonths": 179.0,
+   "sex": "F",
+   "weightKg": 29.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2755.0,
+    "widthPx": 852.9999999999999,
+    "areaPx": 1574300.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 532.9150390624999,
+    "hipPx": 300.1390991210935,
+    "torsoPx": 789.2152709960936
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 463.802032470703,
+    "armVis": 0.9806820631027222,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 87.99999999999991,
+    "radiusPxIqr": 0.9999999999997925,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 88.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 87.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 85.99999999999979,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 87.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 88.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.9382450161898578
+  },
+  "expected": {
+   "features": {
+    "Age": 179.0,
+    "sex_male": 0.0,
+    "Weight": 29.0,
+    "f_diam_ratio": 0.0638838475499092,
+    "f_radius_ratio": 0.0319419237749546,
+    "f_radius_iqr_ratio": 0.0003629764065335,
+    "f_armlen_ratio": 0.1683491950891844,
+    "f_area_over_h2": 0.2074171033692247,
+    "f_bodywidth_ratio": 0.3096188747731397,
+    "f_shoulder_ratio": 0.1934355858666061,
+    "f_hip_ratio": 0.1089434116591991,
+    "f_torso_ratio": 0.2864665230475839,
+    "f_arm_vis": 0.9806820631027222,
+    "f_skin_score": 0.9382450161898578,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0323049001814882,
+    "f_r_f40": 0.0319419237749546,
+    "f_r_f50": 0.0312159709618874,
+    "f_r_f60": 0.0319419237749546,
+    "f_r_f70": 0.0323049001814882,
+    "f_r_min": 0.0312159709618874,
+    "f_r_p25": 0.0319419237749546,
+    "f_r_mean": 0.0319419237749546
+   },
+   "muacCm": 18.19097385715626,
+   "z": -3.213644520061084,
+   "cutCm": 20.14984657515789,
+   "trueMuacCm": 22.0,
+   "trueZ": -1.0934039058209581
+  }
+ },
+ {
+  "tag": "1827",
+  "child": {
+   "ageMonths": 97.0,
+   "sex": "F",
+   "weightKg": 15.8
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2199.0,
+    "widthPx": 675.0,
+    "areaPx": 1011363.9999999997,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 403.2548217773436,
+    "hipPx": 234.407501220703,
+    "torsoPx": 610.3335571289062
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 336.09695434570307,
+    "armVis": 0.9480376005172728,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 61.99999999999991,
+    "radiusPxIqr": 9.999999999999993,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 55.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 58.999999999999865,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 61.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 68.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 71.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.7759378490306713
+  },
+  "expected": {
+   "features": {
+    "Age": 97.0,
+    "sex_male": 0.0,
+    "Weight": 15.8,
+    "f_diam_ratio": 0.0563892678490222,
+    "f_radius_ratio": 0.0281946339245111,
+    "f_radius_iqr_ratio": 0.0045475216007276,
+    "f_armlen_ratio": 0.1528408159825844,
+    "f_area_over_h2": 0.2091495969167017,
+    "f_bodywidth_ratio": 0.3069577080491132,
+    "f_shoulder_ratio": 0.183381001263003,
+    "f_hip_ratio": 0.1065973175173729,
+    "f_torso_ratio": 0.2775505034692616,
+    "f_arm_vis": 0.9480376005172728,
+    "f_skin_score": 0.7759378490306713,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0254661209640745,
+    "f_r_f40": 0.0268303774442928,
+    "f_r_f50": 0.0281946339245111,
+    "f_r_f60": 0.0313778990450204,
+    "f_r_f70": 0.0327421555252387,
+    "f_r_min": 0.0254661209640745,
+    "f_r_p25": 0.0268303774442928,
+    "f_r_mean": 0.0289222373806275
+   },
+   "muacCm": 15.347577031781361,
+   "z": -1.9144710017631243,
+   "cutCm": 15.224026079307556,
+   "trueMuacCm": 13.5,
+   "trueZ": -3.348164129911071
+  }
+ },
+ {
+  "tag": "122",
+  "child": {
+   "ageMonths": 131.0,
+   "sex": "F",
+   "weightKg": 26.1
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2832.0,
+    "widthPx": 805.0,
+    "areaPx": 1538070.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 517.8325805664062,
+    "hipPx": 272.2320556640625,
+    "torsoPx": 682.7131958007811
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 458.8179321289062,
+    "armVis": 0.9819527864456176,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 77.99999999999991,
+    "radiusPxIqr": 10.999999999999853,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 61.99999999999989,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 71.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 77.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 82.9999999999998,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 95.00000000000001,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.3711039803822835
+  },
+  "expected": {
+   "features": {
+    "Age": 131.0,
+    "sex_male": 0.0,
+    "Weight": 26.1,
+    "f_diam_ratio": 0.0550847457627118,
+    "f_radius_ratio": 0.0275423728813559,
+    "f_radius_iqr_ratio": 0.0038841807909604,
+    "f_armlen_ratio": 0.1620119816839358,
+    "f_area_over_h2": 0.1917740701506591,
+    "f_bodywidth_ratio": 0.2842514124293785,
+    "f_shoulder_ratio": 0.1828504874881378,
+    "f_hip_ratio": 0.0961271382994571,
+    "f_torso_ratio": 0.2410710437149651,
+    "f_arm_vis": 0.9819527864456176,
+    "f_skin_score": 0.3711039803822835,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0218926553672316,
+    "f_r_f40": 0.0254237288135593,
+    "f_r_f50": 0.0275423728813559,
+    "f_r_f60": 0.0293079096045197,
+    "f_r_f70": 0.033545197740113,
+    "f_r_min": 0.0218926553672316,
+    "f_r_p25": 0.0254237288135593,
+    "f_r_mean": 0.027542372881355904
+   },
+   "muacCm": 17.21055501424964,
+   "z": -1.8426615237028054,
+   "cutCm": 16.942210357676174,
+   "trueMuacCm": 17.5,
+   "trueZ": -1.6788619041408712
+  }
+ },
+ {
+  "tag": "1332",
+  "child": {
+   "ageMonths": 162.0,
+   "sex": "M",
+   "weightKg": 43.4
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2988.0,
+    "widthPx": 987.9999999999999,
+    "areaPx": 1826138.9999999993,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 581.781311035156,
+    "hipPx": 350.0986328124997,
+    "torsoPx": 906.7869262695312
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 480.9779357910156,
+    "armVis": 0.9901068210601808,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 94.99999999999973,
+    "radiusPxIqr": 2.999999999999916,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 91.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 92.99999999999979,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 94.99999999999973,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 95.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 96.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4425666592597961
+  },
+  "expected": {
+   "features": {
+    "Age": 162.0,
+    "sex_male": 1.0,
+    "Weight": 43.4,
+    "f_diam_ratio": 0.0635876840696117,
+    "f_radius_ratio": 0.0317938420348058,
+    "f_radius_iqr_ratio": 0.001004016064257,
+    "f_armlen_ratio": 0.1609698580291217,
+    "f_area_over_h2": 0.2045373596124793,
+    "f_bodywidth_ratio": 0.3306559571619812,
+    "f_shoulder_ratio": 0.1947059273879371,
+    "f_hip_ratio": 0.1171682171393908,
+    "f_torso_ratio": 0.3034762136109542,
+    "f_arm_vis": 0.9901068210601808,
+    "f_skin_score": 0.4425666592597961,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0307898259705488,
+    "f_r_f40": 0.0311244979919678,
+    "f_r_f50": 0.0317938420348058,
+    "f_r_f60": 0.0321285140562249,
+    "f_r_f70": 0.0324631860776439,
+    "f_r_min": 0.0307898259705488,
+    "f_r_p25": 0.0311244979919678,
+    "f_r_mean": 0.031659973226238244
+   },
+   "muacCm": 22.0960974327503,
+   "z": -0.7035480642570918,
+   "cutCm": 19.398746312249774,
+   "trueMuacCm": 21.0,
+   "trueZ": -1.1842905854457364
+  }
+ },
+ {
+  "tag": "1800",
+  "child": {
+   "ageMonths": 187.0,
+   "sex": "M",
+   "weightKg": 51.4
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3124.0,
+    "widthPx": 954.0,
+    "areaPx": 1874875.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 589.648498535156,
+    "hipPx": 349.40826416015597,
+    "torsoPx": 940.960754394531
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 510.1689453124999,
+    "armVis": 0.9921422243118287,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 101.99999999999972,
+    "radiusPxIqr": 1.9999999999997558,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 96.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 101.99999999999972,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 101.99999999999972,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 103.99999999999979,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 99.99999999999996,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.9838897078037262
+  },
+  "expected": {
+   "features": {
+    "Age": 187.0,
+    "sex_male": 1.0,
+    "Weight": 51.4,
+    "f_diam_ratio": 0.0653008962868117,
+    "f_radius_ratio": 0.0326504481434058,
+    "f_radius_iqr_ratio": 0.0006402048655569,
+    "f_armlen_ratio": 0.1633063205225672,
+    "f_area_over_h2": 0.1921102332772095,
+    "f_bodywidth_ratio": 0.3053777208706786,
+    "f_shoulder_ratio": 0.1887479188652868,
+    "f_hip_ratio": 0.1118464353905749,
+    "f_torso_ratio": 0.3012038266307718,
+    "f_arm_vis": 0.9921422243118287,
+    "f_skin_score": 0.9838897078037262,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0310499359795134,
+    "f_r_f40": 0.0326504481434058,
+    "f_r_f50": 0.0326504481434058,
+    "f_r_f60": 0.0332906530089628,
+    "f_r_f70": 0.0320102432778489,
+    "f_r_min": 0.0310499359795134,
+    "f_r_p25": 0.0320102432778489,
+    "f_r_mean": 0.03233034571062734
+   },
+   "muacCm": 23.181078218791615,
+   "z": -1.324136075678559,
+   "cutCm": 21.75527752999646,
+   "trueMuacCm": 23.0,
+   "trueZ": -1.4050286079030458
+  }
+ },
+ {
+  "tag": "1425",
+  "child": {
+   "ageMonths": 167.0,
+   "sex": "M",
+   "weightKg": 56.1
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2952.0,
+    "widthPx": 950.9999999999998,
+    "areaPx": 1799990.9999999993,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 588.8325195312499,
+    "hipPx": 332.35684204101545,
+    "torsoPx": 881.1297607421875
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 486.0557556152344,
+    "armVis": 0.9922218322753906,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 96.99999999999997,
+    "radiusPxIqr": 1.9999999999998506,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 94.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 96.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 96.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 102.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 94.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4279634669621786
+  },
+  "expected": {
+   "features": {
+    "Age": 167.0,
+    "sex_male": 1.0,
+    "Weight": 56.1,
+    "f_diam_ratio": 0.0657181571815718,
+    "f_radius_ratio": 0.0328590785907859,
+    "f_radius_iqr_ratio": 0.0006775067750677,
+    "f_armlen_ratio": 0.1646530337449981,
+    "f_area_over_h2": 0.2065559108334985,
+    "f_bodywidth_ratio": 0.3221544715447154,
+    "f_shoulder_ratio": 0.1994690106813177,
+    "f_hip_ratio": 0.1125870061114551,
+    "f_torso_ratio": 0.2984856913083291,
+    "f_arm_vis": 0.9922218322753906,
+    "f_skin_score": 0.4279634669621786,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0321815718157181,
+    "f_r_f40": 0.0328590785907859,
+    "f_r_f50": 0.0328590785907859,
+    "f_r_f60": 0.0348915989159891,
+    "f_r_f70": 0.0321815718157181,
+    "f_r_min": 0.0321815718157181,
+    "f_r_p25": 0.0321815718157181,
+    "f_r_mean": 0.03299457994579942
+   },
+   "muacCm": 24.905441982736086,
+   "z": 0.12465076948247811,
+   "cutCm": 19.861042699336352,
+   "trueMuacCm": 25.5,
+   "trueZ": 0.313940310599502
+  }
+ },
+ {
+  "tag": "24",
+  "child": {
+   "ageMonths": 113.0,
+   "sex": "F",
+   "weightKg": 25.5
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3234.0,
+    "widthPx": 936.9999999999998,
+    "areaPx": 1845743.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 616.3617553710938,
+    "hipPx": 338.8761901855469,
+    "torsoPx": 918.8754272460936
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 502.3202819824216,
+    "armVis": 0.9915021181106568,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 69.99999999999986,
+    "radiusPxIqr": 0.9999999999997392,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 69.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 69.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 70.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 71.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 66.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.3299303403501157
+  },
+  "expected": {
+   "features": {
+    "Age": 113.0,
+    "sex_male": 0.0,
+    "Weight": 25.5,
+    "f_diam_ratio": 0.0432900432900432,
+    "f_radius_ratio": 0.0216450216450216,
+    "f_radius_iqr_ratio": 0.0003092145949288,
+    "f_armlen_ratio": 0.1553247625177556,
+    "f_area_over_h2": 0.176478349815217,
+    "f_bodywidth_ratio": 0.2897340754483611,
+    "f_shoulder_ratio": 0.1905880505167266,
+    "f_hip_ratio": 0.1047854638792662,
+    "f_torso_ratio": 0.284129693026003,
+    "f_arm_vis": 0.9915021181106568,
+    "f_skin_score": 0.3299303403501157,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0216450216450216,
+    "f_r_f40": 0.0216450216450216,
+    "f_r_f50": 0.0219542362399505,
+    "f_r_f60": 0.0222634508348794,
+    "f_r_f70": 0.020717377860235,
+    "f_r_min": 0.020717377860235,
+    "f_r_p25": 0.0216450216450216,
+    "f_r_mean": 0.021645021645021623
+   },
+   "muacCm": 17.53825596647682,
+   "z": -1.0584806645719878,
+   "cutCm": 15.922358525868898,
+   "trueMuacCm": 18.7,
+   "trueZ": -0.48436227788493846
+  }
+ },
+ {
+  "tag": "2122",
+  "child": {
+   "ageMonths": 101.0,
+   "sex": "F",
+   "weightKg": 28.2
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2517.0,
+    "widthPx": 747.0,
+    "areaPx": 1218982.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 481.74893188476545,
+    "hipPx": 263.4040832519531,
+    "torsoPx": 710.7822265624998
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 405.70803833007807,
+    "armVis": 0.9804566621780396,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 87.99999999999996,
+    "radiusPxIqr": 2.99999999999991,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 84.0,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 89.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 87.99999999999996,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 91.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 86.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4839279623473132
+  },
+  "expected": {
+   "features": {
+    "Age": 101.0,
+    "sex_male": 0.0,
+    "Weight": 28.2,
+    "f_diam_ratio": 0.0699245133094954,
+    "f_radius_ratio": 0.0349622566547477,
+    "f_radius_iqr_ratio": 0.00119189511323,
+    "f_armlen_ratio": 0.1611871427612547,
+    "f_area_over_h2": 0.1924114274818402,
+    "f_bodywidth_ratio": 0.2967818831942789,
+    "f_shoulder_ratio": 0.1913980659057471,
+    "f_hip_ratio": 0.1046500132109468,
+    "f_torso_ratio": 0.2823926208035359,
+    "f_arm_vis": 0.9804566621780396,
+    "f_skin_score": 0.4839279623473132,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.033373063170441,
+    "f_r_f40": 0.035756853396901,
+    "f_r_f50": 0.0349622566547477,
+    "f_r_f60": 0.0365514501390544,
+    "f_r_f70": 0.034564958283671,
+    "f_r_min": 0.033373063170441,
+    "f_r_p25": 0.034564958283671,
+    "f_r_mean": 0.035041716328963024
+   },
+   "muacCm": 18.578403204725017,
+   "z": -0.18264181984918687,
+   "cutCm": 15.383089855919044,
+   "trueMuacCm": 20.1,
+   "trueZ": 0.4850632150810565
+  }
+ },
+ {
+  "tag": "1313",
+  "child": {
+   "ageMonths": 166.0,
+   "sex": "M",
+   "weightKg": 50.3
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3161.0,
+    "widthPx": 904.0000000000001,
+    "areaPx": 1854768.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 574.5902099609373,
+    "hipPx": 339.4268798828125,
+    "torsoPx": 892.7654418945312
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 506.6122131347654,
+    "armVis": 0.9935517311096193,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 81.99999999999983,
+    "radiusPxIqr": 6.999999999999801,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 89.99999999999979,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 81.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 86.99999999999996,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 79.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 73.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4638334947259337
+  },
+  "expected": {
+   "features": {
+    "Age": 166.0,
+    "sex_male": 1.0,
+    "Weight": 50.3,
+    "f_diam_ratio": 0.0518823157228725,
+    "f_radius_ratio": 0.0259411578614362,
+    "f_radius_iqr_ratio": 0.0022144890857323,
+    "f_armlen_ratio": 0.1602696023836651,
+    "f_area_over_h2": 0.185626867946614,
+    "f_bodywidth_ratio": 0.2859854476431509,
+    "f_shoulder_ratio": 0.1817748212467375,
+    "f_hip_ratio": 0.1073795887006683,
+    "f_torso_ratio": 0.2824313324563528,
+    "f_arm_vis": 0.9935517311096193,
+    "f_skin_score": 0.4638334947259337,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0284720025308446,
+    "f_r_f40": 0.0259411578614362,
+    "f_r_f50": 0.0275229357798165,
+    "f_r_f60": 0.0253084466940841,
+    "f_r_f70": 0.0234103131920278,
+    "f_r_min": 0.0234103131920278,
+    "f_r_p25": 0.0253084466940841,
+    "f_r_mean": 0.02613097121164184
+   },
+   "muacCm": 22.758459655083453,
+   "z": -0.608713046127284,
+   "cutCm": 19.767745296740586,
+   "trueMuacCm": 21.5,
+   "trueZ": -1.1413086914994168
+  }
+ },
+ {
+  "tag": "1030",
+  "child": {
+   "ageMonths": 51.0,
+   "sex": "M",
+   "weightKg": 14.8
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2389.0,
+    "widthPx": 740.0,
+    "areaPx": 1110105.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 535.2124023437498,
+    "hipPx": 267.85949707031233,
+    "torsoPx": 678.1031494140624
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "right",
+    "armLenPx": 386.43722534179676,
+    "armVis": 0.9100480794906618,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 96.99999999999986,
+    "radiusPxIqr": 5.99999999999994,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 101.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 99.99999999999996,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 96.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 93.99999999999977,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 88.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.1849609315395355
+  },
+  "expected": {
+   "features": {
+    "Age": 51.0,
+    "sex_male": 1.0,
+    "Weight": 14.8,
+    "f_diam_ratio": 0.0812055253244035,
+    "f_radius_ratio": 0.0406027626622017,
+    "f_radius_iqr_ratio": 0.0025115110925073,
+    "f_armlen_ratio": 0.1617568963339459,
+    "f_area_over_h2": 0.1945054430966823,
+    "f_bodywidth_ratio": 0.3097530347425701,
+    "f_shoulder_ratio": 0.2240319808889702,
+    "f_hip_ratio": 0.1121220163542538,
+    "f_torso_ratio": 0.283843930269595,
+    "f_arm_vis": 0.9100480794906618,
+    "f_skin_score": 0.1849609315395355,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0426956885726245,
+    "f_r_f40": 0.0418585182084554,
+    "f_r_f50": 0.0406027626622017,
+    "f_r_f60": 0.039347007115948,
+    "f_r_f70": 0.0372540812055253,
+    "f_r_min": 0.0372540812055253,
+    "f_r_p25": 0.039347007115948,
+    "f_r_mean": 0.04035161155295097
+   },
+   "muacCm": 16.708162505410115,
+   "z": 0.3425929643745142,
+   "cutCm": 13.79500798472559,
+   "trueMuacCm": 17.1,
+   "trueZ": 0.616091136367553
+  }
+ },
+ {
+  "tag": "1319",
+  "child": {
+   "ageMonths": 170.0,
+   "sex": "M",
+   "weightKg": 39.5
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2919.0,
+    "widthPx": 979.0,
+    "areaPx": 1826531.9999999993,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 567.8178100585936,
+    "hipPx": 313.46371459960915,
+    "torsoPx": 825.2780761718748
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 487.99270629882807,
+    "armVis": 0.9942767381668092,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 98.99999999999976,
+    "radiusPxIqr": 1.9999999999998481,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 97.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 98.99999999999976,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 100.0,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 103.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 96.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4481746348698934
+  },
+  "expected": {
+   "features": {
+    "Age": 170.0,
+    "sex_male": 1.0,
+    "Weight": 39.5,
+    "f_diam_ratio": 0.0678314491264131,
+    "f_radius_ratio": 0.0339157245632065,
+    "f_radius_iqr_ratio": 0.000685166152792,
+    "f_armlen_ratio": 0.1671780425826749,
+    "f_area_over_h2": 0.2143675750927667,
+    "f_bodywidth_ratio": 0.3353888317917095,
+    "f_shoulder_ratio": 0.1945247722023274,
+    "f_hip_ratio": 0.10738736368606,
+    "f_torso_ratio": 0.2827263022171548,
+    "f_arm_vis": 0.9942767381668092,
+    "f_skin_score": 0.4481746348698934,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0335731414868105,
+    "f_r_f40": 0.0339157245632065,
+    "f_r_f50": 0.0342583076396026,
+    "f_r_f60": 0.0356286399451867,
+    "f_r_f70": 0.0332305584104145,
+    "f_r_min": 0.0332305584104145,
+    "f_r_p25": 0.0335731414868105,
+    "f_r_mean": 0.03412127440904416
+   },
+   "muacCm": 21.051213229048503,
+   "z": -1.5390027589537485,
+   "cutCm": 20.143922053940337,
+   "trueMuacCm": 20.4,
+   "trueZ": -1.8653193602473792
+  }
+ },
+ {
+  "tag": "526",
+  "child": {
+   "ageMonths": 90.0,
+   "sex": "M",
+   "weightKg": 18.3
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2018.0,
+    "widthPx": 556.9999999999999,
+    "areaPx": 810340.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 392.3890686035156,
+    "hipPx": 213.92335510253895,
+    "torsoPx": 595.634765625
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 319.49978637695307,
+    "armVis": 0.8977978229522705,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 45.99999999999982,
+    "radiusPxIqr": 2.9999999999999667,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 40.99999999999981,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 42.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 45.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 45.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 46.99999999999995,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.1354509719283492
+  },
+  "expected": {
+   "features": {
+    "Age": 90.0,
+    "sex_male": 1.0,
+    "Weight": 18.3,
+    "f_diam_ratio": 0.0455896927651139,
+    "f_radius_ratio": 0.0227948463825569,
+    "f_radius_iqr_ratio": 0.0014866204162537,
+    "f_armlen_ratio": 0.1583249684722265,
+    "f_area_over_h2": 0.1989873595519413,
+    "f_bodywidth_ratio": 0.27601585728444,
+    "f_shoulder_ratio": 0.1944445335002555,
+    "f_hip_ratio": 0.1060076090696427,
+    "f_torso_ratio": 0.2951609344028741,
+    "f_arm_vis": 0.8977978229522705,
+    "f_skin_score": 0.1354509719283492,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0203171456888007,
+    "f_r_f40": 0.0213082259663032,
+    "f_r_f50": 0.0227948463825569,
+    "f_r_f60": 0.0227948463825569,
+    "f_r_f70": 0.0232903865213082,
+    "f_r_min": 0.0203171456888007,
+    "f_r_p25": 0.0213082259663032,
+    "f_r_mean": 0.022101090188305177
+   },
+   "muacCm": 15.682427147800714,
+   "z": -1.6375340408096335,
+   "cutCm": 15.265408937084022,
+   "trueMuacCm": 15.0,
+   "trueZ": -2.245357897455739
+  }
+ },
+ {
+  "tag": "1202",
+  "child": {
+   "ageMonths": 202.0,
+   "sex": "F",
+   "weightKg": 44.6
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2970.0,
+    "widthPx": 851.0,
+    "areaPx": 1748289.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 567.3554687499998,
+    "hipPx": 317.8579406738279,
+    "torsoPx": 853.6271972656248
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 499.0434570312497,
+    "armVis": 0.9899710416793824,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 72.99999999999976,
+    "radiusPxIqr": 4.999999999999752,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 73.99999999999996,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 72.99999999999976,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 72.99999999999976,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 67.99999999999972,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 66.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2763562952112268
+  },
+  "expected": {
+   "features": {
+    "Age": 202.0,
+    "sex_male": 0.0,
+    "Weight": 44.6,
+    "f_diam_ratio": 0.0491582491582491,
+    "f_radius_ratio": 0.0245791245791245,
+    "f_radius_iqr_ratio": 0.0016835016835016,
+    "f_armlen_ratio": 0.1680281000105218,
+    "f_area_over_h2": 0.1981984831479781,
+    "f_bodywidth_ratio": 0.2865319865319865,
+    "f_shoulder_ratio": 0.1910287773569023,
+    "f_hip_ratio": 0.1070228756477535,
+    "f_torso_ratio": 0.2874165647359006,
+    "f_arm_vis": 0.9899710416793824,
+    "f_skin_score": 0.2763562952112268,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0249158249158249,
+    "f_r_f40": 0.0245791245791245,
+    "f_r_f50": 0.0245791245791245,
+    "f_r_f60": 0.0228956228956228,
+    "f_r_f70": 0.0225589225589225,
+    "f_r_min": 0.0225589225589225,
+    "f_r_p25": 0.0228956228956228,
+    "f_r_mean": 0.02390572390572384
+   },
+   "muacCm": 21.159687166428625,
+   "z": -1.8982177581667823,
+   "cutCm": 20.968917474231418,
+   "trueMuacCm": 20.5,
+   "trueZ": -2.260491423888658
+  }
+ },
+ {
+  "tag": "289",
+  "child": {
+   "ageMonths": 124.0,
+   "sex": "M",
+   "weightKg": 26.7
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2195.0,
+    "widthPx": 656.9999999999999,
+    "areaPx": 898179.9999999999,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 413.3258361816405,
+    "hipPx": 222.55863952636702,
+    "torsoPx": 578.187255859375
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 328.8107604980467,
+    "armVis": 0.991450309753418,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 65.9999999999999,
+    "radiusPxIqr": 3.9999999999998272,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 63.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 67.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 69.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 65.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 59.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2772576985677083
+  },
+  "expected": {
+   "features": {
+    "Age": 124.0,
+    "sex_male": 1.0,
+    "Weight": 26.7,
+    "f_diam_ratio": 0.060136674259681,
+    "f_radius_ratio": 0.0300683371298405,
+    "f_radius_iqr_ratio": 0.0018223234624145,
+    "f_armlen_ratio": 0.1497998908874928,
+    "f_area_over_h2": 0.1864207844500599,
+    "f_bodywidth_ratio": 0.2993166287015945,
+    "f_shoulder_ratio": 0.188303342223982,
+    "f_hip_ratio": 0.1013934576429918,
+    "f_torso_ratio": 0.26341105050541,
+    "f_arm_vis": 0.991450309753418,
+    "f_skin_score": 0.2772576985677083,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0291571753986332,
+    "f_r_f40": 0.0309794988610478,
+    "f_r_f50": 0.0318906605922551,
+    "f_r_f60": 0.0300683371298405,
+    "f_r_f70": 0.0273348519362186,
+    "f_r_min": 0.0273348519362186,
+    "f_r_p25": 0.0291571753986332,
+    "f_r_mean": 0.029886104783599036
+   },
+   "muacCm": 17.90935965510444,
+   "z": -1.1858274788433594,
+   "cutCm": 16.71470854151392,
+   "trueMuacCm": 17.0,
+   "trueZ": -1.7902025397736325
+  }
+ },
+ {
+  "tag": "1038",
+  "child": {
+   "ageMonths": 92.0,
+   "sex": "M",
+   "weightKg": 20.7
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2479.0,
+    "widthPx": 737.0,
+    "areaPx": 1146444.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 465.1433105468749,
+    "hipPx": 270.63635253906244,
+    "torsoPx": 728.0537719726561
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 395.3329772949217,
+    "armVis": 0.987688374519348,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 59.99999999999991,
+    "radiusPxIqr": 4.999999999999806,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 57.999999999999936,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 56.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 62.999999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 59.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 64.99999999999996,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.3892269564310709
+  },
+  "expected": {
+   "features": {
+    "Age": 92.0,
+    "sex_male": 1.0,
+    "Weight": 20.7,
+    "f_diam_ratio": 0.0484066155707946,
+    "f_radius_ratio": 0.0242033077853973,
+    "f_radius_iqr_ratio": 0.0020169423154497,
+    "f_armlen_ratio": 0.1594727621197748,
+    "f_area_over_h2": 0.1865521123707802,
+    "f_bodywidth_ratio": 0.2972972972972973,
+    "f_shoulder_ratio": 0.1876334451580778,
+    "f_hip_ratio": 0.1091715823070038,
+    "f_torso_ratio": 0.2936884921228948,
+    "f_arm_vis": 0.987688374519348,
+    "f_skin_score": 0.3892269564310709,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0233965308592174,
+    "f_r_f40": 0.0229931423961274,
+    "f_r_f50": 0.0254134731746672,
+    "f_r_f60": 0.0242033077853973,
+    "f_r_f70": 0.0262202501008471,
+    "f_r_min": 0.0229931423961274,
+    "f_r_p25": 0.0233965308592174,
+    "f_r_mean": 0.02444534086325128
+   },
+   "muacCm": 16.615234896206584,
+   "z": -0.9865990673339714,
+   "cutCm": 15.353057749279968,
+   "trueMuacCm": 16.0,
+   "trueZ": -1.4524235256310545
+  }
+ },
+ {
+  "tag": "1118",
+  "child": {
+   "ageMonths": 195.0,
+   "sex": "M",
+   "weightKg": 46.4
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3283.0,
+    "widthPx": 929.9999999999999,
+    "areaPx": 1923494.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 651.7659912109374,
+    "hipPx": 346.25003051757784,
+    "torsoPx": 958.4329833984375
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 561.861083984375,
+    "armVis": 0.9853945970535278,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 84.0,
+    "radiusPxIqr": 2.9999999999998006,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 86.9999999999998,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 88.99999999999989,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 84.0,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 84.0,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 68.99999999999969,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.283356251808449
+  },
+  "expected": {
+   "features": {
+    "Age": 195.0,
+    "sex_male": 1.0,
+    "Weight": 46.4,
+    "f_diam_ratio": 0.0511727078891258,
+    "f_radius_ratio": 0.0255863539445629,
+    "f_radius_iqr_ratio": 0.0009137983551629,
+    "f_armlen_ratio": 0.171142578125,
+    "f_area_over_h2": 0.1784633621043582,
+    "f_bodywidth_ratio": 0.2832774901005178,
+    "f_shoulder_ratio": 0.1985275635732371,
+    "f_hip_ratio": 0.1054675694540292,
+    "f_torso_ratio": 0.2919381612544738,
+    "f_arm_vis": 0.9853945970535278,
+    "f_skin_score": 0.283356251808449,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0265001522997258,
+    "f_r_f40": 0.0271093512031678,
+    "f_r_f50": 0.0255863539445629,
+    "f_r_f60": 0.0255863539445629,
+    "f_r_f70": 0.021017362168748,
+    "f_r_min": 0.021017362168748,
+    "f_r_p25": 0.0255863539445629,
+    "f_r_mean": 0.02515991471215348
+   },
+   "muacCm": 21.321598106970452,
+   "z": -2.614602833034012,
+   "cutCm": 22.47185708537929,
+   "trueMuacCm": 22.5,
+   "trueZ": -1.9858167970709517
+  }
+ },
+ {
+  "tag": "1481",
+  "child": {
+   "ageMonths": 188.0,
+   "sex": "F",
+   "weightKg": 53.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3007.0,
+    "widthPx": 918.9999999999999,
+    "areaPx": 1743969.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 547.0313110351561,
+    "hipPx": 318.3249206542968,
+    "torsoPx": 863.4064941406248
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 485.64172363281244,
+    "armVis": 0.9961020231246948,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 103.99999999999984,
+    "radiusPxIqr": 10.999999999999815,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 110.99999999999977,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 108.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 103.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 93.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 97.99999999999973,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4882709364219948
+  },
+  "expected": {
+   "features": {
+    "Age": 188.0,
+    "sex_male": 0.0,
+    "Weight": 53.0,
+    "f_diam_ratio": 0.0691719321582973,
+    "f_radius_ratio": 0.0345859660791486,
+    "f_radius_iqr_ratio": 0.0036581310276022,
+    "f_armlen_ratio": 0.1615037325017667,
+    "f_area_over_h2": 0.1928732082739211,
+    "f_bodywidth_ratio": 0.3056202194878616,
+    "f_shoulder_ratio": 0.1819192919970589,
+    "f_hip_ratio": 0.1058612971913192,
+    "f_torso_ratio": 0.2871321896044645,
+    "f_arm_vis": 0.9961020231246948,
+    "f_skin_score": 0.4882709364219948,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0369138676421682,
+    "f_r_f40": 0.0362487529098769,
+    "f_r_f50": 0.0345859660791486,
+    "f_r_f60": 0.031260392417692,
+    "f_r_f70": 0.0325906218822746,
+    "f_r_min": 0.031260392417692,
+    "f_r_p25": 0.0325906218822746,
+    "f_r_mean": 0.034319920186232054
+   },
+   "muacCm": 23.621961687138793,
+   "z": -0.5948696593490497,
+   "cutCm": 20.54621400961731,
+   "trueMuacCm": 23.7,
+   "trueZ": -0.5650824351864246
+  }
+ },
+ {
+  "tag": "2101",
+  "child": {
+   "ageMonths": 93.0,
+   "sex": "M",
+   "weightKg": 20.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2151.0,
+    "widthPx": 769.0,
+    "areaPx": 938275.9999999999,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 408.99288940429676,
+    "hipPx": 212.06706237792963,
+    "torsoPx": 582.2199707031248
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 316.5520019531249,
+    "armVis": 0.9914209842681884,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 65.99999999999999,
+    "radiusPxIqr": 4.99999999999995,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 61.99999999999981,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 65.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 69.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 69.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 65.0,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4712108656185645
+  },
+  "expected": {
+   "features": {
+    "Age": 93.0,
+    "sex_male": 1.0,
+    "Weight": 20.0,
+    "f_diam_ratio": 0.0613668061366806,
+    "f_radius_ratio": 0.0306834030683403,
+    "f_radius_iqr_ratio": 0.00232450023245,
+    "f_armlen_ratio": 0.1471650404245118,
+    "f_area_over_h2": 0.2027915183730616,
+    "f_bodywidth_ratio": 0.3575081357508136,
+    "f_shoulder_ratio": 0.1901408132981389,
+    "f_hip_ratio": 0.0985899871584982,
+    "f_torso_ratio": 0.2706740914472919,
+    "f_arm_vis": 0.9914209842681884,
+    "f_skin_score": 0.4712108656185645,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0288238028823802,
+    "f_r_f40": 0.0306834030683403,
+    "f_r_f50": 0.0325430032543003,
+    "f_r_f60": 0.0325430032543003,
+    "f_r_f70": 0.0302185030218503,
+    "f_r_min": 0.0288238028823802,
+    "f_r_p25": 0.0302185030218503,
+    "f_r_mean": 0.03096234309623428
+   },
+   "muacCm": 17.152090347982565,
+   "z": -0.6517946342010047,
+   "cutCm": 15.396291556949276,
+   "trueMuacCm": 18.0,
+   "trueZ": -0.1308462578144694
+  }
+ },
+ {
+  "tag": "695",
+  "child": {
+   "ageMonths": 89.0,
+   "sex": "M",
+   "weightKg": 26.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2402.0,
+    "widthPx": 699.9999999999998,
+    "areaPx": 1121278.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 461.3871154785156,
+    "hipPx": 250.0458526611327,
+    "torsoPx": 709.9337158203124
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "right",
+    "armLenPx": 378.2813415527344,
+    "armVis": 0.9732192516326904,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 67.99999999999977,
+    "radiusPxIqr": 1.9999999999999014,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 71.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 67.99999999999977,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 65.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 62.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 67.99999999999977,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2925410011574074
+  },
+  "expected": {
+   "features": {
+    "Age": 89.0,
+    "sex_male": 1.0,
+    "Weight": 26.0,
+    "f_diam_ratio": 0.0566194837635303,
+    "f_radius_ratio": 0.0283097418817651,
+    "f_radius_iqr_ratio": 0.0008326394671107,
+    "f_armlen_ratio": 0.1574859873242025,
+    "f_area_over_h2": 0.1943424540055088,
+    "f_bodywidth_ratio": 0.2914238134887593,
+    "f_shoulder_ratio": 0.1920845609818966,
+    "f_hip_ratio": 0.1040990227565082,
+    "f_torso_ratio": 0.2955594154122866,
+    "f_arm_vis": 0.9732192516326904,
+    "f_skin_score": 0.2925410011574074,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0299750208159866,
+    "f_r_f40": 0.0283097418817651,
+    "f_r_f50": 0.0274771024146544,
+    "f_r_f60": 0.0262281432139883,
+    "f_r_f70": 0.0283097418817651,
+    "f_r_min": 0.0262281432139883,
+    "f_r_p25": 0.0274771024146544,
+    "f_r_mean": 0.028059950041631903
+   },
+   "muacCm": 17.928223769753924,
+   "z": -0.039630068595513816,
+   "cutCm": 15.221061953214564,
+   "trueMuacCm": 17.8,
+   "trueZ": -0.11434882730812447
+  }
+ },
+ {
+  "tag": "1741",
+  "child": {
+   "ageMonths": 132.0,
+   "sex": "M",
+   "weightKg": 25.9
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2472.0,
+    "widthPx": 716.0,
+    "areaPx": 1213582.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 468.258117675781,
+    "hipPx": 263.52261352539057,
+    "torsoPx": 759.3563232421874
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 388.1717834472655,
+    "armVis": 0.9573896408081056,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 73.99999999999987,
+    "radiusPxIqr": 2.9999999999999782,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 71.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 74.99999999999996,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 71.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 73.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 79.0,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2044083496093749
+  },
+  "expected": {
+   "features": {
+    "Age": 132.0,
+    "sex_male": 1.0,
+    "Weight": 25.9,
+    "f_diam_ratio": 0.0598705501618122,
+    "f_radius_ratio": 0.0299352750809061,
+    "f_radius_iqr_ratio": 0.0012135922330097,
+    "f_armlen_ratio": 0.157027420488376,
+    "f_area_over_h2": 0.1985969394434494,
+    "f_bodywidth_ratio": 0.2896440129449838,
+    "f_shoulder_ratio": 0.1894248048850247,
+    "f_hip_ratio": 0.1066029989989444,
+    "f_torso_ratio": 0.3071829786578428,
+    "f_arm_vis": 0.9573896408081056,
+    "f_skin_score": 0.2044083496093749,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.029126213592233,
+    "f_r_f40": 0.0303398058252427,
+    "f_r_f50": 0.029126213592233,
+    "f_r_f60": 0.0299352750809061,
+    "f_r_f70": 0.031957928802589,
+    "f_r_min": 0.029126213592233,
+    "f_r_p25": 0.029126213592233,
+    "f_r_mean": 0.03009708737864076
+   },
+   "muacCm": 17.294163270813225,
+   "z": -1.8942409632409336,
+   "cutCm": 17.1428972790005,
+   "trueMuacCm": 16.9,
+   "trueZ": -2.175457097600985
+  }
+ },
+ {
+  "tag": "394",
+  "child": {
+   "ageMonths": 81.0,
+   "sex": "M",
+   "weightKg": 17.5
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3388.0,
+    "widthPx": 973.0,
+    "areaPx": 2112635.999999999,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 598.8597412109375,
+    "hipPx": 346.2683105468748,
+    "torsoPx": 989.4819335937499
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 506.16531372070284,
+    "armVis": 0.9904337644577026,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 45.999999999999865,
+    "radiusPxIqr": 14.999999999999815,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 95.9999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 53.999999999999815,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 45.999999999999865,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 38.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 34.99999999999968,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.9601108500551294
+  },
+  "expected": {
+   "features": {
+    "Age": 81.0,
+    "sex_male": 1.0,
+    "Weight": 17.5,
+    "f_diam_ratio": 0.0271546635182998,
+    "f_radius_ratio": 0.0135773317591499,
+    "f_radius_iqr_ratio": 0.0044273907910271,
+    "f_armlen_ratio": 0.1493994432469607,
+    "f_area_over_h2": 0.1840508691694695,
+    "f_bodywidth_ratio": 0.2871900826446281,
+    "f_shoulder_ratio": 0.1767590735569473,
+    "f_hip_ratio": 0.1022043419559843,
+    "f_torso_ratio": 0.2920548800453807,
+    "f_arm_vis": 0.9904337644577026,
+    "f_skin_score": 0.9601108500551294,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0283353010625737,
+    "f_r_f40": 0.0159386068476977,
+    "f_r_f50": 0.0135773317591499,
+    "f_r_f60": 0.0115112160566706,
+    "f_r_f70": 0.0103305785123966,
+    "f_r_min": 0.0103305785123966,
+    "f_r_p25": 0.0115112160566706,
+    "f_r_mean": 0.0159386068476977
+   },
+   "muacCm": 15.13004410388332,
+   "z": -1.7533401073955799,
+   "cutCm": 14.855434234165038,
+   "trueMuacCm": 15.0,
+   "trueZ": -1.868741059755885
+  }
+ },
+ {
+  "tag": "1138",
+  "child": {
+   "ageMonths": 176.0,
+   "sex": "M",
+   "weightKg": 28.3
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2725.0,
+    "widthPx": 729.9999999999999,
+    "areaPx": 1260880.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 476.9386291503905,
+    "hipPx": 275.3493041992185,
+    "torsoPx": 761.2099609375001
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 406.9519653320311,
+    "armVis": 0.9903545618057252,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 83.99999999999973,
+    "radiusPxIqr": 0.999999999999945,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 83.99999999999973,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 82.9999999999998,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 89.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 83.99999999999973,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 77.9999999999998,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4339377438721833
+  },
+  "expected": {
+   "features": {
+    "Age": 176.0,
+    "sex_male": 1.0,
+    "Weight": 28.3,
+    "f_diam_ratio": 0.0616513761467889,
+    "f_radius_ratio": 0.0308256880733944,
+    "f_radius_iqr_ratio": 0.0003669724770642,
+    "f_armlen_ratio": 0.1493401707640481,
+    "f_area_over_h2": 0.1698013298543893,
+    "f_bodywidth_ratio": 0.2678899082568807,
+    "f_shoulder_ratio": 0.1750233501469323,
+    "f_hip_ratio": 0.1010456162198967,
+    "f_torso_ratio": 0.2793431049311927,
+    "f_arm_vis": 0.9903545618057252,
+    "f_skin_score": 0.4339377438721833,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0308256880733944,
+    "f_r_f40": 0.0304587155963302,
+    "f_r_f50": 0.0330275229357798,
+    "f_r_f60": 0.0308256880733944,
+    "f_r_f70": 0.0286238532110091,
+    "f_r_min": 0.0286238532110091,
+    "f_r_p25": 0.0304587155963302,
+    "f_r_mean": 0.030752293577981576
+   },
+   "muacCm": 17.16221516456387,
+   "z": -4.263495915489059,
+   "cutCm": 20.715636952781317,
+   "trueMuacCm": 17.5,
+   "trueZ": -4.005701431436465
+  }
+ },
+ {
+  "tag": "983",
+  "child": {
+   "ageMonths": 134.0,
+   "sex": "F",
+   "weightKg": 33.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2478.0,
+    "widthPx": 869.9999999999999,
+    "areaPx": 1314153.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 478.45611572265625,
+    "hipPx": 273.18655395507795,
+    "torsoPx": 771.7204589843748
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 415.4200439453125,
+    "armVis": 0.995718002319336,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 90.99999999999997,
+    "radiusPxIqr": 2.9999999999999147,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 88.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 90.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 96.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 91.99999999999979,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 82.99999999999979,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.6587234735488892
+  },
+  "expected": {
+   "features": {
+    "Age": 134.0,
+    "sex_male": 0.0,
+    "Weight": 33.0,
+    "f_diam_ratio": 0.0734463276836158,
+    "f_radius_ratio": 0.0367231638418079,
+    "f_radius_iqr_ratio": 0.0012106537530266,
+    "f_armlen_ratio": 0.167643278428294,
+    "f_area_over_h2": 0.2140147258750287,
+    "f_bodywidth_ratio": 0.3510895883777239,
+    "f_shoulder_ratio": 0.1930815640527265,
+    "f_hip_ratio": 0.1102447756073761,
+    "f_torso_ratio": 0.3114287566522901,
+    "f_arm_vis": 0.995718002319336,
+    "f_skin_score": 0.6587234735488892,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0359160613397901,
+    "f_r_f40": 0.0367231638418079,
+    "f_r_f50": 0.0391444713478611,
+    "f_r_f60": 0.0371267150928167,
+    "f_r_f70": 0.0334947538337368,
+    "f_r_min": 0.0334947538337368,
+    "f_r_p25": 0.0359160613397901,
+    "f_r_mean": 0.03648103309120252
+   },
+   "muacCm": 19.792988334991207,
+   "z": -0.6632403084364991,
+   "cutCm": 17.139137584785473,
+   "trueMuacCm": 17.6,
+   "trueZ": -1.7357995007431826
+  }
+ },
+ {
+  "tag": "1735",
+  "child": {
+   "ageMonths": 192.0,
+   "sex": "F",
+   "weightKg": 61.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3113.0,
+    "widthPx": 1029.0,
+    "areaPx": 2028912.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 581.8771972656248,
+    "hipPx": 347.9137573242187,
+    "torsoPx": 895.2350463867189
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 498.84948730468744,
+    "armVis": 0.9922866344451904,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 103.99999999999982,
+    "radiusPxIqr": 5.9999999999998765,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 103.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 105.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 103.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 97.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 95.99999999999989,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4302874602282489
+  },
+  "expected": {
+   "features": {
+    "Age": 192.0,
+    "sex_male": 0.0,
+    "Weight": 61.0,
+    "f_diam_ratio": 0.0668165756504979,
+    "f_radius_ratio": 0.0334082878252489,
+    "f_radius_iqr_ratio": 0.0019274012206874,
+    "f_armlen_ratio": 0.160247185128393,
+    "f_area_over_h2": 0.2093655312596967,
+    "f_bodywidth_ratio": 0.3305493093478959,
+    "f_shoulder_ratio": 0.1869184700499919,
+    "f_hip_ratio": 0.1117615667601088,
+    "f_torso_ratio": 0.2875795202013231,
+    "f_arm_vis": 0.9922866344451904,
+    "f_skin_score": 0.4302874602282489,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0334082878252489,
+    "f_r_f40": 0.0340507548988114,
+    "f_r_f50": 0.0334082878252489,
+    "f_r_f60": 0.0314808866045615,
+    "f_r_f70": 0.030838419530999,
+    "f_r_min": 0.030838419530999,
+    "f_r_p25": 0.0314808866045615,
+    "f_r_mean": 0.03263732733697394
+   },
+   "muacCm": 26.021930196505448,
+   "z": 0.17346052203866072,
+   "cutCm": 20.68941980133966,
+   "trueMuacCm": 26.5,
+   "trueZ": 0.31575959797122866
+  }
+ },
+ {
+  "tag": "1357",
+  "child": {
+   "ageMonths": 131.0,
+   "sex": "M",
+   "weightKg": 34.7
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2664.0,
+    "widthPx": 870.9999999999999,
+    "areaPx": 1476611.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 530.4482421874999,
+    "hipPx": 311.20251464843733,
+    "torsoPx": 842.1568603515623
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 447.84194946289045,
+    "armVis": 0.9941659212112428,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 63.999999999999936,
+    "radiusPxIqr": 0.0,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 62.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 63.999999999999936,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 69.0,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 63.999999999999936,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 63.999999999999936,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4844803045528906
+  },
+  "expected": {
+   "features": {
+    "Age": 131.0,
+    "sex_male": 1.0,
+    "Weight": 34.7,
+    "f_diam_ratio": 0.048048048048048,
+    "f_radius_ratio": 0.024024024024024,
+    "f_radius_iqr_ratio": 0.0,
+    "f_armlen_ratio": 0.1681088398884724,
+    "f_area_over_h2": 0.2080644834023212,
+    "f_bodywidth_ratio": 0.3269519519519519,
+    "f_shoulder_ratio": 0.1991172080283408,
+    "f_hip_ratio": 0.1168177607539179,
+    "f_torso_ratio": 0.3161249475794153,
+    "f_arm_vis": 0.9941659212112428,
+    "f_skin_score": 0.4844803045528906,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0236486486486486,
+    "f_r_f40": 0.024024024024024,
+    "f_r_f50": 0.0259009009009009,
+    "f_r_f60": 0.024024024024024,
+    "f_r_f70": 0.024024024024024,
+    "f_r_min": 0.0236486486486486,
+    "f_r_p25": 0.024024024024024,
+    "f_r_mean": 0.024324324324324298
+   },
+   "muacCm": 19.95611807594902,
+   "z": -0.3535983912252723,
+   "cutCm": 17.085682712617487,
+   "trueMuacCm": 19.2,
+   "trueZ": -0.7201286064526095
+  }
+ },
+ {
+  "tag": "1675",
+  "child": {
+   "ageMonths": 78.0,
+   "sex": "M",
+   "weightKg": 20.6
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2156.0,
+    "widthPx": 706.9999999999999,
+    "areaPx": 974677.9999999997,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 449.7681579589843,
+    "hipPx": 233.15188598632807,
+    "torsoPx": 645.8675537109375
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 330.2640380859374,
+    "armVis": 0.9896942377090454,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 62.0,
+    "radiusPxIqr": 3.9999999999998193,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 57.999999999999964,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 58.99999999999992,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 62.99999999999995,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 69.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 62.0,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.7960501808449074
+  },
+  "expected": {
+   "features": {
+    "Age": 78.0,
+    "sex_male": 1.0,
+    "Weight": 20.6,
+    "f_diam_ratio": 0.0575139146567718,
+    "f_radius_ratio": 0.0287569573283859,
+    "f_radius_iqr_ratio": 0.0018552875695732,
+    "f_armlen_ratio": 0.1531836911344793,
+    "f_area_over_h2": 0.2096832070659263,
+    "f_bodywidth_ratio": 0.3279220779220779,
+    "f_shoulder_ratio": 0.2086123181627942,
+    "f_hip_ratio": 0.1081409489732505,
+    "f_torso_ratio": 0.2995675109976519,
+    "f_arm_vis": 0.9896942377090454,
+    "f_skin_score": 0.7960501808449074,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0269016697588126,
+    "f_r_f40": 0.0273654916512059,
+    "f_r_f50": 0.0292207792207792,
+    "f_r_f60": 0.0324675324675324,
+    "f_r_f70": 0.0287569573283859,
+    "f_r_min": 0.0269016697588126,
+    "f_r_p25": 0.0273654916512059,
+    "f_r_mean": 0.0289424860853432
+   },
+   "muacCm": 17.08868576386752,
+   "z": -0.16842677924089175,
+   "cutCm": 14.715845361322618,
+   "trueMuacCm": 17.3,
+   "trueZ": -0.03410815235800986
+  }
+ },
+ {
+  "tag": "1714",
+  "child": {
+   "ageMonths": 72.0,
+   "sex": "M",
+   "weightKg": 16.8
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2056.0,
+    "widthPx": 610.9999999999999,
+    "areaPx": 843564.9999999999,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 389.67706298828125,
+    "hipPx": 218.59077453613267,
+    "torsoPx": 631.9210815429686
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "right",
+    "armLenPx": 317.38906860351557,
+    "armVis": 0.9630284309387208,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 64.0,
+    "radiusPxIqr": 4.99999999999981,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 58.999999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 60.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 64.0,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 71.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 65.9999999999998,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.8195944978078206
+  },
+  "expected": {
+   "features": {
+    "Age": 72.0,
+    "sex_male": 1.0,
+    "Weight": 16.8,
+    "f_diam_ratio": 0.0622568093385214,
+    "f_radius_ratio": 0.0311284046692607,
+    "f_radius_iqr_ratio": 0.0024319066147859,
+    "f_armlen_ratio": 0.1543721150795309,
+    "f_area_over_h2": 0.1995594653212009,
+    "f_bodywidth_ratio": 0.2971789883268482,
+    "f_shoulder_ratio": 0.1895316454223158,
+    "f_hip_ratio": 0.1063184701051229,
+    "f_torso_ratio": 0.3073546116454128,
+    "f_arm_vis": 0.9630284309387208,
+    "f_skin_score": 0.8195944978078206,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0286964980544747,
+    "f_r_f40": 0.0296692607003891,
+    "f_r_f50": 0.0311284046692607,
+    "f_r_f60": 0.0350194552529182,
+    "f_r_f70": 0.032101167315175,
+    "f_r_min": 0.0286964980544747,
+    "f_r_p25": 0.0296692607003891,
+    "f_r_mean": 0.03132295719844354
+   },
+   "muacCm": 15.559773537776637,
+   "z": -1.047802767831043,
+   "cutCm": 14.444561748608123,
+   "trueMuacCm": 14.5,
+   "trueZ": -1.9489310522470955
+  }
+ },
+ {
+  "tag": "685",
+  "child": {
+   "ageMonths": 86.0,
+   "sex": "F",
+   "weightKg": 17.6
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2093.0,
+    "widthPx": 668.9999999999999,
+    "areaPx": 890742.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 406.9664306640624,
+    "hipPx": 216.97463989257804,
+    "torsoPx": 641.9730834960936
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 293.9919128417968,
+    "armVis": 0.9760302305221558,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 56.99999999999999,
+    "radiusPxIqr": 1.9999999999998381,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 54.99999999999994,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 55.999999999999865,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 57.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 59.99999999999996,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 56.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.75322720574273
+  },
+  "expected": {
+   "features": {
+    "Age": 86.0,
+    "sex_male": 0.0,
+    "Weight": 17.6,
+    "f_diam_ratio": 0.0544672718585762,
+    "f_radius_ratio": 0.0272336359292881,
+    "f_radius_iqr_ratio": 0.0009555661729574,
+    "f_armlen_ratio": 0.140464363517342,
+    "f_area_over_h2": 0.2033358527469331,
+    "f_bodywidth_ratio": 0.3196368848542761,
+    "f_shoulder_ratio": 0.1944416773359113,
+    "f_hip_ratio": 0.1036668131354888,
+    "f_torso_ratio": 0.3067238812690366,
+    "f_arm_vis": 0.9760302305221558,
+    "f_skin_score": 0.75322720574273,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0262780697563306,
+    "f_r_f40": 0.0267558528428093,
+    "f_r_f50": 0.0277114190157668,
+    "f_r_f60": 0.0286669851887243,
+    "f_r_f70": 0.0272336359292881,
+    "f_r_min": 0.0262780697563306,
+    "f_r_p25": 0.0267558528428093,
+    "f_r_mean": 0.02732919254658382
+   },
+   "muacCm": 16.06594021006792,
+   "z": -1.1536593816823606,
+   "cutCm": 14.834868649477384,
+   "trueMuacCm": 15.6,
+   "trueZ": -1.4599165367704487
+  }
+ },
+ {
+  "tag": "1826",
+  "child": {
+   "ageMonths": 116.0,
+   "sex": "M",
+   "weightKg": 23.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2366.0,
+    "widthPx": 704.0,
+    "areaPx": 1110092.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 481.9264831542969,
+    "hipPx": 256.2173156738281,
+    "torsoPx": 696.8858032226561
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "right",
+    "armLenPx": 394.44338989257807,
+    "armVis": 0.9437344789505004,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 72.99999999999979,
+    "radiusPxIqr": 3.9999999999998583,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 71.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 77.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 75.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 72.99999999999979,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 68.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.939731892465662
+  },
+  "expected": {
+   "features": {
+    "Age": 116.0,
+    "sex_male": 1.0,
+    "Weight": 23.0,
+    "f_diam_ratio": 0.0617075232459847,
+    "f_radius_ratio": 0.0308537616229923,
+    "f_radius_iqr_ratio": 0.0016906170752324,
+    "f_armlen_ratio": 0.1667131825412418,
+    "f_area_over_h2": 0.1983032735519893,
+    "f_bodywidth_ratio": 0.2975486052409129,
+    "f_shoulder_ratio": 0.2036882853568457,
+    "f_hip_ratio": 0.1082913422120998,
+    "f_torso_ratio": 0.2945417596038276,
+    "f_arm_vis": 0.9437344789505004,
+    "f_skin_score": 0.939731892465662,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0304311073541842,
+    "f_r_f40": 0.0329670329670329,
+    "f_r_f50": 0.0321217244294167,
+    "f_r_f60": 0.0308537616229923,
+    "f_r_f70": 0.0291631445477599,
+    "f_r_min": 0.0291631445477599,
+    "f_r_p25": 0.0304311073541842,
+    "f_r_mean": 0.031107354184277198
+   },
+   "muacCm": 16.99295415684268,
+   "z": -1.510071585893769,
+   "cutCm": 16.341778075387854,
+   "trueMuacCm": 15.8,
+   "trueZ": -2.4547139569334866
+  }
+ },
+ {
+  "tag": "1682",
+  "child": {
+   "ageMonths": 109.0,
+   "sex": "M",
+   "weightKg": 42.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2547.0,
+    "widthPx": 892.9999999999999,
+    "areaPx": 1440466.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 522.9196166992188,
+    "hipPx": 304.36813354492176,
+    "torsoPx": 809.3359374999999
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 432.67495727539045,
+    "armVis": 0.9965153932571412,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 90.99999999999982,
+    "radiusPxIqr": 12.99999999999994,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 90.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 98.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 103.99999999999976,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 85.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 76.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.9140352437619808
+  },
+  "expected": {
+   "features": {
+    "Age": 109.0,
+    "sex_male": 1.0,
+    "Weight": 42.0,
+    "f_diam_ratio": 0.0714566156262269,
+    "f_radius_ratio": 0.0357283078131134,
+    "f_radius_iqr_ratio": 0.0051040439733019,
+    "f_armlen_ratio": 0.1698763083138557,
+    "f_area_over_h2": 0.2220472625438767,
+    "f_bodywidth_ratio": 0.3506085590891244,
+    "f_shoulder_ratio": 0.2053080552411538,
+    "f_hip_ratio": 0.1195006413603933,
+    "f_torso_ratio": 0.317760478013349,
+    "f_arm_vis": 0.9965153932571412,
+    "f_skin_score": 0.9140352437619808,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0357283078131134,
+    "f_r_f40": 0.03886925795053,
+    "f_r_f50": 0.0408323517864153,
+    "f_r_f60": 0.0337652139772281,
+    "f_r_f70": 0.0302316450726344,
+    "f_r_min": 0.0302316450726344,
+    "f_r_p25": 0.0337652139772281,
+    "f_r_mean": 0.03588535531998424
+   },
+   "muacCm": 22.07427339498572,
+   "z": 1.1425590694737306,
+   "cutCm": 16.046647712188832,
+   "trueMuacCm": 22.5,
+   "trueZ": 1.2741287112427004
+  }
+ },
+ {
+  "tag": "342",
+  "child": {
+   "ageMonths": 129.0,
+   "sex": "M",
+   "weightKg": 23.5
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3660.0,
+    "widthPx": 1006.0,
+    "areaPx": 2155895.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 648.2677001953123,
+    "hipPx": 359.27804565429653,
+    "torsoPx": 987.1000366210938
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 532.3869628906249,
+    "armVis": 0.9820990085601808,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 75.99999999999973,
+    "radiusPxIqr": 0.999999999999828,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 75.99999999999973,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 76.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 74.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 71.99999999999969,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 75.99999999999973,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.478037627253709
+  },
+  "expected": {
+   "features": {
+    "Age": 129.0,
+    "sex_male": 1.0,
+    "Weight": 23.5,
+    "f_diam_ratio": 0.0415300546448087,
+    "f_radius_ratio": 0.0207650273224043,
+    "f_radius_iqr_ratio": 0.0002732240437158,
+    "f_armlen_ratio": 0.1454609188225751,
+    "f_area_over_h2": 0.1609406073636119,
+    "f_bodywidth_ratio": 0.2748633879781421,
+    "f_shoulder_ratio": 0.1771223224577356,
+    "f_hip_ratio": 0.0981634004519936,
+    "f_torso_ratio": 0.2696994635576759,
+    "f_arm_vis": 0.9820990085601808,
+    "f_skin_score": 0.478037627253709,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0207650273224043,
+    "f_r_f40": 0.0210382513661202,
+    "f_r_f50": 0.0204918032786885,
+    "f_r_f60": 0.0196721311475409,
+    "f_r_f70": 0.0207650273224043,
+    "f_r_min": 0.0196721311475409,
+    "f_r_p25": 0.0204918032786885,
+    "f_r_mean": 0.02054644808743164
+   },
+   "muacCm": 16.57377348623678,
+   "z": -2.301152617111787,
+   "cutCm": 16.974960236912306,
+   "trueMuacCm": 17.5,
+   "trueZ": -1.6354984317628065
+  }
+ },
+ {
+  "tag": "656",
+  "child": {
+   "ageMonths": 160.0,
+   "sex": "F",
+   "weightKg": 38.5
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2831.0,
+    "widthPx": 759.0,
+    "areaPx": 1433018.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 502.85467529296864,
+    "hipPx": 291.6137695312498,
+    "torsoPx": 823.153137207031
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 471.1806030273435,
+    "armVis": 0.9871050357818604,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 50.9999999999999,
+    "radiusPxIqr": 6.999999999999719,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 57.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 52.99999999999979,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 50.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 45.99999999999977,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 44.99999999999998,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2868938151041666
+  },
+  "expected": {
+   "features": {
+    "Age": 160.0,
+    "sex_male": 0.0,
+    "Weight": 38.5,
+    "f_diam_ratio": 0.0360296714941716,
+    "f_radius_ratio": 0.0180148357470858,
+    "f_radius_iqr_ratio": 0.0024726245143058,
+    "f_armlen_ratio": 0.1664361013872637,
+    "f_area_over_h2": 0.1788019331314591,
+    "f_bodywidth_ratio": 0.2681031437654539,
+    "f_shoulder_ratio": 0.177624399608961,
+    "f_hip_ratio": 0.1030073364645884,
+    "f_torso_ratio": 0.2907640894408446,
+    "f_arm_vis": 0.9871050357818604,
+    "f_skin_score": 0.2868938151041666,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0204874602613917,
+    "f_r_f40": 0.0187212998940303,
+    "f_r_f50": 0.0180148357470858,
+    "f_r_f60": 0.0162486753797244,
+    "f_r_f70": 0.0158954433062522,
+    "f_r_min": 0.0158954433062522,
+    "f_r_p25": 0.0162486753797244,
+    "f_r_mean": 0.01787354291769688
+   },
+   "muacCm": 19.48043930166536,
+   "z": -1.7405912937035382,
+   "cutCm": 18.999323833041434,
+   "trueMuacCm": 19.0,
+   "trueZ": -1.9996244696570336
+  }
+ },
+ {
+  "tag": "1621",
+  "child": {
+   "ageMonths": 155.0,
+   "sex": "M",
+   "weightKg": 57.5
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3098.0,
+    "widthPx": 955.9999999999999,
+    "areaPx": 1784737.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 597.1732177734374,
+    "hipPx": 333.52661132812494,
+    "torsoPx": 869.6778564453125
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 482.7618713378905,
+    "armVis": 0.9882267236709597,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 91.99999999999986,
+    "radiusPxIqr": 9.999999999999831,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 96.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 96.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 91.99999999999986,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 86.9999999999998,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 79.99999999999989,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.7920510643641154
+  },
+  "expected": {
+   "features": {
+    "Age": 155.0,
+    "sex_male": 1.0,
+    "Weight": 57.5,
+    "f_diam_ratio": 0.0593931568754034,
+    "f_radius_ratio": 0.0296965784377017,
+    "f_radius_iqr_ratio": 0.0032278889606197,
+    "f_armlen_ratio": 0.1558301715099711,
+    "f_area_over_h2": 0.1859565158137385,
+    "f_bodywidth_ratio": 0.3085861846352485,
+    "f_shoulder_ratio": 0.1927608837228655,
+    "f_hip_ratio": 0.107658686677897,
+    "f_torso_ratio": 0.2807223552115276,
+    "f_arm_vis": 0.9882267236709597,
+    "f_skin_score": 0.7920510643641154,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0313105229180116,
+    "f_r_f40": 0.0313105229180116,
+    "f_r_f50": 0.0296965784377017,
+    "f_r_f60": 0.0280826339573918,
+    "f_r_f70": 0.025823111684958,
+    "f_r_min": 0.025823111684958,
+    "f_r_p25": 0.0280826339573918,
+    "f_r_mean": 0.029244673983214935
+   },
+   "muacCm": 25.0368793821829,
+   "z": 0.6004291337480786,
+   "cutCm": 18.781929175707734,
+   "trueMuacCm": 24.3,
+   "trueZ": 0.37661083709251747
+  }
+ },
+ {
+  "tag": "2001",
+  "child": {
+   "ageMonths": 84.0,
+   "sex": "M",
+   "weightKg": 18.9
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2163.0,
+    "widthPx": 682.0,
+    "areaPx": 1011822.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 430.49365234374983,
+    "hipPx": 245.53259277343727,
+    "torsoPx": 657.565185546875
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 340.63348388671864,
+    "armVis": 0.9836051225662232,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 72.99999999999987,
+    "radiusPxIqr": 8.999999999999812,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 69.0,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 65.99999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 72.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 77.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 79.99999999999996,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.487641159999812
+  },
+  "expected": {
+   "features": {
+    "Age": 84.0,
+    "sex_male": 1.0,
+    "Weight": 18.9,
+    "f_diam_ratio": 0.0674988441978733,
+    "f_radius_ratio": 0.0337494220989366,
+    "f_radius_iqr_ratio": 0.0041608876560332,
+    "f_armlen_ratio": 0.1574819620373179,
+    "f_area_over_h2": 0.2162674099708693,
+    "f_bodywidth_ratio": 0.3153028201571891,
+    "f_shoulder_ratio": 0.1990261915597549,
+    "f_hip_ratio": 0.1135148371583159,
+    "f_torso_ratio": 0.3040060959532478,
+    "f_arm_vis": 0.9836051225662232,
+    "f_skin_score": 0.487641159999812,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0319001386962552,
+    "f_r_f40": 0.0305131761442441,
+    "f_r_f50": 0.0337494220989366,
+    "f_r_f60": 0.0360610263522884,
+    "f_r_f70": 0.0369856680536292,
+    "f_r_min": 0.0305131761442441,
+    "f_r_p25": 0.0319001386962552,
+    "f_r_mean": 0.0338418862690707
+   },
+   "muacCm": 16.563615412594057,
+   "z": -0.7380382772671605,
+   "cutCm": 14.994296815126752,
+   "trueMuacCm": 15.7,
+   "trueZ": -1.3918909933531538
+  }
+ },
+ {
+  "tag": "2002",
+  "child": {
+   "ageMonths": 69.0,
+   "sex": "M",
+   "weightKg": 20.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2093.0,
+    "widthPx": 634.9999999999999,
+    "areaPx": 922224.9999999999,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 451.106475830078,
+    "hipPx": 234.56295776367176,
+    "torsoPx": 635.0738525390625
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 317.3244323730468,
+    "armVis": 0.6142596662044526,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 67.99999999999993,
+    "radiusPxIqr": 7.9999999999999805,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 67.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 58.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 70.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 75.0,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 62.99999999999993,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4901123305563573
+  },
+  "expected": {
+   "features": {
+    "Age": 69.0,
+    "sex_male": 1.0,
+    "Weight": 20.0,
+    "f_diam_ratio": 0.0649784997611084,
+    "f_radius_ratio": 0.0324892498805542,
+    "f_radius_iqr_ratio": 0.0038222646918299,
+    "f_armlen_ratio": 0.1516122467143081,
+    "f_area_over_h2": 0.2105224591150763,
+    "f_bodywidth_ratio": 0.303392259913999,
+    "f_shoulder_ratio": 0.2155310443526412,
+    "f_hip_ratio": 0.1120702139339091,
+    "f_torso_ratio": 0.3034275454080566,
+    "f_arm_vis": 0.6142596662044526,
+    "f_skin_score": 0.4901123305563573,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0324892498805542,
+    "f_r_f40": 0.0281892021022455,
+    "f_r_f50": 0.0339225991399904,
+    "f_r_f60": 0.0358337314859054,
+    "f_r_f70": 0.0301003344481605,
+    "f_r_min": 0.0281892021022455,
+    "f_r_p25": 0.0301003344481605,
+    "f_r_mean": 0.032107023411371206
+   },
+   "muacCm": 16.939368852421236,
+   "z": 0.04270814196422634,
+   "cutCm": 14.320005655056052,
+   "trueMuacCm": 16.9,
+   "trueZ": 0.016776276417717773
+  }
+ },
+ {
+  "tag": "1091",
+  "child": {
+   "ageMonths": 125.0,
+   "sex": "M",
+   "weightKg": 26.7
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2502.0,
+    "widthPx": 792.9999999999999,
+    "areaPx": 1229016.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 484.7960205078123,
+    "hipPx": 262.0072937011717,
+    "torsoPx": 754.3078613281249
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 401.80163574218733,
+    "armVis": 0.9957568645477296,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 83.99999999999987,
+    "radiusPxIqr": 4.999999999999953,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 83.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 88.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 83.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 96.9999999999998,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 59.999999999999936,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.4799949900009014
+  },
+  "expected": {
+   "features": {
+    "Age": 125.0,
+    "sex_male": 1.0,
+    "Weight": 26.7,
+    "f_diam_ratio": 0.0671462829736211,
+    "f_radius_ratio": 0.0335731414868105,
+    "f_radius_iqr_ratio": 0.0019984012789768,
+    "f_armlen_ratio": 0.160592180552433,
+    "f_area_over_h2": 0.1963284687997004,
+    "f_bodywidth_ratio": 0.3169464428457234,
+    "f_shoulder_ratio": 0.1937633974851368,
+    "f_hip_ratio": 0.1047191421667353,
+    "f_torso_ratio": 0.3014819589640787,
+    "f_arm_vis": 0.9957568645477296,
+    "f_skin_score": 0.4799949900009014,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0335731414868105,
+    "f_r_f40": 0.0355715427657873,
+    "f_r_f50": 0.0335731414868105,
+    "f_r_f60": 0.0387689848121502,
+    "f_r_f70": 0.0239808153477218,
+    "f_r_min": 0.0239808153477218,
+    "f_r_p25": 0.0335731414868105,
+    "f_r_mean": 0.03309352517985605
+   },
+   "muacCm": 17.174319153330863,
+   "z": -1.7042986017747772,
+   "cutCm": 16.764920992665232,
+   "trueMuacCm": 16.0,
+   "trueZ": -2.6129569906459955
+  }
+ },
+ {
+  "tag": "777",
+  "child": {
+   "ageMonths": 118.0,
+   "sex": "M",
+   "weightKg": 28.8
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2618.0,
+    "widthPx": 720.9999999999999,
+    "areaPx": 1180465.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 474.1634826660154,
+    "hipPx": 237.57388305664062,
+    "torsoPx": 737.6405029296875
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "right",
+    "armLenPx": 427.3089599609374,
+    "armVis": 0.9867929697036744,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 80.99999999999997,
+    "radiusPxIqr": 8.999999999999794,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 75.99999999999977,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 77.99999999999996,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 89.99999999999976,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 86.99999999999974,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 80.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.0531387042999267
+  },
+  "expected": {
+   "features": {
+    "Age": 118.0,
+    "sex_male": 1.0,
+    "Weight": 28.8,
+    "f_diam_ratio": 0.0618792971734148,
+    "f_radius_ratio": 0.0309396485867074,
+    "f_radius_iqr_ratio": 0.0034377387318563,
+    "f_armlen_ratio": 0.163219618014109,
+    "f_area_over_h2": 0.1722321403038609,
+    "f_bodywidth_ratio": 0.2754010695187165,
+    "f_shoulder_ratio": 0.1811166855103191,
+    "f_hip_ratio": 0.0907463266068146,
+    "f_torso_ratio": 0.2817572585674895,
+    "f_arm_vis": 0.9867929697036744,
+    "f_skin_score": 0.0531387042999267,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.029029793735676,
+    "f_r_f40": 0.0297937356760886,
+    "f_r_f50": 0.0343773873185637,
+    "f_r_f60": 0.0332314744079449,
+    "f_r_f70": 0.0309396485867074,
+    "f_r_min": 0.029029793735676,
+    "f_r_p25": 0.0297937356760886,
+    "f_r_mean": 0.03147440794499612
+   },
+   "muacCm": 17.555011499439768,
+   "z": -1.1982276802279497,
+   "cutCm": 16.430911342338177,
+   "trueMuacCm": 16.7,
+   "trueZ": -1.7932818458775623
+  }
+ },
+ {
+  "tag": "1107",
+  "child": {
+   "ageMonths": 131.0,
+   "sex": "M",
+   "weightKg": 40.4
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2648.0,
+    "widthPx": 840.9999999999999,
+    "areaPx": 1362292.0,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 511.061279296875,
+    "hipPx": 297.46545410156233,
+    "torsoPx": 754.8546752929688
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 358.292053222656,
+    "armVis": 0.9629362106323244,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 121.99999999999976,
+    "radiusPxIqr": 1.9999999999998832,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 124.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 121.99999999999976,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 120.99999999999982,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 122.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 119.99999999999989,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.2961660011574074
+  },
+  "expected": {
+   "features": {
+    "Age": 131.0,
+    "sex_male": 1.0,
+    "Weight": 40.4,
+    "f_diam_ratio": 0.0921450151057401,
+    "f_radius_ratio": 0.04607250755287,
+    "f_radius_iqr_ratio": 0.0007552870090634,
+    "f_armlen_ratio": 0.1353066666248701,
+    "f_area_over_h2": 0.1942827511614534,
+    "f_bodywidth_ratio": 0.3175981873111782,
+    "f_shoulder_ratio": 0.1929989725441371,
+    "f_hip_ratio": 0.1123358965640341,
+    "f_torso_ratio": 0.2850659649897918,
+    "f_arm_vis": 0.9629362106323244,
+    "f_skin_score": 0.2961660011574074,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0472054380664652,
+    "f_r_f40": 0.04607250755287,
+    "f_r_f50": 0.0456948640483383,
+    "f_r_f60": 0.0464501510574018,
+    "f_r_f70": 0.0453172205438066,
+    "f_r_min": 0.0453172205438066,
+    "f_r_p25": 0.0456948640483383,
+    "f_r_mean": 0.04614803625377638
+   },
+   "muacCm": 22.1272444856239,
+   "z": 0.5072604989221497,
+   "cutCm": 17.085682712617487,
+   "trueMuacCm": 20.9,
+   "trueZ": 0.051955173686131784
+  }
+ },
+ {
+  "tag": "1726",
+  "child": {
+   "ageMonths": 156.0,
+   "sex": "F",
+   "weightKg": 33.5
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2946.0,
+    "widthPx": 840.9999999999999,
+    "areaPx": 1710657.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 525.1820068359374,
+    "hipPx": 299.3427124023435,
+    "torsoPx": 843.3927001953125
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 489.7442016601563,
+    "armVis": 0.9921033143997192,
+    "nOk": 5,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 88.99999999999977,
+    "radiusPxIqr": 3.999999999999887,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 88.99999999999977,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 85.99999999999979,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 93.99999999999984,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 89.99999999999997,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 84.0,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.7691295745496396
+  },
+  "expected": {
+   "features": {
+    "Age": 156.0,
+    "sex_male": 0.0,
+    "Weight": 33.5,
+    "f_diam_ratio": 0.0604209097080787,
+    "f_radius_ratio": 0.0302104548540393,
+    "f_radius_iqr_ratio": 0.0013577732518669,
+    "f_armlen_ratio": 0.166240394317772,
+    "f_area_over_h2": 0.1971050301673619,
+    "f_bodywidth_ratio": 0.2854718262050237,
+    "f_shoulder_ratio": 0.1782695203109088,
+    "f_hip_ratio": 0.1016098820102999,
+    "f_torso_ratio": 0.2862840122862568,
+    "f_arm_vis": 0.9921033143997192,
+    "f_skin_score": 0.7691295745496396,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0302104548540393,
+    "f_r_f40": 0.0291921249151391,
+    "f_r_f50": 0.031907671418873,
+    "f_r_f60": 0.0305498981670061,
+    "f_r_f70": 0.0285132382892057,
+    "f_r_min": 0.0285132382892057,
+    "f_r_p25": 0.0291921249151391,
+    "f_r_mean": 0.03007467752885264
+   },
+   "muacCm": 18.759092544078683,
+   "z": -1.976405784787723,
+   "cutCm": 18.716756774442672,
+   "trueMuacCm": 19.8,
+   "trueZ": -1.4333537727008205
+  }
+ },
+ {
+  "tag": "4",
+  "child": {
+   "ageMonths": 95.0,
+   "sex": "M",
+   "weightKg": 18.5
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3712.0,
+    "widthPx": 1036.9999999999998,
+    "areaPx": 2165463.9999999995,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 672.543701171875,
+    "hipPx": 364.71530151367165,
+    "torsoPx": 1012.0590820312497
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 571.8341674804686,
+    "armVis": 0.9161144256591796,
+    "nOk": 4,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 83.49999999999994,
+    "radiusPxIqr": 99.74999999999979,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 158.9999999999999,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 128.99999999999966,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 37.999999999999844,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 32.99999999999981,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.8973976123668529
+  },
+  "expected": {
+   "features": {
+    "Age": 95.0,
+    "sex_male": 1.0,
+    "Weight": 18.5,
+    "f_diam_ratio": 0.044989224137931,
+    "f_radius_ratio": 0.0224946120689655,
+    "f_radius_iqr_ratio": 0.0268723060344827,
+    "f_armlen_ratio": 0.1540501528772814,
+    "f_area_over_h2": 0.157157471574019,
+    "f_bodywidth_ratio": 0.279364224137931,
+    "f_shoulder_ratio": 0.1811809539794922,
+    "f_hip_ratio": 0.0982530445888124,
+    "f_torso_ratio": 0.2726452268403151,
+    "f_arm_vis": 0.9161144256591796,
+    "f_skin_score": 0.8973976123668529,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0428340517241379,
+    "f_r_f40": null,
+    "f_r_f50": 0.0347521551724137,
+    "f_r_f60": 0.0102370689655172,
+    "f_r_f70": 0.0088900862068965,
+    "f_r_min": 0.0088900862068965,
+    "f_r_p25": 0.009900323275862025,
+    "f_r_mean": 0.024178340517241326
+   },
+   "muacCm": 14.70956830701433,
+   "z": -2.7378923655564615,
+   "cutCm": 15.481157013110105,
+   "trueMuacCm": 14.3,
+   "trueZ": -3.1769439699564175
+  }
+ },
+ {
+  "tag": "112",
+  "child": {
+   "ageMonths": 63.0,
+   "sex": "F",
+   "weightKg": 26.0
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 3248.0,
+    "widthPx": 1045.0,
+    "areaPx": 2079513.9999999993,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 657.0460815429688,
+    "hipPx": 346.84103393554676,
+    "torsoPx": 924.8156127929689
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 478.84747314453125,
+    "armVis": 0.9913742065429688,
+    "nOk": 3,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 104.99999999999983,
+    "radiusPxIqr": 32.999999999999716,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 146.99999999999977,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 104.99999999999983,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 80.99999999999969,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.0200043678283691
+  },
+  "expected": {
+   "features": {
+    "Age": 63.0,
+    "sex_male": 0.0,
+    "Weight": 26.0,
+    "f_diam_ratio": 0.0646551724137931,
+    "f_radius_ratio": 0.0323275862068965,
+    "f_radius_iqr_ratio": 0.0101600985221674,
+    "f_armlen_ratio": 0.1474284092193754,
+    "f_area_over_h2": 0.1971195991773641,
+    "f_bodywidth_ratio": 0.3217364532019704,
+    "f_shoulder_ratio": 0.2022925127903229,
+    "f_hip_ratio": 0.106786032615624,
+    "f_torso_ratio": 0.2847338709337958,
+    "f_arm_vis": 0.9913742065429688,
+    "f_skin_score": 0.0200043678283691,
+    "f_n_sep": 0.0,
+    "f_r_f30": null,
+    "f_r_f40": null,
+    "f_r_f50": 0.0452586206896551,
+    "f_r_f60": 0.0323275862068965,
+    "f_r_f70": 0.0249384236453201,
+    "f_r_min": 0.0249384236453201,
+    "f_r_p25": 0.028633004926108298,
+    "f_r_mean": 0.03417487684729057
+   },
+   "muacCm": 17.826834354084593,
+   "z": 0.5237939979449181,
+   "cutCm": 14.154042765289457,
+   "trueMuacCm": 21.6,
+   "trueZ": 2.401754169571358
+  }
+ },
+ {
+  "tag": "201",
+  "child": {
+   "ageMonths": 90.0,
+   "sex": "F",
+   "weightKg": 18.5
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2512.0,
+    "widthPx": 696.0,
+    "areaPx": 1073488.9999999998,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 458.83154296874994,
+    "hipPx": 231.90211486816386,
+    "torsoPx": 688.5599975585938
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 374.1886291503906,
+    "armVis": 0.9508835554122924,
+    "nOk": 2,
+    "nImplausible": 0,
+    "nSeparated": 1,
+    "radiusPxMed": 25.999999999999797,
+    "radiusPxIqr": 1.9999999999998879,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": false,
+      "plausible": false,
+      "separated": true,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 23.99999999999991,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 27.999999999999936,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.9034402708548088
+  },
+  "expected": {
+   "features": {
+    "Age": 90.0,
+    "sex_male": 0.0,
+    "Weight": 18.5,
+    "f_diam_ratio": 0.0207006369426751,
+    "f_radius_ratio": 0.0103503184713375,
+    "f_radius_iqr_ratio": 0.000796178343949,
+    "f_armlen_ratio": 0.1489604415407606,
+    "f_area_over_h2": 0.1701211572984705,
+    "f_bodywidth_ratio": 0.2770700636942675,
+    "f_shoulder_ratio": 0.1826558690162221,
+    "f_hip_ratio": 0.0923177208870079,
+    "f_torso_ratio": 0.2741082792828797,
+    "f_arm_vis": 0.9508835554122924,
+    "f_skin_score": 0.9034402708548088,
+    "f_n_sep": 1.0,
+    "f_r_f30": null,
+    "f_r_f40": null,
+    "f_r_f50": null,
+    "f_r_f60": 0.0095541401273885,
+    "f_r_f70": 0.0111464968152866,
+    "f_r_min": 0.0095541401273885,
+    "f_r_p25": 0.009952229299363024,
+    "f_r_mean": 0.01035031847133755
+   },
+   "muacCm": 16.547350944302966,
+   "z": -0.95837458402168,
+   "cutCm": 14.969001807108965,
+   "trueMuacCm": 14.0,
+   "trueZ": -2.745336463511927
+  }
+ },
+ {
+  "tag": "202",
+  "child": {
+   "ageMonths": 61.0,
+   "sex": "M",
+   "weightKg": 17.7
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2586.0,
+    "widthPx": 631.9999999999998,
+    "areaPx": 1001784.9999999999,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 467.7276611328124,
+    "hipPx": 233.1412506103515,
+    "torsoPx": 637.7745361328124
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 371.4911499023435,
+    "armVis": 0.9464787483215332,
+    "nOk": 2,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 65.99999999999983,
+    "radiusPxIqr": 11.999999999999805,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 77.99999999999989,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 53.999999999999766,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.7097861901601155
+  },
+  "expected": {
+   "features": {
+    "Age": 61.0,
+    "sex_male": 1.0,
+    "Weight": 17.7,
+    "f_diam_ratio": 0.0510440835266821,
+    "f_radius_ratio": 0.025522041763341,
+    "f_radius_iqr_ratio": 0.0046403712296983,
+    "f_armlen_ratio": 0.1436547370078668,
+    "f_area_over_h2": 0.1498019557986397,
+    "f_bodywidth_ratio": 0.2443928847641144,
+    "f_shoulder_ratio": 0.1808691651712345,
+    "f_hip_ratio": 0.0901551626490145,
+    "f_torso_ratio": 0.2466258840420775,
+    "f_arm_vis": 0.9464787483215332,
+    "f_skin_score": 0.7097861901601155,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0301624129930394,
+    "f_r_f40": 0.0208816705336426,
+    "f_r_f50": null,
+    "f_r_f60": null,
+    "f_r_f70": null,
+    "f_r_min": 0.0208816705336426,
+    "f_r_p25": 0.023201856148491802,
+    "f_r_mean": 0.025522041763341
+   },
+   "muacCm": 15.626696513893032,
+   "z": -0.666835749443835,
+   "cutCm": 13.996673137279947,
+   "trueMuacCm": 12.5,
+   "trueZ": -3.431666045389985
+  }
+ },
+ {
+  "tag": "234",
+  "child": {
+   "ageMonths": 94.0,
+   "sex": "F",
+   "weightKg": 17.2
+  },
+  "measurement": {
+   "ok": true,
+   "reason": "ok",
+   "width": 3000,
+   "height": 4000,
+   "landmarks": [],
+   "segmentation": {
+    "usedRefinement": false,
+    "feetOk": true,
+    "areaRatio": 0.1
+   },
+   "body": {
+    "heightPx": 2121.0,
+    "widthPx": 599.0,
+    "areaPx": 897452.9999999999,
+    "bbox": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "shoulderPx": 388.4811096191406,
+    "hipPx": 214.4624786376952,
+    "torsoPx": 560.9744873046875
+   },
+   "arm": {
+    "ok": true,
+    "reason": "ok",
+    "side": "left",
+    "armLenPx": 331.74478149414045,
+    "armVis": 0.9797425270080566,
+    "nOk": 2,
+    "nImplausible": 0,
+    "nSeparated": 0,
+    "radiusPxMed": 87.9999999999998,
+    "radiusPxIqr": 7.999999999999847,
+    "samples": [
+     {
+      "fraction": 0.3,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 95.99999999999987,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.4,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.5,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.6,
+      "ok": false,
+      "plausible": false,
+      "separated": false,
+      "radiusPx": null,
+      "x": 0.5,
+      "y": 0.5
+     },
+     {
+      "fraction": 0.7,
+      "ok": true,
+      "plausible": true,
+      "separated": false,
+      "radiusPx": 79.99999999999996,
+      "x": 0.5,
+      "y": 0.5
+     }
+    ]
+   },
+   "skinScore": 0.8225815562566121
+  },
+  "expected": {
+   "features": {
+    "Age": 94.0,
+    "sex_male": 0.0,
+    "Weight": 17.2,
+    "f_diam_ratio": 0.0829797265440829,
+    "f_radius_ratio": 0.0414898632720414,
+    "f_radius_iqr_ratio": 0.0037718057520037,
+    "f_armlen_ratio": 0.1564096093796042,
+    "f_area_over_h2": 0.1994942472626733,
+    "f_bodywidth_ratio": 0.2824139556812824,
+    "f_shoulder_ratio": 0.1831594104757853,
+    "f_hip_ratio": 0.1011138513143306,
+    "f_torso_ratio": 0.2644858497428984,
+    "f_arm_vis": 0.9797425270080566,
+    "f_skin_score": 0.8225815562566121,
+    "f_n_sep": 0.0,
+    "f_r_f30": 0.0452616690240452,
+    "f_r_f40": null,
+    "f_r_f50": null,
+    "f_r_f60": null,
+    "f_r_f70": 0.0377180575200377,
+    "f_r_min": 0.0377180575200377,
+    "f_r_p25": 0.03960396039603958,
+    "f_r_mean": 0.04148986327204145
+   },
+   "muacCm": 15.94783258866126,
+   "z": -1.4362494226546705,
+   "cutCm": 15.111058321415067,
+   "trueMuacCm": 15.0,
+   "trueZ": -2.079241881020165
+  }
+ }
+]

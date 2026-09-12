@@ -1,0 +1,731 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .nv { font-family: 'Public Sans', system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--ground); }
+    .nv a { color: var(--accent); text-decoration: none; }
+    .nv a:hover { color: var(--accent); text-decoration: underline; }
+    .nv-tap { cursor: pointer; -webkit-tap-highlight-color: transparent; user-select: none; }
+    .nv-tap:active { opacity: 0.86; }
+    .nv-scroll { overflow-y: auto; }
+    .nv-scroll::-webkit-scrollbar { width: 0; }
+  </style>
+</helmet>
+
+<div class="nv" style="
+    --ground:#F7F9F8; --surface:#FFFFFF; --ink:#1C2B29; --ink-muted:#5B6D69; --ink-faint:#9BA9A5;
+    --border:#E4EAE8; --accent:{{accentColor}}; --accent-soft:#E6F1EF;
+    --good:#2E9E5B; --good-soft:#E5F5EA; --amber:#B9820A; --amber-soft:#FBF3DE; --red:#C4453B; --red-soft:#FBEAE8;
+    --shadow:0 1px 2px rgba(28,43,41,0.05), 0 6px 16px rgba(28,43,41,0.07);
+    width:100%; height:100%; min-height:100%; display:flex; flex-direction:column; position:relative;">
+
+  <!-- ============================= HOME ============================= -->
+  <sc-if value="{{isHome}}" hint-placeholder-val="{{true}}">
+    <div class="nv-scroll" style="flex:1; min-height:0; display:flex; flex-direction:column; gap:22px; padding:20px 18px 28px;">
+
+      <div style="display:flex; align-items:center; justify-content:space-between; padding-top:6px;">
+        <div style="display:flex; align-items:center; gap:9px;">
+          <div style="width:30px; height:30px; border-radius:9px; background:var(--accent); display:flex; align-items:center; justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 13V6.5L8 3L13.5 6.5V13" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 13V9H10V13" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="font-size:17px; font-weight:800; letter-spacing:-0.01em;">NutriVision</div>
+        </div>
+        <div onClick="{{goSettings}}" class="nv-tap" style="width:38px; height:38px; border-radius:11px; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--ink-muted);">
+          <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="2.6" stroke="currentColor" stroke-width="1.6"/><path d="M10 2.8V4.6M10 15.4V17.2M17.2 10H15.4M4.6 10H2.8M15.1 4.9L13.8 6.2M6.2 13.8L4.9 15.1M15.1 15.1L13.8 13.8M6.2 6.2L4.9 4.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:6px; background:var(--accent-soft); color:var(--accent); border-radius:999px; padding:6px 12px; align-self:flex-start; font-size:12px; font-weight:700;">
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 6.5C4 4 10 4 12 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4 8.7C5.3 7.3 8.7 7.3 10 8.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="11" r="1" fill="currentColor"/></svg>
+        Works fully offline
+      </div>
+
+      <div onClick="{{goNewScreening}}" class="nv-tap" style="background:var(--accent); border-radius:20px; padding:24px 22px; display:flex; align-items:center; gap:16px; box-shadow:var(--shadow);">
+        <div style="width:52px; height:52px; border-radius:16px; background:rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.8"/><path d="M12 8V16M8 12H16" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div style="flex:1;">
+          <div style="color:#fff; font-size:18px; font-weight:800; margin-bottom:3px;">New Screening</div>
+          <div style="color:rgba(255,255,255,0.82); font-size:13.5px;">Photo, age, sex &amp; weight</div>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;"><path d="M7.5 4L13.5 10L7.5 16" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <div style="display:flex; gap:12px;">
+        <div style="flex:1; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px;">
+          <div style="font-size:26px; font-weight:800;">3</div>
+          <div style="font-size:12.5px; color:var(--ink-muted); font-weight:600;">Screenings today</div>
+        </div>
+        <div style="flex:1; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px;">
+          <div style="font-size:26px; font-weight:800;">41</div>
+          <div style="font-size:12.5px; color:var(--ink-muted); font-weight:600;">Total records</div>
+        </div>
+      </div>
+
+      <div>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-muted);">Recent</div>
+          <div onClick="{{goHistory}}" class="nv-tap" style="font-size:13px; font-weight:700; color:var(--accent);">View all</div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div onClick="{{goDetail}}" class="nv-tap" style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:12px;">
+            <div style="width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,#DCE9E6,#C7DAD6); flex-shrink:0;"></div>
+            <div style="flex:1; min-width:0;">
+              <div style="font-size:14.5px; font-weight:700;">Aditi R.</div>
+              <div style="font-size:12.5px; color:var(--ink-muted);">10 yrs 7 mo · Female</div>
+            </div>
+            <div style="background:var(--good-soft); color:var(--good); font-size:11.5px; font-weight:700; padding:5px 10px; border-radius:999px; white-space:nowrap;">Healthy</div>
+          </div>
+
+          <div onClick="{{goDetail}}" class="nv-tap" style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:12px;">
+            <div style="width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,#EFE3C9,#E4D2A8); flex-shrink:0;"></div>
+            <div style="flex:1; min-width:0;">
+              <div style="font-size:14.5px; font-weight:700;">Karan M.</div>
+              <div style="font-size:12.5px; color:var(--ink-muted);">6 yrs 1 mo · Male</div>
+            </div>
+            <div style="background:var(--amber-soft); color:var(--amber); font-size:11.5px; font-weight:700; padding:5px 10px; border-radius:999px; white-space:nowrap;">Not sure</div>
+          </div>
+
+          <div onClick="{{goDetail}}" class="nv-tap" style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:12px;">
+            <div style="width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,#F2D9D5,#E6BEB8); flex-shrink:0;"></div>
+            <div style="flex:1; min-width:0;">
+              <div style="font-size:14.5px; font-weight:700;">Priya S.</div>
+              <div style="font-size:12.5px; color:var(--ink-muted);">14 yrs 2 mo · Female</div>
+            </div>
+            <div style="background:var(--red-soft); color:var(--red); font-size:11.5px; font-weight:700; padding:5px 10px; border-radius:999px; white-space:nowrap;">Refer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ========================= CHILD INFO ============================ -->
+  <sc-if value="{{isChildInfo}}" hint-placeholder-val="{{false}}">
+    <div class="nv-scroll" style="flex:1; min-height:0; display:flex; flex-direction:column;">
+      <div style="display:flex; align-items:center; gap:12px; padding:18px 18px 8px;">
+        <div onClick="{{goHome}}" class="nv-tap" style="width:36px; height:36px; border-radius:10px; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--ink);">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M12.5 4L6.5 10L12.5 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="font-size:17px; font-weight:800;">Child Details</div>
+      </div>
+
+      <div style="flex:1; display:flex; flex-direction:column; gap:18px; padding:14px 18px 24px;">
+
+        <div>
+          <div style="font-size:12px; font-weight:700; color:var(--ink-muted); margin-bottom:7px;">NAME OR ID (OPTIONAL)</div>
+          <div style="background:var(--surface); border:1.5px solid var(--border); border-radius:13px; padding:13px 14px; font-size:15px; color:var(--ink-faint);">e.g. Aditi, or record #042</div>
+        </div>
+
+        <div>
+          <div style="font-size:12px; font-weight:700; color:var(--ink-muted); margin-bottom:7px;">SEX</div>
+          <div style="display:flex; gap:10px;">
+            <div onClick="{{pickMale}}" class="nv-tap" style="flex:1; border-radius:13px; padding:14px; text-align:center; font-weight:700; font-size:14.5px; border:1.5px solid {{maleBorder}}; background:{{maleBg}}; color:{{maleColor}};">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="display:block; margin:0 auto 6px;"><circle cx="9" cy="5.6" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 16C3 12.5 5.5 10.5 9 10.5C12.5 10.5 15 12.5 15 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Male
+            </div>
+            <div onClick="{{pickFemale}}" class="nv-tap" style="flex:1; border-radius:13px; padding:14px; text-align:center; font-weight:700; font-size:14.5px; border:1.5px solid {{femaleBorder}}; background:{{femaleBg}}; color:{{femaleColor}};">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="display:block; margin:0 auto 6px;"><circle cx="9" cy="5.6" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 16C3 12.5 5.5 10.5 9 10.5C12.5 10.5 15 12.5 15 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Female
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:12px; font-weight:700; color:var(--ink-muted); margin-bottom:7px;">AGE</div>
+          <div style="background:var(--surface); border:1.5px solid var(--border); border-radius:13px; padding:13px 14px; display:flex; align-items:baseline; justify-content:space-between;">
+            <span style="font-size:15px; font-weight:600;">127 months</span>
+            <span style="font-size:13px; color:var(--ink-muted);">10 yrs 7 mo</span>
+          </div>
+        </div>
+
+        <div>
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
+            <div style="font-size:12px; font-weight:700; color:var(--ink-muted);">WEIGHT</div>
+            <div style="background:var(--accent-soft); color:var(--accent); font-size:10.5px; font-weight:800; padding:2px 7px; border-radius:6px;">REQUIRED</div>
+          </div>
+          <div style="background:var(--surface); border:1.5px solid var(--border); border-radius:13px; padding:13px 14px; display:flex; align-items:baseline; gap:6px;">
+            <svg width="17" height="17" viewBox="0 0 18 18" fill="none" style="color:var(--ink-faint);"><rect x="3" y="12" width="12" height="3.2" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M9 12V4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="3.2" r="1.3" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span style="font-size:15px; font-weight:600;">24.5</span>
+            <span style="font-size:13px; color:var(--ink-muted);">kg</span>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:9px; background:var(--accent-soft); border-radius:13px; padding:12px 14px;">
+          <svg width="17" height="17" viewBox="0 0 18 18" fill="none" style="flex-shrink:0; margin-top:1px; color:var(--accent);"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M9 8.2V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="5.5" r="0.9" fill="currentColor"/></svg>
+          <div style="font-size:13px; color:var(--accent); line-height:1.45;">No height needed — this app estimates from photo, age, sex and weight only.</div>
+        </div>
+
+        <div style="flex:1;"></div>
+
+        <div onClick="{{goCameraIfReady}}" class="nv-tap" style="background:{{continueBg}}; color:#fff; border-radius:15px; padding:16px; text-align:center; font-weight:800; font-size:15.5px; box-shadow:var(--shadow);">
+          Continue to Camera
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============================ CAMERA ============================= -->
+  <sc-if value="{{isCamera}}" hint-placeholder-val="{{false}}">
+    <div style="flex:1; min-height:0; display:flex; flex-direction:column; background:#15211E;">
+      <div style="display:flex; align-items:center; gap:12px; padding:18px;">
+        <div onClick="{{goChildInfo}}" class="nv-tap" style="width:36px; height:36px; border-radius:10px; background:rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; color:#fff;">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M12.5 4L6.5 10L12.5 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="color:#fff; font-size:14.5px; font-weight:700;">Position the child in the frame</div>
+      </div>
+
+      <div style="flex:1; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+        <svg width="150" height="290" viewBox="0 0 150 290" fill="none" style="opacity:0.5;">
+          <ellipse cx="75" cy="38" rx="26" ry="30" stroke="#fff" stroke-width="2" stroke-dasharray="6 7"/>
+          <path d="M75 68 L75 190 M75 92 L28 150 M75 92 L122 150 M75 190 L45 280 M75 190 L105 280" stroke="#fff" stroke-width="2" stroke-dasharray="6 7" stroke-linecap="round"/>
+        </svg>
+        <div style="position:absolute; top:14%; left:8%; right:8%; bottom:14%; border:2px dashed rgba(255,255,255,0.28); border-radius:20px;"></div>
+      </div>
+
+      <div style="padding:0 18px 10px; display:flex; gap:8px; flex-wrap:wrap;">
+        <div onClick="{{setCamGood}}" class="nv-tap" style="font-size:11.5px; font-weight:700; padding:6px 11px; border-radius:999px; background:{{demoGoodBg}}; color:{{demoGoodColor}};">Ready</div>
+        <div onClick="{{setCamBlur}}" class="nv-tap" style="font-size:11.5px; font-weight:700; padding:6px 11px; border-radius:999px; background:{{demoBlurBg}}; color:{{demoBlurColor}};">Blurry</div>
+        <div onClick="{{setCamDark}}" class="nv-tap" style="font-size:11.5px; font-weight:700; padding:6px 11px; border-radius:999px; background:{{demoDarkBg}}; color:{{demoDarkColor}};">Too dark</div>
+        <div onClick="{{setCamFraming}}" class="nv-tap" style="font-size:11.5px; font-weight:700; padding:6px 11px; border-radius:999px; background:{{demoFramingBg}}; color:{{demoFramingColor}};">Bad framing</div>
+      </div>
+
+      <div style="padding:8px 18px 16px; display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; gap:8px;">
+          <div style="flex:1; background:rgba(0,0,0,0.42); border-radius:12px; padding:10px 12px; display:flex; align-items:center; gap:7px;">
+            <span style="width:8px; height:8px; border-radius:999px; background:{{sharpDot}}; flex-shrink:0;"></span>
+            <span style="color:#fff; font-size:12.5px; font-weight:600;">{{sharpLabel}}</span>
+          </div>
+          <div style="flex:1; background:rgba(0,0,0,0.42); border-radius:12px; padding:10px 12px; display:flex; align-items:center; gap:7px;">
+            <span style="width:8px; height:8px; border-radius:999px; background:{{lightDot}}; flex-shrink:0;"></span>
+            <span style="color:#fff; font-size:12.5px; font-weight:600;">{{lightLabel}}</span>
+          </div>
+        </div>
+        <div style="background:rgba(0,0,0,0.42); border-radius:12px; padding:10px 12px; display:flex; align-items:center; gap:7px;">
+          <span style="width:8px; height:8px; border-radius:999px; background:{{frameDot}}; flex-shrink:0;"></span>
+          <span style="color:#fff; font-size:12.5px; font-weight:600;">{{frameLabel}}</span>
+        </div>
+
+        <sc-if value="{{camNotGood}}" hint-placeholder-val="{{false}}">
+          <div style="display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.10); border-radius:12px; padding:9px 12px;">
+            <div style="width:24px; height:24px; border-radius:999px; background:rgba(255,255,255,0.16); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="14" height="14" viewBox="0 0 18 18" fill="none" style="color:#fff;"><path d="M3 7V11H6L10 14.5V3.5L6 7H3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12.3 6.5C13.1 7.3 13.1 10.7 12.3 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <div style="color:rgba(255,255,255,0.9); font-size:12.5px;">{{fixHint}}</div>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="display:flex; justify-content:center; padding-bottom:30px;">
+        <div onClick="{{capture}}" class="nv-tap" style="width:70px; height:70px; border-radius:999px; border:4px solid {{shutterRing}}; display:flex; align-items:center; justify-content:center;">
+          <div style="width:56px; height:56px; border-radius:999px; background:{{shutterFill}};"></div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ========================== PROCESSING ============================ -->
+  <sc-if value="{{isProcessing}}" hint-placeholder-val="{{false}}">
+    <div onClick="{{goResult}}" class="nv-tap" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:34px; padding:32px;">
+      <div style="display:flex; flex-direction:column; gap:16px; width:100%; max-width:280px;">
+
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:30px; height:30px; border-radius:999px; background:var(--good-soft); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 22 22" fill="none" style="color:var(--good);"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M7.2 11.3L9.7 13.8L14.8 8.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="font-size:14.5px; font-weight:700;">Detecting pose</div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:30px; height:30px; border-radius:999px; background:var(--good-soft); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 22 22" fill="none" style="color:var(--good);"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M7.2 11.3L9.7 13.8L14.8 8.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="font-size:14.5px; font-weight:700;">Measuring the arm</div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:30px; height:30px; border-radius:999px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" style="color:var(--accent);"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.8" stroke-dasharray="10 9"/></svg>
+          </div>
+          <div style="font-size:14.5px; font-weight:700; color:var(--ink);">Estimating MUAC…</div>
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <div style="font-size:13px; color:var(--ink-muted); font-weight:500;">This takes just a few seconds — no internet needed</div>
+        <div style="font-size:11.5px; color:var(--ink-faint); margin-top:14px;">(tap anywhere to continue — demo)</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ========================= CANNOT ASSESS =========================== -->
+  <sc-if value="{{isCannotAssess}}" hint-placeholder-val="{{false}}">
+    <div style="flex:1; display:flex; flex-direction:column; padding:24px 22px 28px;">
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:18px;">
+        <div style="width:64px; height:64px; border-radius:20px; background:#EEF1F0; display:flex; align-items:center; justify-content:center; color:var(--ink-muted);">
+          <svg width="30" height="30" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10.5" stroke="currentColor" stroke-width="1.8"/><path d="M13 11.5V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="8.3" r="1" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <div style="font-size:18px; font-weight:800; margin-bottom:8px;">We can't assess this photo</div>
+          <div style="font-size:14px; color:var(--ink-muted); line-height:1.55; max-width:280px;">We couldn't measure the arm clearly in this photo.</div>
+        </div>
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:14px 16px; text-align:left; max-width:300px;">
+          <div style="font-size:12px; font-weight:700; color:var(--ink-muted); margin-bottom:8px;">THIS CAN ALSO HAPPEN IF:</div>
+          <div style="font-size:13px; color:var(--ink); line-height:1.7;">
+            • The child's arm isn't visible<br/>
+            • Entered age is outside 3 months–19 years<br/>
+            • Weight wasn't entered
+          </div>
+        </div>
+        <div style="background:var(--accent-soft); border-radius:14px; padding:14px 16px; text-align:left; max-width:300px;">
+          <div style="font-size:12px; font-weight:700; color:var(--accent); margin-bottom:8px;">WHAT TO TRY</div>
+          <div style="font-size:13px; color:var(--accent); line-height:1.7;">
+            • Better lighting, facing a window<br/>
+            • Roll up the sleeve if possible<br/>
+            • Double-check the age entered
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div onClick="{{goCamera}}" class="nv-tap" style="background:var(--accent); color:#fff; border-radius:15px; padding:16px; text-align:center; font-weight:800; font-size:15px;">Retake Photo</div>
+        <div onClick="{{goChildInfo}}" class="nv-tap" style="background:var(--surface); border:1.5px solid var(--border); color:var(--ink); border-radius:15px; padding:15px; text-align:center; font-weight:700; font-size:14.5px;">Edit Child Details</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============================ RESULT =============================== -->
+  <sc-if value="{{isResult}}" hint-placeholder-val="{{false}}">
+    <div class="nv-scroll" style="flex:1; min-height:0; display:flex; flex-direction:column;">
+      <div style="display:flex; align-items:center; gap:12px; padding:18px 18px 6px;">
+        <div onClick="{{goHome}}" class="nv-tap" style="width:36px; height:36px; border-radius:10px; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M12.5 4L6.5 10L12.5 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="font-size:17px; font-weight:800;">Screening Result</div>
+      </div>
+
+      <div style="padding:6px 18px 10px; display:flex; gap:7px;">
+        <span style="font-size:11px; font-weight:700; color:var(--ink-faint); align-self:center; margin-right:2px;">PREVIEW:</span>
+        <div onClick="{{setResultHealthy}}" class="nv-tap" style="font-size:11.5px; font-weight:700; padding:6px 11px; border-radius:999px; background:{{pvHealthyBg}}; color:{{pvHealthyColor}};">Healthy</div>
+        <div onClick="{{setResultNotSure}}" class="nv-tap" style="font-size:11.5px; font-weight:700; padding:6px 11px; border-radius:999px; background:{{pvNotSureBg}}; color:{{pvNotSureColor}};">Not sure</div>
+        <div onClick="{{setResultRefer}}" class="nv-tap" style="font-size:11.5px; font-weight:700; padding:6px 11px; border-radius:999px; background:{{pvReferBg}}; color:{{pvReferColor}};">Refer</div>
+      </div>
+
+      <div style="padding:10px 18px 20px; display:flex; flex-direction:column; gap:16px;">
+
+        <div style="background:{{statusBg}}; border-radius:20px; padding:22px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;">
+          <div style="width:52px; height:52px; border-radius:999px; background:{{statusIconBg}}; display:flex; align-items:center; justify-content:center; color:{{statusColor}};">
+            <sc-if value="{{resultHealthy}}" hint-placeholder-val="{{true}}">
+              <svg width="26" height="26" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M7.2 11.3L9.7 13.8L14.8 8.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </sc-if>
+            <sc-if value="{{resultNotSure}}" hint-placeholder-val="{{false}}">
+              <svg width="26" height="26" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M8.6 8.4C8.9 7.1 10 6.4 11.2 6.6C12.4 6.8 13.2 7.8 13 9C12.85 9.85 12.2 10.3 11.6 10.7C11.05 11.05 10.8 11.4 10.8 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="10.8" cy="14.4" r="0.9" fill="currentColor"/></svg>
+            </sc-if>
+            <sc-if value="{{resultRefer}}" hint-placeholder-val="{{false}}">
+              <svg width="26" height="26" viewBox="0 0 22 22" fill="none"><path d="M11 3.5L20 18.5H2L11 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 9V13.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="16" r="0.9" fill="currentColor"/></svg>
+            </sc-if>
+          </div>
+          <div style="font-size:18px; font-weight:800; color:{{statusColor}};">{{statusTitle}}</div>
+          <div style="background:rgba(255,255,255,0.6); color:{{statusColor}}; font-size:11.5px; font-weight:700; padding:5px 12px; border-radius:999px;">{{category}}</div>
+        </div>
+
+        <div style="display:flex; gap:12px;">
+          <div style="flex:1; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px; text-align:center;">
+            <div style="font-size:30px; font-weight:800; line-height:1;">{{muacValue}}</div>
+            <div style="font-size:12px; color:var(--ink-muted); font-weight:600; margin-top:6px;">Estimated MUAC</div>
+          </div>
+          <div style="flex:1; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px; display:flex; flex-direction:column; justify-content:center; gap:6px;">
+            <div style="display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink-muted);">
+              <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="5.6" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 16C3 12.5 5.5 10.5 9 10.5C12.5 10.5 15 12.5 15 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              10 yrs 7 mo · Female
+            </div>
+            <div style="display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink-muted);">
+              <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><rect x="3" y="12" width="12" height="3.2" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M9 12V4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="3.2" r="1.3" stroke="currentColor" stroke-width="1.6"/></svg>
+              24.5 kg
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:15px 16px; display:flex; align-items:flex-start; gap:10px;">
+          <div style="width:26px; height:26px; border-radius:999px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; color:var(--accent);">
+            <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M3 7V11H6L10 14.5V3.5L6 7H3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12.3 6.5C13.1 7.3 13.1 10.7 12.3 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div style="font-size:13.5px; line-height:1.55; color:var(--ink);">{{explainText}}</div>
+        </div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:2px 2px;">
+          <div style="font-size:12px; color:var(--ink-faint);">Saved · Just now</div>
+          <div onClick="{{goExplain}}" class="nv-tap" style="font-size:13px; font-weight:700; color:var(--accent);">Explain this result →</div>
+        </div>
+
+        <div onClick="{{goHome}}" class="nv-tap" style="background:var(--accent); color:#fff; border-radius:15px; padding:16px; text-align:center; font-weight:800; font-size:15px; margin-top:4px;">Done</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- =========================== EXPLAIN ================================ -->
+  <sc-if value="{{isExplain}}" hint-placeholder-val="{{false}}">
+    <div class="nv-scroll" style="flex:1; min-height:0; display:flex; flex-direction:column;">
+      <div style="display:flex; align-items:center; gap:12px; padding:18px 18px 6px;">
+        <div onClick="{{goResult}}" class="nv-tap" style="width:36px; height:36px; border-radius:10px; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M12.5 4L6.5 10L12.5 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="font-size:17px; font-weight:800;">How We Measured This</div>
+      </div>
+
+      <div style="padding:14px 18px 24px; display:flex; flex-direction:column; gap:18px;">
+
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--ink-muted); margin-bottom:10px;">MEASUREMENT POINTS</div>
+          <div style="position:relative; background:linear-gradient(160deg,#DCE9E6,#B9CFC9); border-radius:16px; height:190px; overflow:hidden;">
+            <svg width="80" height="160" viewBox="0 0 80 160" style="position:absolute; left:50%; top:14px; transform:translateX(-50%); opacity:0.85;">
+              <circle cx="40" cy="18" r="14" fill="#8FA6A0"/>
+              <path d="M40 32 L40 100 M40 45 L15 80 M40 45 L65 80" stroke="#8FA6A0" stroke-width="12" stroke-linecap="round"/>
+            </svg>
+            <circle cx="27" cy="70" r="4" fill="#2E9E5B" style="position:absolute;"></circle>
+            <div style="position:absolute; left:28%; top:39%; width:9px; height:9px; border-radius:999px; background:var(--good); border:2px solid #fff;"></div>
+            <div style="position:absolute; left:24%; top:44%; width:9px; height:9px; border-radius:999px; background:var(--good); border:2px solid #fff;"></div>
+            <div style="position:absolute; left:21%; top:49%; width:9px; height:9px; border-radius:999px; background:var(--amber); border:2px solid #fff;"></div>
+            <div style="position:absolute; left:19%; top:54%; width:9px; height:9px; border-radius:999px; background:var(--good); border:2px solid #fff;"></div>
+            <div style="position:absolute; left:17%; top:59%; width:9px; height:9px; border-radius:999px; background:var(--good); border:2px solid #fff;"></div>
+          </div>
+          <div style="font-size:13px; color:var(--ink-muted); line-height:1.5; margin-top:10px;">We measured the upper arm at 5 points. One point (amber) looked less reliable, so the others carried more weight.</div>
+        </div>
+
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--ink-muted); margin-bottom:10px;">CONFIDENCE RANGE</div>
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:18px 16px;">
+            <div style="position:relative; height:8px; border-radius:999px; background:#EEF1F0; margin:14px 0 10px;">
+              <div style="position:absolute; left:22%; right:30%; top:0; bottom:0; border-radius:999px; background:var(--accent-soft);"></div>
+              <div style="position:absolute; left:46%; top:-5px; width:18px; height:18px; border-radius:999px; background:var(--accent); border:3px solid #fff; box-shadow:var(--shadow);"></div>
+            </div>
+            <div style="font-size:13px; color:var(--ink); line-height:1.5;">We're confident the true value is between <strong>16.9–18.7 cm</strong>.</div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--ink-muted); margin-bottom:10px;">GROWTH CURVE PLACEMENT</div>
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px;">
+            <svg width="100%" height="130" viewBox="0 0 260 130" preserveAspectRatio="none">
+              <path d="M0 96 C 60 80, 130 60, 260 34" stroke="var(--accent-soft)" stroke-width="22" fill="none"/>
+              <path d="M0 96 C 60 80, 130 60, 260 34" stroke="var(--accent)" stroke-width="2" fill="none"/>
+              <path d="M0 118 C 60 102, 130 84, 260 60" stroke="#D8DFDD" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+              <path d="M0 62 C 60 50, 130 34, 260 10" stroke="#D8DFDD" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+              <circle cx="188" cy="52" r="6" fill="var(--ink)" stroke="#fff" stroke-width="2.5"/>
+            </svg>
+            <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--ink-faint); margin-top:2px;">
+              <span>Age →</span><span>MUAC (cm)</span>
+            </div>
+            <div style="font-size:13px; color:var(--ink); line-height:1.5; margin-top:10px;">This child (dark dot) sits close to the median line for their age and sex.</div>
+          </div>
+        </div>
+
+        <div onClick="{{goResult}}" class="nv-tap" style="background:var(--surface); border:1.5px solid var(--border); color:var(--ink); border-radius:15px; padding:15px; text-align:center; font-weight:700; font-size:14.5px; margin-top:2px;">Back to Result</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- =========================== HISTORY ================================ -->
+  <sc-if value="{{isHistory}}" hint-placeholder-val="{{false}}">
+    <div class="nv-scroll" style="flex:1; min-height:0; display:flex; flex-direction:column;">
+      <div style="display:flex; align-items:center; gap:12px; padding:18px 18px 6px;">
+        <div onClick="{{goHome}}" class="nv-tap" style="width:36px; height:36px; border-radius:10px; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M12.5 4L6.5 10L12.5 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="font-size:17px; font-weight:800;">Screening History</div>
+      </div>
+
+      <div style="padding:14px 18px 8px;">
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:13px; padding:11px 14px; display:flex; align-items:center; gap:9px; color:var(--ink-faint);">
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.2" stroke="currentColor" stroke-width="1.6"/><path d="M12 12L15.5 15.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span style="font-size:14px;">Search by name</span>
+        </div>
+      </div>
+
+      <div style="padding:8px 18px 4px; display:flex; gap:7px; flex-wrap:wrap;">
+        <div onClick="{{setHistAll}}" class="nv-tap" style="font-size:12px; font-weight:700; padding:6px 12px; border-radius:999px; background:{{fAllBg}}; color:{{fAllColor}};">All</div>
+        <div onClick="{{setHistHealthy}}" class="nv-tap" style="font-size:12px; font-weight:700; padding:6px 12px; border-radius:999px; background:{{fHealthyBg}}; color:{{fHealthyColor}};">Healthy</div>
+        <div onClick="{{setHistNotSure}}" class="nv-tap" style="font-size:12px; font-weight:700; padding:6px 12px; border-radius:999px; background:{{fNotSureBg}}; color:{{fNotSureColor}};">Not sure</div>
+        <div onClick="{{setHistRefer}}" class="nv-tap" style="font-size:12px; font-weight:700; padding:6px 12px; border-radius:999px; background:{{fReferBg}}; color:{{fReferColor}};">Refer</div>
+      </div>
+
+      <div style="padding:12px 18px 26px; display:flex; flex-direction:column; gap:9px;">
+        <div onClick="{{goDetail}}" class="nv-tap" style="background:var(--surface); border:1px solid var(--border); border-radius:15px; padding:12px 13px; display:flex; align-items:center; gap:11px;">
+          <div style="width:40px; height:40px; border-radius:11px; background:linear-gradient(135deg,#DCE9E6,#C7DAD6); flex-shrink:0;"></div>
+          <div style="flex:1; min-width:0;"><div style="font-size:14px; font-weight:700;">Aditi R.</div><div style="font-size:12px; color:var(--ink-muted);">10 yrs 7 mo · 3 weeks ago</div></div>
+          <div style="background:var(--good-soft); color:var(--good); font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px;">Healthy</div>
+        </div>
+        <div onClick="{{goDetail}}" class="nv-tap" style="background:var(--surface); border:1px solid var(--border); border-radius:15px; padding:12px 13px; display:flex; align-items:center; gap:11px;">
+          <div style="width:40px; height:40px; border-radius:11px; background:linear-gradient(135deg,#EFE3C9,#E4D2A8); flex-shrink:0;"></div>
+          <div style="flex:1; min-width:0;"><div style="font-size:14px; font-weight:700;">Karan M.</div><div style="font-size:12px; color:var(--ink-muted);">6 yrs 1 mo · 2 days ago</div></div>
+          <div style="background:var(--amber-soft); color:var(--amber); font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px;">Not sure</div>
+        </div>
+        <div onClick="{{goDetail}}" class="nv-tap" style="background:var(--surface); border:1px solid var(--border); border-radius:15px; padding:12px 13px; display:flex; align-items:center; gap:11px;">
+          <div style="width:40px; height:40px; border-radius:11px; background:linear-gradient(135deg,#F2D9D5,#E6BEB8); flex-shrink:0;"></div>
+          <div style="flex:1; min-width:0;"><div style="font-size:14px; font-weight:700;">Priya S.</div><div style="font-size:12px; color:var(--ink-muted);">14 yrs 2 mo · Today</div></div>
+          <div style="background:var(--red-soft); color:var(--red); font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px;">Refer</div>
+        </div>
+        <div onClick="{{goDetail}}" class="nv-tap" style="background:var(--surface); border:1px solid var(--border); border-radius:15px; padding:12px 13px; display:flex; align-items:center; gap:11px;">
+          <div style="width:40px; height:40px; border-radius:11px; background:linear-gradient(135deg,#D9E4EF,#BFD2E6); flex-shrink:0;"></div>
+          <div style="flex:1; min-width:0;"><div style="font-size:14px; font-weight:700;">Rohan T.</div><div style="font-size:12px; color:var(--ink-muted);">8 yrs 4 mo · 1 week ago</div></div>
+          <div style="background:var(--good-soft); color:var(--good); font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px;">Healthy</div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ===================== SCREENING DETAIL (reopened) =================== -->
+  <sc-if value="{{isDetail}}" hint-placeholder-val="{{false}}">
+    <div class="nv-scroll" style="flex:1; min-height:0; display:flex; flex-direction:column;">
+      <div style="display:flex; align-items:center; gap:12px; padding:18px 18px 6px;">
+        <div onClick="{{goHistory}}" class="nv-tap" style="width:36px; height:36px; border-radius:10px; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M12.5 4L6.5 10L12.5 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="font-size:17px; font-weight:800;">Saved Record</div>
+      </div>
+
+      <div style="padding:12px 18px 24px; display:flex; flex-direction:column; gap:14px;">
+
+        <div style="display:flex; align-items:center; gap:7px; background:#EEF1F0; color:var(--ink-muted); border-radius:11px; padding:9px 12px; font-size:12px;">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M10 5.6V10L13 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Measured 3 weeks ago — used an earlier version of the app
+        </div>
+
+        <div style="background:var(--good-soft); border-radius:20px; padding:22px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;">
+          <div style="width:52px; height:52px; border-radius:999px; background:rgba(255,255,255,0.6); display:flex; align-items:center; justify-content:center; color:var(--good);">
+            <svg width="26" height="26" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M7.2 11.3L9.7 13.8L14.8 8.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="font-size:18px; font-weight:800; color:var(--good);">Healthy — no referral needed</div>
+          <div style="background:rgba(255,255,255,0.6); color:var(--good); font-size:11.5px; font-weight:700; padding:5px 12px; border-radius:999px;">Normal</div>
+        </div>
+
+        <div style="display:flex; gap:12px;">
+          <div style="flex:1; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px; text-align:center;">
+            <div style="font-size:30px; font-weight:800;">19.1 cm</div>
+            <div style="font-size:12px; color:var(--ink-muted); font-weight:600; margin-top:6px;">Estimated MUAC</div>
+          </div>
+          <div style="flex:1; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:16px; display:flex; flex-direction:column; justify-content:center; gap:6px;">
+            <div style="font-size:12.5px; color:var(--ink-muted);">Aditi R.</div>
+            <div style="font-size:12.5px; color:var(--ink-muted);">10 yrs 7 mo · Female</div>
+            <div style="font-size:12.5px; color:var(--ink-muted);">24.1 kg</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px;">
+          <div class="nv-tap" style="flex:1; background:var(--surface); border:1.5px solid var(--border); color:var(--ink); border-radius:14px; padding:13px; text-align:center; font-weight:700; font-size:13.5px;">Edit</div>
+          <div class="nv-tap" style="flex:1; background:var(--surface); border:1.5px solid var(--red); color:var(--red); border-radius:14px; padding:13px; text-align:center; font-weight:700; font-size:13.5px;">Delete</div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ========================== SETTINGS ================================ -->
+  <sc-if value="{{isSettings}}" hint-placeholder-val="{{false}}">
+    <div class="nv-scroll" style="flex:1; min-height:0; display:flex; flex-direction:column;">
+      <div style="display:flex; align-items:center; gap:12px; padding:18px 18px 6px;">
+        <div onClick="{{goHome}}" class="nv-tap" style="width:36px; height:36px; border-radius:10px; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M12.5 4L6.5 10L12.5 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="font-size:17px; font-weight:800;">Settings</div>
+      </div>
+
+      <div style="padding:14px 18px 24px; display:flex; flex-direction:column; gap:18px;">
+
+        <div style="display:flex; flex-direction:column; gap:1px; background:var(--border); border-radius:15px; overflow:hidden; border:1px solid var(--border);">
+          <div onClick="{{cycleLang}}" class="nv-tap" style="background:var(--surface); padding:15px 16px; display:flex; align-items:center; justify-content:between; justify-content:space-between;">
+            <span style="font-size:14.5px; font-weight:600;">Language</span>
+            <span style="font-size:13.5px; color:var(--accent); font-weight:700;">{{settingsLang}} →</span>
+          </div>
+          <div style="background:var(--surface); padding:15px 16px; display:flex; align-items:center; justify-content:space-between;">
+            <span style="font-size:14.5px; font-weight:600;">Units</span>
+            <span style="font-size:13.5px; color:var(--ink-faint); font-weight:600;">Metric (cm, kg)</span>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:12px; font-weight:700; color:var(--ink-muted); margin-bottom:9px;">DATA &amp; STORAGE</div>
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:15px; padding:15px 16px; display:flex; align-items:center; justify-content:space-between;">
+            <span style="font-size:13.5px; color:var(--ink-muted);">12 records · 3.4 MB used</span>
+            <span style="font-size:13px; font-weight:700; color:var(--red);">Clear data</span>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:12px; font-weight:700; color:var(--ink-muted); margin-bottom:9px;">ABOUT</div>
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:15px; padding:16px; display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; justify-content:space-between; font-size:13.5px;"><span style="color:var(--ink-muted);">Version</span><span style="font-weight:600;">1.0.0</span></div>
+            <div style="font-size:12.5px; color:var(--ink-muted); line-height:1.5;">Estimation model: photo + age + sex + weight. No height measurement required.</div>
+            <div style="height:1px; background:var(--border);"></div>
+            <div style="font-size:12px; color:var(--ink-faint); line-height:1.6;">NutriVision is a screening aid to help prioritize follow-up. It does not replace clinical diagnosis or a manual measurement.</div>
+          </div>
+        </div>
+
+        <div class="nv-tap" style="background:var(--surface); border:1px solid var(--border); border-radius:15px; padding:15px 16px; text-align:center; font-weight:700; font-size:13.5px; color:var(--ink);">Help / How to Use</div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{"accentColor":{"editor":"color","default":"#2C7A6E","options":["#2C7A6E","#3B6FB0","#6B5FA8"]}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      screen: 'home',
+      sex: null,
+      cameraDemo: 'good',
+      resultDemo: 'healthy',
+      historyFilter: 'all',
+      settingsLang: 'English'
+    };
+  }
+
+  go(screen) { this.setState({ screen: screen }); }
+
+  renderVals() {
+    const s = this.state;
+    const self = this;
+
+    function chip(active, activeBg, activeColor) {
+      return active
+        ? { bg: activeBg, color: '#fff' }
+        : { bg: '#EEF1F0', color: '#5B6D69' };
+    }
+
+    const male = chip(s.sex === 'male', '#2C7A6E', '#fff');
+    const female = chip(s.sex === 'female', '#2C7A6E', '#fff');
+
+    const camGoodPv = chip(s.cameraDemo === 'good', '#2E9E5B', '#fff');
+    const camBlurPv = chip(s.cameraDemo === 'blur', '#C4453B', '#fff');
+    const camDarkPv = chip(s.cameraDemo === 'dark', '#C4453B', '#fff');
+    const camFramingPv = chip(s.cameraDemo === 'framing', '#C4453B', '#fff');
+
+    const sharpOk = s.cameraDemo !== 'blur';
+    const lightOk = s.cameraDemo !== 'dark';
+    const frameOk = s.cameraDemo !== 'framing';
+
+    let fixHint = '';
+    if (s.cameraDemo === 'blur') fixHint = 'Hold the phone steady for a moment.';
+    if (s.cameraDemo === 'dark') fixHint = 'Too dark — try facing a window.';
+    if (s.cameraDemo === 'framing') fixHint = 'Stand back so the whole child is visible.';
+
+    let statusColor = '#2E9E5B', statusBg = '#E5F5EA', statusIconBg = 'rgba(255,255,255,0.6)';
+    let statusTitle = 'Healthy — no referral needed', category = 'Normal', muacValue = '19.4 cm';
+    let explainText = "This child's arm measurement is typical for their age and sex.";
+    if (s.resultDemo === 'notsure') {
+      statusColor = '#B9820A'; statusBg = '#FBF3DE'; statusTitle = 'Not sure — measure by hand';
+      category = 'At Risk'; muacValue = '15.9 cm';
+      explainText = "This measurement is close to the line — please confirm with a manual MUAC tape.";
+    }
+    if (s.resultDemo === 'refer') {
+      statusColor = '#C4453B'; statusBg = '#FBEAE8'; statusTitle = 'Refer for further assessment';
+      category = 'Moderate'; muacValue = '13.6 cm';
+      explainText = "This child's arm is smaller than expected for their age — please arrange a follow-up.";
+    }
+
+    const pvHealthy = chip(s.resultDemo === 'healthy', '#2E9E5B', '#fff');
+    const pvNotSure = chip(s.resultDemo === 'notsure', '#B9820A', '#fff');
+    const pvRefer = chip(s.resultDemo === 'refer', '#C4453B', '#fff');
+
+    const fAll = chip(s.historyFilter === 'all', '#2C7A6E', '#fff');
+    const fHealthy = chip(s.historyFilter === 'healthy', '#2E9E5B', '#fff');
+    const fNotSure = chip(s.historyFilter === 'notsure', '#B9820A', '#fff');
+    const fRefer = chip(s.historyFilter === 'refer', '#C4453B', '#fff');
+
+    return {
+      accentColor: this.props.accentColor || '#2C7A6E',
+
+      isHome: s.screen === 'home',
+      isChildInfo: s.screen === 'childInfo',
+      isCamera: s.screen === 'camera',
+      isProcessing: s.screen === 'processing',
+      isCannotAssess: s.screen === 'cannotAssess',
+      isResult: s.screen === 'result',
+      isExplain: s.screen === 'explain',
+      isHistory: s.screen === 'history',
+      isDetail: s.screen === 'detail',
+      isSettings: s.screen === 'settings',
+
+      goHome: function () { self.go('home'); },
+      goNewScreening: function () { self.setState({ screen: 'childInfo', sex: null }); },
+      goChildInfo: function () { self.go('childInfo'); },
+      goCamera: function () { self.go('camera'); },
+      goCannotAssess: function () { self.go('cannotAssess'); },
+      goResult: function () { self.go('result'); },
+      goExplain: function () { self.go('explain'); },
+      goHistory: function () { self.go('history'); },
+      goDetail: function () { self.go('detail'); },
+      goSettings: function () { self.go('settings'); },
+
+      pickMale: function () { self.setState({ sex: 'male' }); },
+      pickFemale: function () { self.setState({ sex: 'female' }); },
+      maleBg: male.bg, maleColor: male.color, maleBorder: s.sex === 'male' ? '#2C7A6E' : '#E4EAE8',
+      femaleBg: female.bg, femaleColor: female.color, femaleBorder: s.sex === 'female' ? '#2C7A6E' : '#E4EAE8',
+      continueBg: s.sex ? '#2C7A6E' : '#B7C4C0',
+      goCameraIfReady: function () { if (s.sex) self.go('camera'); },
+
+      setCamGood: function () { self.setState({ cameraDemo: 'good' }); },
+      setCamBlur: function () { self.setState({ cameraDemo: 'blur' }); },
+      setCamDark: function () { self.setState({ cameraDemo: 'dark' }); },
+      setCamFraming: function () { self.setState({ cameraDemo: 'framing' }); },
+      demoGoodBg: camGoodPv.bg, demoGoodColor: camGoodPv.color,
+      demoBlurBg: camBlurPv.bg, demoBlurColor: camBlurPv.color,
+      demoDarkBg: camDarkPv.bg, demoDarkColor: camDarkPv.color,
+      demoFramingBg: camFramingPv.bg, demoFramingColor: camFramingPv.color,
+
+      sharpDot: sharpOk ? '#4CC57F' : '#E77268',
+      sharpLabel: sharpOk ? 'Sharp' : 'Too blurry',
+      lightDot: lightOk ? '#4CC57F' : '#E77268',
+      lightLabel: lightOk ? 'Good light' : 'Too dark',
+      frameDot: frameOk ? '#4CC57F' : '#E77268',
+      frameLabel: frameOk ? 'Well framed' : 'Stand back — move into frame',
+      camNotGood: s.cameraDemo !== 'good',
+      fixHint: fixHint,
+      shutterRing: s.cameraDemo === 'good' ? '#fff' : 'rgba(255,255,255,0.35)',
+      shutterFill: s.cameraDemo === 'good' ? '#fff' : 'rgba(255,255,255,0.35)',
+      capture: function () { if (s.cameraDemo === 'good') self.go('processing'); },
+
+      resultHealthy: s.resultDemo === 'healthy',
+      resultNotSure: s.resultDemo === 'notsure',
+      resultRefer: s.resultDemo === 'refer',
+      setResultHealthy: function () { self.setState({ resultDemo: 'healthy' }); },
+      setResultNotSure: function () { self.setState({ resultDemo: 'notsure' }); },
+      setResultRefer: function () { self.setState({ resultDemo: 'refer' }); },
+      pvHealthyBg: pvHealthy.bg, pvHealthyColor: pvHealthy.color,
+      pvNotSureBg: pvNotSure.bg, pvNotSureColor: pvNotSure.color,
+      pvReferBg: pvRefer.bg, pvReferColor: pvRefer.color,
+      statusColor: statusColor, statusBg: statusBg, statusIconBg: statusIconBg,
+      statusTitle: statusTitle, category: category, muacValue: muacValue, explainText: explainText,
+
+      setHistAll: function () { self.setState({ historyFilter: 'all' }); },
+      setHistHealthy: function () { self.setState({ historyFilter: 'healthy' }); },
+      setHistNotSure: function () { self.setState({ historyFilter: 'notsure' }); },
+      setHistRefer: function () { self.setState({ historyFilter: 'refer' }); },
+      fAllBg: fAll.bg, fAllColor: fAll.color,
+      fHealthyBg: fHealthy.bg, fHealthyColor: fHealthy.color,
+      fNotSureBg: fNotSure.bg, fNotSureColor: fNotSure.color,
+      fReferBg: fRefer.bg, fReferColor: fRefer.color,
+
+      settingsLang: s.settingsLang,
+      cycleLang: function () {
+        const order = ['English', 'Hindi', 'Kannada'];
+        const i = order.indexOf(s.settingsLang);
+        self.setState({ settingsLang: order[(i + 1) % order.length] });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

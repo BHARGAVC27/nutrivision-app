@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Nutrivison_App",
+    "name": "NutriVision",
     "slug": "Nutrivison_App",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,16 +8,25 @@
     "scheme": "nutrivisonapp",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.nutrivision.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "NutriVision uses the camera to photograph a child for mid-upper-arm circumference screening."
+      }
     },
     "android": {
+      "package": "com.nutrivision.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#F6F1E7",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "predictiveBackGestureEnabled": false,
+      "versionCode": 1
     },
     "web": {
       "output": "static",
@@ -28,11 +37,15 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#F6F1E7",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
-      ]
+      ],
+      "./plugins/with-nutrivision-assets.js",
+      "expo-sharing",
+      "./plugins/with-cmake-version.js",
+      "./plugins/with-release-signing.js"
     ],
     "experiments": {
       "typedRoutes": true,
