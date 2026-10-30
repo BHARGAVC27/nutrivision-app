@@ -52,3 +52,9 @@ credentials/
 # Gradle output of the local Expo module
 modules/*/android/build/
 modules/*/android/.cxx/
+
+# Versioned APK copies (see README, Shipping a build)
+/releases/
+
+# Gradle cache of the local Expo module
+modules/*/android/.gradle/

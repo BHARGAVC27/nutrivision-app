@@ -20,7 +20,7 @@ const MIN_STAGE_MS = 450;
 
 export default function ProcessingScreen() {
   const router = useRouter();
-  const { L, E, draft, setOutcome, setViewingId } = useApp();
+  const { L, E, X, draft, setOutcome, setViewingId } = useApp();
   const [done, setDone] = useState(0);
   const [failed, setFailed] = useState<string | null>(null);
   const started = useRef(false);
@@ -73,7 +73,7 @@ export default function ProcessingScreen() {
   const labels = [L.proc1, L.proc2, L.proc3];
 
   return (
-    <Screen title={L.proc_h} subtitle="Step 3 of 3" canGoBack={false} contentStyle={styles.content}>
+    <Screen title={L.proc_h} subtitle={X.step(3, 3)} canGoBack={false} contentStyle={styles.content}>
       <Text style={styles.h1}>{L.proc_h}</Text>
       {!!E.proc_h && <Text style={styles.h1En}>{E.proc_h}</Text>}
       <Text style={styles.body}>{L.proc_s}</Text>

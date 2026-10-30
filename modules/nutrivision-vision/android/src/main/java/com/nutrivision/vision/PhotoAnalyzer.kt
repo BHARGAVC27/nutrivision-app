@@ -19,21 +19,54 @@ import java.io.IOException
 object PhotoAnalyzer {
 
   /**
-   * Safety net against OOM on very large captures. The photo output requests a
-   * ~1920px-wide still, so this normally does not trigger; if a device hands
-   * back something much larger, subsampling keeps the decode bounded. Note that
-   * variance-of-the-Laplacian is resolution dependent, so a subsampled decode
-   * would shift the blur score.
+   * Every analyzed still is normalized to this long edge before scoring. The
+   * camera capture path already targets ~1920px for exactly this reason (see
+   * capture.tsx), and the blur threshold in `src/quality/gate.ts` (29.44) is
+   * calibrated against images at that scale — variance-of-the-Laplacian is
+   * resolution dependent, so a gallery photo at its native resolution (often
+   * 4000px+) would score very differently for the same real sharpness.
+   * Downscaling only (never up) keeps this a normalization, not an upscale
+   * blur-hiding trick.
    */
-  private const val MAX_LONG_EDGE = 2048
+  private const val TARGET_LONG_EDGE = 1920
+
+  /** Safety net against OOM decoding a very large gallery photo, ahead of the precise resize to TARGET_LONG_EDGE above. */
+  private const val DECODE_MAX_LONG_EDGE = 3072
+
+  /**
+   * The Stage 1 pixel checks (blur, brightness) run on the photo as it is,
+   * up to this long edge. `tools/stage1_quality_gate.py` read every training
+   * photo with `cv2.imread` and never resized it, and the 29.44 blur threshold
+   * was tuned on those native-resolution scores. Variance-of-the-Laplacian
+   * falls as an image is downscaled, so scoring a shrunken copy against the
+   * same number rejects sharp photos the desktop gate would accept. A camera
+   * still is captured at 1920px (capture.tsx), so for it "native" is 1920 and
+   * this changes nothing; a gallery photo keeps its own resolution. 4096 is a
+   * memory bound (a 12 MP bitmap is ~50 MB), not a normalisation.
+   */
+  private const val NATIVE_MAX_LONG_EDGE = 4096
 
   fun analyze(detector: PoseDetector, path: String): Map<String, Any> {
-    val bitmap = loadUpright(path)
+    val file = File(path)
+    if (!file.exists()) {
+      throw IllegalArgumentException("No photo at $path")
+    }
+    val native = applyExifRotation(
+      file,
+      decodeBounded(path, NATIVE_MAX_LONG_EDGE) ?: throw IllegalStateException("Could not decode photo at $path")
+    )
+    val blurLongEdge = maxOf(native.width, native.height)
+    val gray = ImageMath.bitmapToGray(native)
+    val blurScore = ImageMath.laplacianVariance(gray, native.width, native.height)
+    val brightness = ImageMath.brightness(gray)
+
+    // Framing is judged on the same normalised image Stage 2 measures on.
+    val bitmap = normalizeScale(native)
     try {
-      val gray = ImageMath.bitmapToGray(bitmap)
       return mapOf(
-        "blurScore" to ImageMath.laplacianVariance(gray, bitmap.width, bitmap.height),
-        "brightness" to ImageMath.brightness(gray),
+        "blurScore" to blurScore,
+        "brightness" to brightness,
+        "blurLongEdge" to blurLongEdge,
         "width" to bitmap.width,
         "height" to bitmap.height,
         "landmarks" to detector.detect(bitmap).toList()
@@ -49,18 +82,18 @@ object PhotoAnalyzer {
     if (!file.exists()) {
       throw IllegalArgumentException("No photo at $path")
     }
-    val bitmap = decodeBounded(path)
+    val bitmap = decodeBounded(path, DECODE_MAX_LONG_EDGE)
       ?: throw IllegalStateException("Could not decode photo at $path")
-    return applyExifRotation(file, bitmap)
+    return normalizeScale(applyExifRotation(file, bitmap))
   }
 
-  private fun decodeBounded(path: String): Bitmap? {
+  private fun decodeBounded(path: String, maxLongEdge: Int): Bitmap? {
     val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
     BitmapFactory.decodeFile(path, bounds)
 
     var sampleSize = 1
     val longEdge = maxOf(bounds.outWidth, bounds.outHeight)
-    while (longEdge / sampleSize > MAX_LONG_EDGE) {
+    while (longEdge / sampleSize > maxLongEdge) {
       sampleSize *= 2
     }
 
@@ -71,6 +104,18 @@ object PhotoAnalyzer {
         inPreferredConfig = Bitmap.Config.ARGB_8888
       }
     )
+  }
+
+  /** Resizes down to TARGET_LONG_EDGE, preserving aspect ratio. A source already at or below that scale is left alone. */
+  private fun normalizeScale(bitmap: Bitmap): Bitmap {
+    val longEdge = maxOf(bitmap.width, bitmap.height)
+    if (longEdge <= TARGET_LONG_EDGE) return bitmap
+    val scale = TARGET_LONG_EDGE.toFloat() / longEdge
+    val targetW = (bitmap.width * scale).toInt().coerceAtLeast(1)
+    val targetH = (bitmap.height * scale).toInt().coerceAtLeast(1)
+    val resized = Bitmap.createScaledBitmap(bitmap, targetW, targetH, true)
+    if (resized !== bitmap) bitmap.recycle()
+    return resized
   }
 
   /**

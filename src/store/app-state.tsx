@@ -3,9 +3,10 @@ import * as Speech from 'expo-speech';
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 
 import { BLANK, DEFAULT_LANG, EXTRA, STR, type Extra, type LangCode, type Strings } from '@/i18n/strings';
+import type { Diet } from '@/nutrition/plan';
 import type { ScreeningOutcome } from '@/pipeline/run';
 import type { Sex } from '@/pipeline/zscore';
-import { byNewest, loadRecords, newRecordId, saveRecords, type ScreeningRecord } from '@/store/records';
+import { byNewest, loadRecords, newRecordId, persistPhoto, saveRecords, type ScreeningRecord } from '@/store/records';
 
 /**
  * App-wide state: language and audio settings, the on-phone register, and
@@ -22,9 +23,11 @@ export type Draft = {
   weight: string;
   /** Temporary file of the accepted still, until saved or discarded. */
   photoPath: string | null;
+  /** Optional, only used by the food plan; null = not asked. */
+  diet: Diet | null;
 };
 
-const DEFAULT_DRAFT: Draft = { name: '', ageMonths: 24, sex: 'F', weight: '', photoPath: null };
+const DEFAULT_DRAFT: Draft = { name: '', ageMonths: 24, sex: 'F', weight: '', photoPath: null, diet: null };
 
 type Settings = { lang: LangCode; audio: boolean };
 
@@ -44,7 +47,8 @@ type AppState = {
   say: (text: string) => void;
 
   records: ScreeningRecord[];
-  addRecord: (r: Omit<ScreeningRecord, 'id' | 'createdAt'>) => ScreeningRecord;
+  /** `photoPath` is the still's current (temporary) location; it is moved into permanent storage before the record is written. */
+  addRecord: (r: Omit<ScreeningRecord, 'id' | 'createdAt' | 'photoPath'> & { photoPath: string | null }) => ScreeningRecord;
   deleteRecord: (id: string) => void;
   clearRecords: () => void;
 
@@ -147,11 +151,27 @@ export function AppProvider({ children }: { children: ReactNode }) {
     [settings.audio, L.code]
   );
 
-  const addRecord = useCallback((r: Omit<ScreeningRecord, 'id' | 'createdAt'>) => {
-    const record: ScreeningRecord = { ...r, id: newRecordId(), createdAt: new Date().toISOString() };
+  /**
+   * Writes the register, never throwing out of a state updater: a failed write
+   * (disk full) is logged and the in-memory list stays intact, so the next
+   * successful save — which always writes the whole list — catches up.
+   */
+  const persist = (next: ScreeningRecord[]) => {
+    try {
+      saveRecords(next);
+    } catch (e) {
+      console.error('[records] save failed; records kept in memory', e);
+    }
+  };
+
+  const addRecord = useCallback((r: Omit<ScreeningRecord, 'id' | 'createdAt' | 'photoPath'> & { photoPath: string | null }) => {
+    const { photoPath: tempPhotoPath, ...rest } = r;
+    const id = newRecordId();
+    const photoPath = tempPhotoPath ? persistPhoto(tempPhotoPath, id) : null;
+    const record: ScreeningRecord = { ...rest, id, createdAt: new Date().toISOString(), photoPath };
     setRecords((prev) => {
       const next = [record, ...prev];
-      saveRecords(next);
+      persist(next);
       return next;
     });
     return record;
@@ -159,15 +179,17 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   const deleteRecord = useCallback((id: string) => {
     setRecords((prev) => {
+      discardPhoto(prev.find((r) => r.id === id)?.photoPath);
       const next = prev.filter((r) => r.id !== id);
-      saveRecords(next);
+      persist(next);
       return next;
     });
   }, []);
 
   const clearRecords = useCallback(() => {
-    setRecords(() => {
-      saveRecords([]);
+    setRecords((prev) => {
+      prev.forEach((r) => discardPhoto(r.photoPath));
+      persist([]);
       return [];
     });
   }, []);

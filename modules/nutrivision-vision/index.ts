@@ -2,8 +2,12 @@ import { NativeModule, requireNativeModule } from 'expo';
 
 /** Raw measurements for a captured still. No thresholds applied — see `gate.ts`. */
 export type PhotoAnalysis = {
+  /** Measured on the photo at its own resolution (up to 4096px), as the desktop gate did — see PhotoAnalyzer.kt. */
   blurScore: number;
   brightness: number;
+  /** Long edge, in pixels, of the image `blurScore` was measured on. */
+  blurLongEdge: number;
+  /** Dimensions of the normalised (≤1920px) image the landmarks refer to. */
   width: number;
   height: number;
   /** Flat `[x, y, visibility, ...]`; empty when no person was detected. */
@@ -86,6 +90,8 @@ declare class NutriVisionVisionModule extends NativeModule {
 
   /** Runs all three Stage 1 measurements on a captured still. */
   analyzePhoto(path: string): Promise<PhotoAnalysis>;
+  /** BCP-47 tags the phone's TTS engine can speak with no network and with voice data installed. */
+  offlineVoiceLanguages(): Promise<string[]>;
 
   /** Runs Stage 2 (pose, mask, arm profile, skin score) on a captured still. */
   measurePhoto(path: string): Promise<PhotoMeasurement>;

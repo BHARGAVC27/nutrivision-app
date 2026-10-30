@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import type { LangCode, Strings } from '@/i18n/strings';
 import type { DecisionKey } from '@/pipeline/decide';
 import type { ScreeningRecord } from '@/store/records';
-import { PhotoPlaceholder } from '@/ui/primitives';
+import { PhotoThumb } from '@/ui/primitives';
 import { colors, decisionColors, fonts, radius } from '@/ui/theme';
 
 /** Pill label for a decision, in the current language. */
@@ -29,10 +29,10 @@ export function formatWhen(iso: string, lang: LangCode, withYear = false): strin
 export function RecordRow({ record, L, lang, onPress }: { record: ScreeningRecord; L: Strings; lang: LangCode; onPress: () => void }) {
   const b = badgeFor(record.result.decision, L);
   const name = record.name.trim() || '—';
-  const meta = `${record.ageMonths} mo · ${record.sex === 'F' ? L.girl : L.boy} · ${formatWhen(record.createdAt, lang)}`;
+  const meta = `${record.ageMonths} ${L.months} · ${record.sex === 'F' ? L.girl : L.boy} · ${formatWhen(record.createdAt, lang)}`;
   return (
     <Pressable accessibilityRole="button" onPress={onPress} style={({ pressed }) => [styles.row, pressed && styles.rowPressed]}>
-      <PhotoPlaceholder size={46} />
+      <PhotoThumb path={record.photoPath} size={46} />
       <View style={styles.text}>
         <Text style={styles.name} numberOfLines={1}>{name}</Text>
         <Text style={styles.meta} numberOfLines={1}>{meta}</Text>

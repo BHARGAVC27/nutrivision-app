@@ -2,17 +2,25 @@ import Slider from '@react-native-community/slider';
 import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
+import type { Diet } from '@/nutrition/plan';
 import { MACZ_MAX_MONTHS, MACZ_MIN_MONTHS, waz } from '@/pipeline/zscore';
 import { useApp } from '@/store/app-state';
 import { Btn, Card, Note, SpeakButton } from '@/ui/primitives';
 import { Screen } from '@/ui/screen';
 import { colors, fonts, radius } from '@/ui/theme';
 
-/** Step 1 of 3 — age, sex, weight, optional name. No height: by design. */
+/** Step 1 of 3 — age, sex, optional diet, weight, optional name. No height: by design. */
 
 const AGE_SLIDER_MIN = 1;
 const AGE_SLIDER_MAX = 240;
 const KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0', '⌫'];
+
+/** The optional diet answer, used only by the food plan. */
+const DIETS: [Diet, 'd_veg' | 'd_egg' | 'd_nonveg'][] = [
+  ['veg', 'd_veg'],
+  ['egg', 'd_egg'],
+  ['nonveg', 'd_nonveg'],
+];
 
 /** Weight is plausible for a person at all; the reference check below is the softer one. */
 const WEIGHT_HARD_MIN_KG = 2;
@@ -23,7 +31,7 @@ const WEIGHT_WARN_Z = 5;
 export default function InfoScreen() {
   const router = useRouter();
   const { L, E, X, say, draft, updateDraft } = useApp();
-  const { ageMonths, sex, weight, name } = draft;
+  const { ageMonths, sex, weight, name, diet } = draft;
 
   const w = parseFloat(weight);
   const weightOk = Number.isFinite(w) && w >= WEIGHT_HARD_MIN_KG && w <= WEIGHT_HARD_MAX_KG;
@@ -44,7 +52,7 @@ export default function InfoScreen() {
   };
 
   return (
-    <Screen title={L.info_h} subtitle="Step 1 of 3" contentStyle={styles.content}>
+    <Screen title={L.info_h} subtitle={X.step(1, 3)} contentStyle={styles.content}>
       <View style={styles.headRow}>
         <View style={{ flex: 1 }}>
           <Text style={styles.h1}>{L.info_h}</Text>
@@ -86,7 +94,7 @@ export default function InfoScreen() {
         <View style={styles.jumps}>
           {[-12, -6, 6, 12].map((n) => (
             <Pressable key={n} accessibilityRole="button" onPress={() => setAge(ageMonths + n)} style={({ pressed }) => [styles.jump, pressed && styles.pressed]}>
-              <Text style={styles.jumpText}>{n > 0 ? `+${n}` : n} mo</Text>
+              <Text style={styles.jumpText}>{n > 0 ? `+${n}` : n} {L.months}</Text>
             </Pressable>
           ))}
         </View>
@@ -96,7 +104,7 @@ export default function InfoScreen() {
               <Text style={styles.warnIconRed}>!</Text>
               <Text style={styles.warnTitleRed}>{L.age_range}</Text>
             </View>
-            <Text style={styles.warnBodyRed}>Validated for 3 months to 19 years (3–228 months).</Text>
+            <Text style={styles.warnBodyRed}>{L.age_range_s}</Text>
           </Note>
         )}
       </Card>
@@ -106,6 +114,17 @@ export default function InfoScreen() {
         <View style={styles.sexRow}>
           <Toggle label={L.boy} on={sex === 'M'} onPress={() => updateDraft({ sex: 'M' })} />
           <Toggle label={L.girl} on={sex === 'F'} onPress={() => updateDraft({ sex: 'F' })} />
+        </View>
+      </Card>
+
+      <Card style={styles.card}>
+        <Text style={styles.label}>{L.diet}</Text>
+        <Text style={styles.hint}>{X.diet_s}</Text>
+        <View style={styles.dietCol}>
+          {DIETS.map(([d, key]) => (
+            // Tapping the selected answer again clears it: the question is optional.
+            <Toggle key={d} label={L[key]} on={diet === d} compact onPress={() => updateDraft({ diet: diet === d ? null : d })} />
+          ))}
         </View>
       </Card>
 
@@ -171,10 +190,14 @@ export default function InfoScreen() {
   );
 }
 
-function Toggle({ label, on, onPress }: { label: string; on: boolean; onPress: () => void }) {
+function Toggle({ label, on, compact, onPress }: { label: string; on: boolean; compact?: boolean; onPress: () => void }) {
   return (
-    <Pressable accessibilityRole="button" accessibilityState={{ selected: on }} onPress={onPress} style={[styles.toggle, on && styles.toggleOn]}>
-      <Text style={[styles.toggleText, on && styles.toggleTextOn]}>{label}</Text>
+    <Pressable
+      accessibilityRole="button"
+      accessibilityState={{ selected: on }}
+      onPress={onPress}
+      style={[styles.toggle, compact && styles.toggleCompact, on && styles.toggleOn]}>
+      <Text style={[styles.toggleText, compact && styles.toggleTextCompact, on && styles.toggleTextOn]}>{label}</Text>
     </Pressable>
   );
 }
@@ -212,6 +235,10 @@ const styles = StyleSheet.create({
   toggleOn: { backgroundColor: colors.ink },
   toggleText: { fontFamily: fonts.sansSemi, fontSize: 17, color: colors.ink },
   toggleTextOn: { color: colors.surface },
+  toggleCompact: { flex: 0, minHeight: 52 },
+  toggleTextCompact: { fontSize: 16 },
+  hint: { fontFamily: fonts.sans, fontSize: 13, lineHeight: 19, color: colors.mutedWarm, marginTop: 3 },
+  dietCol: { gap: 8, marginTop: 10 },
   weightDisplay: { marginTop: 8, borderBottomWidth: 2, borderBottomColor: colors.ink, paddingBottom: 8, flexDirection: 'row', alignItems: 'baseline', gap: 8 },
   weightNumber: { fontFamily: fonts.serifSemi, fontSize: 44, lineHeight: 46, letterSpacing: -1.3, color: colors.ink, includeFontPadding: false },
   weightUnit: { fontFamily: fonts.sans, fontSize: 18, color: colors.muted2 },

@@ -23,6 +23,16 @@ npx expo prebuild --platform android
 npx expo run:android          # needs the emulator (Medium_Phone_API_36.1) or a device
 ```
 
+**A JDK 17–23 must be installed** — JDK 24+ breaks the NDK configure step
+(AGP treats the JDK-24 "restricted method" warning the prefab helper prints on
+stderr as a failure; every `configureCMake*[abi]` task for worklets,
+nitro-modules and screens fails with only that warning as the message).
+`plugins/with-build-props.js` finds one on each prebuild — `JAVA_HOME`, then
+`~/.gradle/jdks`, then the usual install folders — and pins it as
+`org.gradle.java.home` in `android/gradle.properties`; set `NUTRIVISION_JDK`
+to choose explicitly. The same plugin turns on R8 and resource shrinking for
+release builds.
+
 **CMake 3.31.6 must be installed in the SDK** (`sdkmanager "cmake;3.31.6"`).
 This folder is 59 characters deep, and the NDK builds of the Nitro-based
 libraries (nitro-image, VisionCamera) generate `.cxx` prefab paths that reach
@@ -70,7 +80,16 @@ cd android
 `arm64-v8a` covers every Android phone sold in the last several years; add
 `armeabi-v7a` to the list for very old 32-bit handsets, `x86_64` for the
 emulator. Bump `expo.version` and `expo.android.versionCode` in `app.json`
-before each release. The dev-only route (`/dev`) and the raw failure codes on
+before each release, and copy the APK into `releases/` (git-ignored) with the
+version in its name — Gradle overwrites `app/build/outputs/` on every build,
+including builds for a different ABI.
+
+The release manifest blocks `INTERNET`, `ACCESS_NETWORK_STATE`, `RECORD_AUDIO`
+and `SYSTEM_ALERT_WINDOW` (`android.blockedPermissions` in `app.json`), which
+React Native and VisionCamera would otherwise add. The app has no network
+code; blocking the permission makes "nothing leaves the phone" something
+Android enforces rather than something we promise. Check with
+`aapt2 dump badging <apk> | grep uses-permission` after a build. The dev-only route (`/dev`) and the raw failure codes on
 the cannot-assess screen are compiled out of release builds.
 
 Not covered here: a Play Store listing (developer account, privacy policy
@@ -89,9 +108,12 @@ native module is Android-only.
 | Explain this result | `src/app/explain.tsx` | where the arm was read, the range, the growth curve |
 | History, Settings | `src/app/history.tsx`, `src/app/settings.tsx` | register with filters; language, audio, export / clear, about |
 
-The photo is a temporary file and is deleted when the screening is saved or
-abandoned. Records (`screenings.json` in the app's documents directory) hold
-the inputs, the numbers and the arm sample points — never the image.
+The photo is a temporary file until the screening is saved; saving moves it
+into `photos/<record id>` in the app's private documents directory, beside
+the register (`screenings.json`), and it is deleted when that record is —
+or when the screening is abandoned before saving. The register is written
+atomically (temp file + rename, previous copy kept as `.bak`) so a kill
+mid-write cannot empty it.
 
 ## Validating against real photos (dev builds)
 

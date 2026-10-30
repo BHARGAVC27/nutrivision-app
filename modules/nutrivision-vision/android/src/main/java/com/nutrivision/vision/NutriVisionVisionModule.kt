@@ -1,5 +1,7 @@
 package com.nutrivision.vision
 
+import android.speech.tts.TextToSpeech
+import expo.modules.kotlin.Promise
 import expo.modules.kotlin.exception.Exceptions
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
@@ -71,6 +73,44 @@ class NutriVisionVisionModule : Module() {
      */
     AsyncFunction("measurePhoto") { path: String ->
       MeasurementPipeline.measure(stillPose, segmenter, path)
+    }
+
+    /**
+     * BCP-47 tags of the languages the phone can speak *offline, right now*.
+     *
+     * Not the vision pipeline, but it has to be native: expo-speech's
+     * `getAvailableVoicesAsync` returns `TextToSpeech.getVoices()` unfiltered,
+     * and Android lists voices whose data has never been downloaded (feature
+     * `notInstalled`) and voices that only work with a network connection.
+     * Indian-language voices are downloadable packs, so on a phone that has
+     * never been online that list still says "Hindi: yes" — precisely the case
+     * Settings needs to warn about. The two flags that tell the difference
+     * are only on the Android `Voice` object.
+     *
+     * Resolves to an empty list when there is no TTS engine at all.
+     */
+    AsyncFunction("offlineVoiceLanguages") { promise: Promise ->
+      var tts: TextToSpeech? = null
+      tts = TextToSpeech(context) { status ->
+        val langs = if (status == TextToSpeech.SUCCESS) {
+          try {
+            tts?.voices
+              ?.filter { v ->
+                !v.isNetworkConnectionRequired &&
+                  !v.features.contains(TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED)
+              }
+              ?.map { it.locale.toLanguageTag() }
+              ?.distinct()
+              ?: emptyList()
+          } catch (e: Exception) {
+            emptyList()
+          }
+        } else {
+          emptyList()
+        }
+        promise.resolve(langs)
+        tts?.shutdown()
+      }
     }
 
     OnDestroy {

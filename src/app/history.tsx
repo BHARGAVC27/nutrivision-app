@@ -25,7 +25,7 @@ export default function HistoryScreen() {
   ];
 
   return (
-    <Screen title={L.history} subtitle="On this phone" contentStyle={styles.content}>
+    <Screen title={L.history} subtitle={L.sub_history} contentStyle={styles.content}>
       <Text style={styles.h1}>{L.history}</Text>
       <Text style={styles.h1En}>
         {X.records(records.length)} · {L.offline}

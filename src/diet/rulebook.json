@@ -1,0 +1,173 @@
+{
+  "version": "draft-2026-10-05",
+  "status": "DRAFT for review. Not yet checked by a nutritionist or clinician.",
+
+  "sources": {
+    "ICMR_NRI_2020": "ICMR-NIN, Nutrient Requirements for Indians 2020 - Table 1b (energy) and Table 2a (protein). https://www.nin.res.in/rdabook/brief_note.pdf",
+    "ICMR_DGI_2024": "ICMR-NIN, Dietary Guidelines for Indians 2024 - Table 1.6 (food groups per age), Fig 4.3/4.4 (sample menus). https://www.nin.res.in/dietaryguidelines/pdfjs/locale/DGI_2024.pdf",
+    "WHO_MAM_2012": "WHO 2012 Technical note on supplementary foods for moderate malnutrition: +25 kcal/kg/day above the needs of non-malnourished children. Cited in WHO 2023 wasting guideline (rec. B16: recovery needs ~100-130 kcal/kg/day).",
+    "FAO_WHO_UNU_CATCHUP": "FAO/WHO/UNU, Energy and protein requirements, ch. 9 (catch-up growth): 5 kcal and 0.23 g protein per g of tissue gained. https://www.fao.org/4/aa040e/AA040E10.htm",
+    "WHO_CF_2023": "WHO Guideline for complementary feeding of infants and young children 6-23 months (2023); meal frequency from WHO/UNICEF IYCF indicators.",
+    "INDIA_PROGRAMMES": "MoHFW: Nutrition Rehabilitation Centres (SAM), National Deworming Day (1-19 y, 6-monthly), Anemia Mukt Bharat (IFA), ICDS/Anganwadi take-home ration."
+  },
+
+  "personalisation": {
+    "inputs": ["label (refer | unsure | clear)", "age in months", "sex", "weight in kg"],
+    "step_1_band": "Pick the ICMR band from exact age (and sex from 10 years).",
+    "step_2_maintenance_kcal": "kcal_per_kg x weight, capped at the band's reference daily energy (so a heavier child is not told to eat more than a reference child).",
+    "step_3_catchup": "extra_kcal = kcal_per_g_gain x target_gain x weight; extra_protein = protein_per_g_gain x target_gain x weight.",
+    "step_4_protein_g": "protein_rda_g_per_kg x weight + extra_protein.",
+    "step_5_basket": "Vegetables, GLV, roots and fruits stay at the ICMR amounts. Cereals, pulses, milk, nuts and fats are scaled so the basket meets maintenance energy. Catch-up energy is then added as milk, pulses/egg, nuts and ghee/oil (catchup_split).",
+    "energy_cap_x_reference": 1.3
+  },
+
+  "catchup": {
+    "kcal_per_g_gain": 5.0,
+    "protein_g_per_g_gain": 0.23,
+    "target_gain_g_per_kg_day": {
+      "clear": 0.0,
+      "unsure": 3.0,
+      "refer": 5.0
+    },
+    "notes": {
+      "refer": "5 g/kg/day x 5 kcal/g = +25 kcal/kg/day, the WHO 2012 figure for moderate wasting. For a 1-3 y child this gives 83 + 25 = 108 kcal/kg/day, inside the WHO 2023 recovery range of 100-130.",
+      "unsure": "DESIGN CHOICE approved by the project team 2026-10-05 (not from a guideline): 60% of the refer increment (+15 kcal/kg/day), because these children are near the cut-off and may or may not be malnourished.",
+      "over_5_years": "WHO figures are for 6-59 months. Above 5 years the same tissue-cost formula (FAO/WHO/UNU) is applied. Approved by the project team 2026-10-05."
+    },
+    "catchup_split": { "cereals_g": 0.20, "milk_ml": 0.25, "pulses_g": 0.20, "nuts_g": 0.20, "fats_g": 0.15 },
+    "catchup_split_under_12m": "milk share is moved to the other groups in proportion: animal milk is not a main drink before 12 months; breast milk covers that role."
+  },
+
+  "kcal_per_unit": {
+    "_note": "Approximate raw-weight energy density (Indian Food Composition Tables 2017). Checked: reproduces Table 1.6 energy within ~3%.",
+    "cereals_g": 3.4, "pulses_g": 3.4, "glv_g": 0.4, "vegetables_g": 0.3, "roots_tubers_g": 0.9,
+    "fruits_g": 0.6, "nuts_g": 5.8, "milk_ml": 0.7, "fats_g": 9.0
+  },
+
+  "icmr_bands": [
+    { "id": "inf_0_6",  "age_min_m": 0,   "age_max_m": 5,   "sex": "any", "ref_wt_kg": 5.8,  "kcal_per_kg": 90, "ref_kcal": 530,  "protein_rda_g_per_kg": 1.40, "basket": null },
+    { "id": "inf_6_12", "age_min_m": 6,   "age_max_m": 11,  "sex": "any", "ref_wt_kg": 8.5,  "kcal_per_kg": 80, "ref_kcal": 660,  "protein_rda_g_per_kg": 1.23,
+      "basket": { "cereals_g": 25, "pulses_g": 12, "glv_g": 20, "vegetables_g": 25, "roots_tubers_g": 20, "fruits_g": 50, "nuts_g": 7, "milk_ml": 0, "fats_g": 10 },
+      "breastmilk_kcal": { "6_8m": 420, "9_11m": 335 },
+      "complementary_kcal": { "6_8m": 230, "9_11m": 385 },
+      "_infant_rule": "Infants: the basket is the ICMR complementary food for their age (scaled to 230 or 385 kcal, ICMR DGI 2024 Fig 4.3), not scaled by weight. Catch-up energy is added on top. Breast milk continues."},
+    { "id": "c_1_3",    "age_min_m": 12,  "age_max_m": 47,  "sex": "any", "ref_wt_kg": 12.9, "kcal_per_kg": 83, "ref_kcal": 1110, "protein_rda_g_per_kg": 0.97,
+      "basket": { "cereals_g": 100, "pulses_g": 50, "glv_g": 50, "vegetables_g": 100, "roots_tubers_g": 50, "fruits_g": 68, "nuts_g": 10, "milk_ml": 350, "fats_g": 20 } },
+    { "id": "c_4_6",    "age_min_m": 48,  "age_max_m": 83,  "sex": "any", "ref_wt_kg": 18.3, "kcal_per_kg": 74, "ref_kcal": 1370, "protein_rda_g_per_kg": 0.87,
+      "basket": { "cereals_g": 160, "pulses_g": 60, "glv_g": 50, "vegetables_g": 100, "roots_tubers_g": 50, "fruits_g": 75, "nuts_g": 15, "milk_ml": 350, "fats_g": 20 } },
+    { "id": "c_7_9",    "age_min_m": 84,  "age_max_m": 119, "sex": "any", "ref_wt_kg": 25.3, "kcal_per_kg": 67, "ref_kcal": 1710, "protein_rda_g_per_kg": 0.92,
+      "basket": { "cereals_g": 200, "pulses_g": 65, "glv_g": 100, "vegetables_g": 150, "roots_tubers_g": 100, "fruits_g": 100, "nuts_g": 20, "milk_ml": 400, "fats_g": 25 } },
+    { "id": "b_10_12",  "age_min_m": 120, "age_max_m": 155, "sex": "m",   "ref_wt_kg": 34.9, "kcal_per_kg": 64, "ref_kcal": 2230, "protein_rda_g_per_kg": 0.91,
+      "basket": { "cereals_g": 280, "pulses_g": 90, "glv_g": 100, "vegetables_g": 200, "roots_tubers_g": 100, "fruits_g": 100, "nuts_g": 30, "milk_ml": 400, "fats_g": 35 } },
+    { "id": "g_10_12",  "age_min_m": 120, "age_max_m": 155, "sex": "f",   "ref_wt_kg": 36.4, "kcal_per_kg": 57, "ref_kcal": 2060, "protein_rda_g_per_kg": 0.90,
+      "basket": { "cereals_g": 250, "pulses_g": 85, "glv_g": 100, "vegetables_g": 200, "roots_tubers_g": 100, "fruits_g": 100, "nuts_g": 30, "milk_ml": 400, "fats_g": 30 } },
+    { "id": "b_13_15",  "age_min_m": 156, "age_max_m": 191, "sex": "m",   "ref_wt_kg": 50.5, "kcal_per_kg": 57, "ref_kcal": 2860, "protein_rda_g_per_kg": 0.89,
+      "basket": { "cereals_g": 390, "pulses_g": 130, "glv_g": 100, "vegetables_g": 200, "roots_tubers_g": 100, "fruits_g": 100, "nuts_g": 40, "milk_ml": 400, "fats_g": 45 } },
+    { "id": "g_13_15",  "age_min_m": 156, "age_max_m": 191, "sex": "f",   "ref_wt_kg": 49.6, "kcal_per_kg": 49, "ref_kcal": 2410, "protein_rda_g_per_kg": 0.87,
+      "basket": { "cereals_g": 300, "pulses_g": 100, "glv_g": 100, "vegetables_g": 200, "roots_tubers_g": 100, "fruits_g": 100, "nuts_g": 35, "milk_ml": 400, "fats_g": 40 } },
+    { "id": "b_16_18",  "age_min_m": 192, "age_max_m": 228, "sex": "m",   "ref_wt_kg": 64.4, "kcal_per_kg": 52, "ref_kcal": 3300, "protein_rda_g_per_kg": 0.86,
+      "basket": { "cereals_g": 450, "pulses_g": 150, "glv_g": 100, "vegetables_g": 200, "roots_tubers_g": 100, "fruits_g": 150, "nuts_g": 50, "milk_ml": 400, "fats_g": 55 } },
+    { "id": "g_16_18",  "age_min_m": 192, "age_max_m": 228, "sex": "f",   "ref_wt_kg": 55.7, "kcal_per_kg": 45, "ref_kcal": 2490, "protein_rda_g_per_kg": 0.83,
+      "basket": { "cereals_g": 315, "pulses_g": 105, "glv_g": 100, "vegetables_g": 200, "roots_tubers_g": 100, "fruits_g": 150, "nuts_g": 40, "milk_ml": 400, "fats_g": 40 } }
+  ],
+
+  "food_group_scores": {
+    "_note": "0 = avoid, 5 = top priority. Same for every age; the gram amounts carry the age/weight personalisation.",
+    "groups": ["cereals_millets", "pulses_beans", "milk_curd", "egg_meat_fish", "green_leafy_veg", "other_veg_roots", "fruits", "nuts_oilseeds", "ghee_oil", "sugar_junk"],
+    "clear":  { "cereals_millets": 3, "pulses_beans": 3, "milk_curd": 3, "egg_meat_fish": 3, "green_leafy_veg": 4, "other_veg_roots": 3, "fruits": 3, "nuts_oilseeds": 2, "ghee_oil": 2, "sugar_junk": 0 },
+    "unsure": { "cereals_millets": 3, "pulses_beans": 4, "milk_curd": 4, "egg_meat_fish": 4, "green_leafy_veg": 4, "other_veg_roots": 3, "fruits": 3, "nuts_oilseeds": 4, "ghee_oil": 3, "sugar_junk": 0 },
+    "refer":  { "cereals_millets": 3, "pulses_beans": 5, "milk_curd": 5, "egg_meat_fish": 5, "green_leafy_veg": 4, "other_veg_roots": 2, "fruits": 3, "nuts_oilseeds": 5, "ghee_oil": 4, "sugar_junk": 0 },
+    "rationale": {
+      "pulses/milk/egg/nuts up": "protein and energy for catch-up growth",
+      "ghee_oil up": "raises energy density without raising volume; small stomachs fill quickly (WHO)",
+      "other_veg_roots down for refer": "bulky and low in energy; still eaten, but not allowed to crowd out dense foods",
+      "green_leafy_veg always 4": "iron, folate, vitamin A; anaemia is common alongside undernutrition",
+      "sugar_junk always 0": "ICMR: sugar < 5% of energy, none under 2 years; avoid packaged high-fat-sugar-salt foods"
+    }
+  },
+
+  "meal_rules": {
+    "_source": "WHO/UNICEF IYCF: breastfed 6-8 m 2-3 meals; 9-23 m 3-4 meals + 1-2 snacks. Older ages: ICMR DGI 2024 sample menus (3 meals + snacks).",
+    "_note": "Where WHO gives a range, the upper end is used.",
+    "catchup_extra": { "clear": { "meals": 0, "snacks": 0 }, "unsure": { "meals": 0, "snacks": 1 }, "refer": { "meals": 1, "snacks": 1 } }
+  },
+
+  "age_groups": [
+    {
+      "id": "0_6m", "label": "0-6 months", "age_min_m": 0, "age_max_m": 5,
+      "meals": "Breast milk only, on demand, at least 8 times in 24 hours, day and night.",
+      "foods": "No water, honey, animal milk, formula or food unless a doctor advises.",
+      "mother": "Mother needs about +600 kcal and +17 g protein a day while breastfeeding (ICMR 2020).",
+      "veg_example": "Mother: an extra 2 rotis + 1 bowl dal + 1 glass milk a day.",
+      "nonveg_example": "Mother: as veg, or 1 egg / 50 g fish or chicken in place of the dal."
+    },
+    {
+      "id": "6m_3y", "label": "6 months - 3 years", "age_min_m": 6, "age_max_m": 35,
+      "meals": [ { "age_min_m": 6, "age_max_m": 8, "meals": 3, "snacks": 0, "breastfeed": true }, { "age_min_m": 9, "age_max_m": 23, "meals": 4, "snacks": 1, "breastfeed": true }, { "age_min_m": 24, "age_max_m": 35, "meals": 3, "snacks": 2, "breastfeed": false } ],
+      "texture": "Mashed and thick, not watery; soft family food from 12 months.",
+      "veg_example": "Ragi porridge with milk; rice-moong dal khichdi with 1 tsp ghee; mashed banana or papaya; curd rice; mashed spinach in dal.",
+      "nonveg_example": "As veg, plus a soft-boiled egg mashed into rice, or 25 g mashed fish or chicken mixed into khichdi."
+    },
+    {
+      "id": "3_6y", "label": "3 - 6 years", "age_min_m": 36, "age_max_m": 71,
+      "meals": [ { "age_min_m": 36, "age_max_m": 71, "meals": 3, "snacks": 2 } ],
+      "veg_example": "Idli or dosa with sambar; roti with dal and palak; vegetable upma; milk; roasted chana; peanut chikki; seasonal fruit.",
+      "nonveg_example": "As veg, plus a boiled egg daily, or egg bhurji / chicken or fish curry with rice."
+    },
+    {
+      "id": "6_9y", "label": "6 - 9 years", "age_min_m": 72, "age_max_m": 107,
+      "meals": [ { "age_min_m": 72, "age_max_m": 107, "meals": 3, "snacks": 1 } ],
+      "veg_example": "Bajra or jowar roti with rajma; rice with sambar and methi; poha with peanuts; curd; sprouts chaat; fruit.",
+      "nonveg_example": "As veg, plus an egg daily, or fish or chicken curry 3-4 times a week."
+    },
+    {
+      "id": "9_12y", "label": "9 - 12 years", "age_min_m": 108, "age_max_m": 143,
+      "meals": [ { "age_min_m": 108, "age_max_m": 143, "meals": 3, "snacks": 1 } ],
+      "veg_example": "Millet roti with chana and amaranth; rice with dal and vegetables; paneer; milk; groundnut ladoo; fruit.",
+      "nonveg_example": "As veg, plus eggs, or fish, chicken or mutton in place of one dal serving."
+    },
+    {
+      "id": "12_15y", "label": "12 - 15 years", "age_min_m": 144, "age_max_m": 179,
+      "meals": [ { "age_min_m": 144, "age_max_m": 179, "meals": 3, "snacks": 2 } ],
+      "veg_example": "Larger portions: 3-4 rotis or 2 cups rice per meal with dal and sabzi; sprouts; curd; peanuts or til ladoo; fruit.",
+      "nonveg_example": "As veg, plus eggs daily, or fish or chicken 3-4 times a week."
+    },
+    {
+      "id": "15_plus", "label": "15+ years", "age_min_m": 180, "age_max_m": 228,
+      "meals": [ { "age_min_m": 180, "age_max_m": 228, "meals": 3, "snacks": 2 } ],
+      "veg_example": "As 12-15 with bigger portions; include iron-rich foods (GLV, jaggery-til, rajma) with a vitamin C fruit such as amla, guava or orange.",
+      "nonveg_example": "As veg, plus eggs, fish, chicken or liver for iron."
+    }
+  ],
+
+  "tips": {
+    "all": [
+      "Eat from at least 5 food groups every day.",
+      "Make about 20% of cereals millets (ragi, jowar, bajra).",
+      "No added sugar below 2 years; avoid sugary drinks and packaged chips or biscuits at any age.",
+      "Wash hands with soap before feeding and after the toilet.",
+      "Use iodised salt."
+    ],
+    "clear": [
+      "Keep up the current diet and keep variety.",
+      "Deworming every 6 months (1-19 years, National Deworming Day).",
+      "Weekly iron-folic acid tablet from school or Anganwadi (5-19 years, Anemia Mukt Bharat).",
+      "At least 60 minutes of active play a day (5+ years)."
+    ],
+    "unsure": [
+      "Add 1 teaspoon of ghee or oil to every meal.",
+      "Add one extra snack a day: banana, boiled egg, peanut chikki, or roasted chana with jaggery.",
+      "Make porridges and dals thick, not watery.",
+      "Measure MUAC with a tape at the Anganwadi within 2 weeks.",
+      "Keep breastfeeding if the child is under 2."
+    ],
+    "refer": [
+      "Visit the health centre or Anganwadi worker soon. A doctor may refer to a Nutrition Rehabilitation Centre (NRC).",
+      "Until then, give small meals 5-6 times a day, each with ghee or oil added.",
+      "Keep breastfeeding as often as the child wants.",
+      "If the child has diarrhoea, keep feeding and give ORS + zinc; do not stop food.",
+      "Ask the Anganwadi for the take-home ration (ICDS).",
+      "Go to a doctor immediately if the child stops eating, has swelling of both feet, or is very drowsy."
+    ]
+  }
+}

@@ -39,7 +39,7 @@ export default function CannotScreen() {
   };
 
   return (
-    <Screen title={L.cannot} subtitle="No result" onBack={home} contentStyle={styles.content}>
+    <Screen title={L.cannot} subtitle={L.sub_no_result} onBack={home} contentStyle={styles.content}>
       <View style={styles.icon}>
         <Text style={styles.iconGlyph}>⌀</Text>
       </View>

@@ -17,6 +17,10 @@ android {
   defaultConfig {
     versionCode 1
     versionName '0.1.0'
+    // Keep rules for MediaPipe + protobuf-lite, applied to the host app's R8
+    // pass. Without them the first minified release build fails at runtime
+    // with "Field platform_ for <obfuscated> not found". See proguard-rules.pro.
+    consumerProguardFiles 'proguard-rules.pro'
   }
 }
 
