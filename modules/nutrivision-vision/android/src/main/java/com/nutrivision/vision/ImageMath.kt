@@ -16,20 +16,28 @@ import android.graphics.Bitmap
  */
 object ImageMath {
 
-  /** OpenCV's COLOR_BGR2GRAY weights: Y = 0.299R + 0.587G + 0.114B. */
+  /**
+   * OpenCV's COLOR_BGR2GRAY weights: Y = 0.299R + 0.587G + 0.114B.
+   *
+   * Read one row at a time: this now runs on gallery photos at up to 4096px
+   * (see PhotoAnalyzer.NATIVE_MAX_LONG_EDGE), where a whole-image IntArray
+   * would be another 50 MB on top of the bitmap.
+   */
   fun bitmapToGray(bitmap: Bitmap): ByteArray {
     val width = bitmap.width
     val height = bitmap.height
-    val pixels = IntArray(width * height)
-    bitmap.getPixels(pixels, 0, width, 0, 0, width, height)
-
+    val row = IntArray(width)
     val gray = ByteArray(width * height)
-    for (i in pixels.indices) {
-      val pixel = pixels[i]
-      val r = (pixel shr 16) and 0xFF
-      val g = (pixel shr 8) and 0xFF
-      val b = pixel and 0xFF
-      gray[i] = (0.299 * r + 0.587 * g + 0.114 * b + 0.5).toInt().coerceIn(0, 255).toByte()
+    for (y in 0 until height) {
+      bitmap.getPixels(row, 0, width, 0, y, width, 1)
+      val base = y * width
+      for (x in 0 until width) {
+        val pixel = row[x]
+        val r = (pixel shr 16) and 0xFF
+        val g = (pixel shr 8) and 0xFF
+        val b = pixel and 0xFF
+        gray[base + x] = (0.299 * r + 0.587 * g + 0.114 * b + 0.5).toInt().coerceIn(0, 255).toByte()
+      }
     }
     return gray
   }

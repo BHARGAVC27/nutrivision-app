@@ -1,4 +1,5 @@
 import { Image } from 'expo-image';
+import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, Animated, Easing, Pressable, StyleSheet, Text, View } from 'react-native';
@@ -22,6 +23,10 @@ import { colors, fonts, radius } from '@/ui/theme';
  * the health worker can see why a shot isn't usable *before* pressing the
  * shutter. On capture they run again on the full still, which is the
  * authoritative pass; only an all-pass still can be used.
+ *
+ * A photo can also be imported from the gallery instead of captured live —
+ * the same three checks run against it before it can be used, so an
+ * imported photo is held to the same bar as a fresh capture.
  */
 
 /** ~3.5 fps: responsive feedback without heating the device. */
@@ -30,7 +35,29 @@ const SAMPLE_INTERVAL_MS = 285;
 /** Pose input is downsampled to this long edge; the model works at 256px. */
 const POSE_INPUT_LONG_EDGE = 256;
 
-const PREVIEW_HEIGHT = 360;
+/**
+ * The design drew the guide for a 360px-tall preview; everything in it is
+ * scaled from the box's measured height so the same proportions hold at any
+ * size (see PreviewBox).
+ */
+const GUIDE_DESIGN_HEIGHT = 360;
+
+/** Portrait 3:4, the same shape as STILL_TARGET_RESOLUTION below. */
+const PREVIEW_ASPECT = 3 / 4;
+
+/**
+ * A screening still, not a hero shot. Keeping it modest bounds the decode and
+ * keeps the still's blur score nearer the preview's. Module-level, not an
+ * inline object literal in the `usePhotoOutput` call below: `usePhotoOutput`
+ * memoizes its native output by reference-equality of this object, and the
+ * live preview re-renders this screen several times a second (every sampled
+ * frame updates blur/brightness/landmark state) — an inline `{ width, height }`
+ * literal would be a new reference every render, silently recreating the
+ * native photo output each time and tearing down/reconfiguring the whole
+ * camera session mid-flight. That race is what threw
+ * `ImageCaptureException: Camera is closed` when the shutter was pressed.
+ */
+const STILL_TARGET_RESOLUTION = { width: 1920, height: 1440 };
 
 /** Localized value/fix for each check outcome. */
 function wording(code: CheckCode, L: Strings): { value: string; fix: string } {
@@ -70,11 +97,15 @@ export default function CaptureScreen() {
 
   const [blurScore, setBlurScore] = useState(0);
   const [brightness, setBrightness] = useState(0);
+  /** The live frame's own pixel area — blur is judged against a threshold scaled to it, see `liveBlurThreshold`. */
+  const [frameArea, setFrameArea] = useState(0);
   const [landmarks, setLandmarks] = useState<Landmark[]>([]);
   const [isCapturing, setIsCapturing] = useState(false);
-  /** The accepted-or-rejected still, once one has been taken. */
-  const [still, setStill] = useState<{ path: string; decision: QualityDecision } | null>(null);
+  /** The accepted-or-rejected still, once one has been taken or picked. */
+  const [still, setStill] = useState<{ path: string; decision: QualityDecision; source: 'camera' | 'gallery' } | null>(null);
   const [error, setError] = useState<string | null>(null);
+  /** Measured height of the preview box, for the guide and scan line. */
+  const [previewH, setPreviewH] = useState(GUIDE_DESIGN_HEIGHT);
 
   const lastSampleAt = useSharedValue(0);
   // The still is a temp file; if this screen unmounts without it being
@@ -98,9 +129,10 @@ export default function CaptureScreen() {
     if (hasPermission) setCameraGranted(true);
   }, [hasPermission, setCameraGranted]);
 
-  const onFrameMeasured = useCallback((measuredBlur: number, measuredBrightness: number, gray: Uint8Array, w: number, h: number) => {
+  const onFrameMeasured = useCallback((measuredBlur: number, measuredBrightness: number, measuredFrameArea: number, gray: Uint8Array, w: number, h: number) => {
     setBlurScore(measuredBlur);
     setBrightness(measuredBrightness);
+    setFrameArea(measuredFrameArea);
     if (poseBusy.current) return;
     poseBusy.current = true;
     NutriVisionVision.detectPoseInGrayImage(gray, w, h)
@@ -133,7 +165,7 @@ export default function CaptureScreen() {
 
         const measurement = measureLuma(luma, width, height, bytesPerRow);
         const small = downsampleLuma(luma, width, height, bytesPerRow, POSE_INPUT_LONG_EDGE);
-        runOnJS(onFrameMeasured)(measurement.blurScore, measurement.brightness, small.data, small.width, small.height);
+        runOnJS(onFrameMeasured)(measurement.blurScore, measurement.brightness, width * height, small.data, small.width, small.height);
       } finally {
         // Mandatory: without this the camera pipeline stalls on buffer exhaustion.
         frame.dispose();
@@ -142,15 +174,28 @@ export default function CaptureScreen() {
   });
 
   const photoOutput = usePhotoOutput({
-    // A screening still, not a hero shot. Keeping it modest bounds the decode
-    // and keeps the still's blur score nearer the preview's.
-    targetResolution: { width: 1920, height: 1440 },
+    targetResolution: STILL_TARGET_RESOLUTION,
     qualityPrioritization: 'quality',
   });
 
-  const liveDecision = useMemo(() => decide(blurScore, brightness, landmarks), [blurScore, brightness, landmarks]);
+  const liveDecision = useMemo(() => decide(blurScore, brightness, landmarks, frameArea), [blurScore, brightness, landmarks, frameArea]);
   const shown = still ? still.decision : liveDecision;
-  const ready = liveDecision.accepted;
+  // Blur on the live preview is guidance only, never a gate (see quality/luma.ts):
+  // the preview buffer is a different size and pipeline from the still vision-camera
+  // actually captures, so its blur score is not comparable to the threshold that
+  // score is judged against — on real devices the preview reads persistently
+  // "too blurry" no matter how steady the shot is. Framing and brightness are
+  // reasonably preview-vs-still consistent, so only those gate the shutter; the
+  // captured still still gets the full, authoritative check (all three) right
+  // after the shutter fires, and a genuinely blurry still is still caught there.
+  const ready = liveDecision.checks.filter((c) => c.name !== 'blur').every((c) => c.passed);
+
+  /** Runs the same Stage 1 checks used on a capture against any still on disk, camera or gallery. */
+  const analyzeAndSetStill = useCallback(async (path: string, source: 'camera' | 'gallery') => {
+    const analysis = await NutriVisionVision.analyzePhoto(path);
+    const decision = decide(analysis.blurScore, analysis.brightness, unflattenLandmarks(analysis.landmarks));
+    setStill({ path, decision, source });
+  }, []);
 
   const onShoot = useCallback(async () => {
     if (!ready || isCapturing) return;
@@ -160,18 +205,40 @@ export default function CaptureScreen() {
       const photo = await photoOutput.capturePhoto({}, {});
       try {
         const path = await photo.saveToTemporaryFileAsync();
-        const analysis = await NutriVisionVision.analyzePhoto(path);
-        const decision = decide(analysis.blurScore, analysis.brightness, unflattenLandmarks(analysis.landmarks));
-        setStill({ path, decision });
+        await analyzeAndSetStill(path, 'camera');
       } finally {
         photo.dispose();
       }
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Capture failed');
+      console.error('Capture failed', e);
+      setError(L.capture_err);
     } finally {
       setIsCapturing(false);
     }
-  }, [ready, isCapturing, photoOutput]);
+  }, [ready, isCapturing, photoOutput, analyzeAndSetStill, L.capture_err]);
+
+  const pickFromGallery = useCallback(async () => {
+    if (isCapturing) return;
+    setError(null);
+    try {
+      const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (!perm.granted) {
+        setError(L.gallery_perm_denied);
+        return;
+      }
+      const result = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ['images'], quality: 1 });
+      if (result.canceled || result.assets.length === 0) return;
+      setIsCapturing(true);
+      const uri = result.assets[0].uri;
+      const path = uri.startsWith('file://') ? uri.slice('file://'.length) : uri;
+      await analyzeAndSetStill(path, 'gallery');
+    } catch (e) {
+      console.error('Gallery import failed', e);
+      setError(L.capture_err);
+    } finally {
+      setIsCapturing(false);
+    }
+  }, [isCapturing, analyzeAndSetStill, L.gallery_perm_denied, L.capture_err]);
 
   const retake = useCallback(() => {
     discardPhoto(still?.path);
@@ -188,7 +255,7 @@ export default function CaptureScreen() {
 
   if (!hasPermission) {
     return (
-      <Screen title={L.perm_h} subtitle="Camera" contentStyle={styles.permContent}>
+      <Screen title={L.perm_h} subtitle={L.sub_camera} contentStyle={styles.permContent}>
         <View style={styles.permIcon}>
           <Text style={styles.permIconGlyph}>◎</Text>
         </View>
@@ -207,7 +274,7 @@ export default function CaptureScreen() {
   const stillWords = stillFailed && still ? wording(still.decision.failures[0].code, L) : null;
 
   return (
-    <Screen title={L.btn_photo} subtitle="Step 2 of 3" contentStyle={styles.content}>
+    <Screen title={L.btn_photo} subtitle={X.step(2, 3)} contentStyle={styles.content}>
       <View style={styles.headRow}>
         <View style={{ flex: 1 }}>
           <Text style={styles.h1}>{L.cap_h}</Text>
@@ -216,22 +283,22 @@ export default function CaptureScreen() {
         <SpeakButton size={48} onPress={() => say(`${L.cap_h}. ${ready ? L.ready_yes : hint}`)} />
       </View>
 
-      <View style={styles.preview}>
+      <View style={styles.preview} onLayout={(e) => setPreviewH(e.nativeEvent.layout.height)}>
         {device == null ? (
           <View style={styles.noCamera}>
-            <Text style={styles.noCameraText}>No camera available</Text>
+            <Text style={styles.noCameraText}>{L.no_camera}</Text>
           </View>
         ) : still ? (
-          <Image source={{ uri: `file://${still.path}` }} style={StyleSheet.absoluteFill} contentFit="cover" />
+          <Image source={{ uri: `file://${still.path}` }} style={StyleSheet.absoluteFill} contentFit="contain" />
         ) : (
-          <Camera style={StyleSheet.absoluteFill} device={device} outputs={[frameOutput, photoOutput]} isActive />
+          <Camera style={StyleSheet.absoluteFill} device={device} outputs={[frameOutput, photoOutput]} resizeMode="cover" isActive />
         )}
 
-        <Guide ready={ready && !still} />
-        {!still && <ScanLine />}
+        {!still && <Guide ready={ready} height={previewH} feetLabel={L.feet_line} />}
+        {!still && <ScanLine height={previewH} />}
         {still && (
           <View style={styles.stillChip}>
-            <Text style={styles.stillChipText}>{L.still}</Text>
+            <Text style={styles.stillChipText}>{still.source === 'gallery' ? L.picked : L.still}</Text>
           </View>
         )}
       </View>
@@ -275,6 +342,20 @@ export default function CaptureScreen() {
             <Text style={styles.readyHint}>{hint}</Text>
           </View>
         </View>
+      ) : null}
+
+      {!still && (
+        <View style={styles.uploadRow}>
+          <View style={styles.uploadDivider} />
+          <Text style={styles.uploadOr}>{L.or_word}</Text>
+          <View style={styles.uploadDivider} />
+        </View>
+      )}
+
+      {!still ? (
+        <View style={styles.uploadBtnRow}>
+          <Btn label={L.upload_photo} variant="outline" minHeight={58} labelStyle={{ fontSize: 15 }} disabled={isCapturing} onPress={pickFromGallery} />
+        </View>
       ) : (
         <View style={styles.afterRow}>
           {stillWords && (
@@ -298,29 +379,31 @@ export default function CaptureScreen() {
 }
 
 /** The standing-child silhouette guide drawn over the preview. */
-function Guide({ ready }: { ready: boolean }) {
+function Guide({ ready, height, feetLabel }: { ready: boolean; height: number; feetLabel: string }) {
   const armBorder = ready ? colors.greenBright : 'rgba(255,253,248,0.45)';
   const armFill = ready ? 'rgba(111,211,166,0.16)' : 'transparent';
+  // Proportions from the design's 360px-tall box.
+  const k = height / GUIDE_DESIGN_HEIGHT;
   return (
     <View style={StyleSheet.absoluteFill} pointerEvents="none">
       <Text style={styles.guideCaption}>[ camera preview ] child standing, facing the lens</Text>
-      <View style={styles.guideHead} />
-      <View style={styles.guideBody} />
-      <View style={[styles.guideArm, { left: '50%', marginLeft: -95, borderColor: armBorder, backgroundColor: armFill }]} />
-      <View style={[styles.guideArm, { left: '50%', marginLeft: 60, borderColor: armBorder, backgroundColor: armFill }]} />
-      <View style={styles.guideFeet} />
-      <Text style={styles.guideFeetLabel}>FEET ON THIS LINE</Text>
+      <View style={[styles.guideHead, { top: 28 * k, width: 58 * k, height: 58 * k, marginLeft: -29 * k, borderRadius: 29 * k }]} />
+      <View style={[styles.guideBody, { top: 90 * k, width: 126 * k, height: 216 * k, marginLeft: -63 * k }]} />
+      <View style={[styles.guideArm, { top: 108 * k, width: 34 * k, height: 60 * k, left: '50%', marginLeft: -95 * k, borderColor: armBorder, backgroundColor: armFill }]} />
+      <View style={[styles.guideArm, { top: 108 * k, width: 34 * k, height: 60 * k, left: '50%', marginLeft: 60 * k, borderColor: armBorder, backgroundColor: armFill }]} />
+      <View style={[styles.guideFeet, { bottom: 22 * k }]} />
+      <Text style={[styles.guideFeetLabel, { bottom: 29 * k }]}>{feetLabel}</Text>
     </View>
   );
 }
 
-function ScanLine() {
+function ScanLine({ height }: { height: number }) {
   const y = useRef(new Animated.Value(0)).current;
   useEffect(() => {
-    const loop = Animated.loop(Animated.timing(y, { toValue: PREVIEW_HEIGHT, duration: 1800, easing: Easing.linear, useNativeDriver: true }));
+    const loop = Animated.loop(Animated.timing(y, { toValue: height, duration: 1800, easing: Easing.linear, useNativeDriver: true }));
     loop.start();
     return () => loop.stop();
-  }, [y]);
+  }, [y, height]);
   return <Animated.View pointerEvents="none" style={[styles.scan, { transform: [{ translateY: y }] }]} />;
 }
 
@@ -347,15 +430,15 @@ const styles = StyleSheet.create({
   headRow: { paddingTop: 14, paddingHorizontal: 18, flexDirection: 'row', alignItems: 'flex-start', gap: 12 },
   h1: { fontFamily: fonts.sansSemi, fontSize: 19, lineHeight: 26, color: colors.ink },
   h1En: { fontFamily: fonts.sans, fontSize: 13, color: colors.muted, marginTop: 2 },
-  preview: { marginTop: 12, marginHorizontal: 18, height: PREVIEW_HEIGHT, borderRadius: radius.xl, overflow: 'hidden', backgroundColor: colors.cameraA },
+  preview: { marginTop: 12, marginHorizontal: 18, aspectRatio: PREVIEW_ASPECT, borderRadius: radius.xl, overflow: 'hidden', backgroundColor: colors.cameraA },
   noCamera: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   noCameraText: { fontFamily: fonts.mono, fontSize: 12, color: colors.ghost },
   guideCaption: { position: 'absolute', top: 8, left: 0, right: 0, textAlign: 'center', fontFamily: fonts.mono, fontSize: 10, letterSpacing: 0.8, color: colors.ghost },
-  guideHead: { position: 'absolute', left: '50%', top: 28, width: 58, height: 58, marginLeft: -29, borderWidth: 2, borderColor: 'rgba(255,253,248,0.7)', borderRadius: 29 },
-  guideBody: { position: 'absolute', left: '50%', top: 90, width: 126, height: 216, marginLeft: -63, borderWidth: 2, borderColor: 'rgba(255,253,248,0.7)', borderRadius: 10 },
-  guideArm: { position: 'absolute', top: 108, width: 34, height: 60, borderWidth: 2, borderRadius: 8 },
-  guideFeet: { position: 'absolute', left: 0, right: 0, bottom: 22, height: 2, backgroundColor: 'rgba(255,253,248,0.5)' },
-  guideFeetLabel: { position: 'absolute', left: 16, bottom: 29, fontFamily: fonts.sansSemi, fontSize: 10, letterSpacing: 0.6, color: 'rgba(255,253,248,0.75)' },
+  guideHead: { position: 'absolute', left: '50%', borderWidth: 2, borderColor: 'rgba(255,253,248,0.7)' },
+  guideBody: { position: 'absolute', left: '50%', borderWidth: 2, borderColor: 'rgba(255,253,248,0.7)', borderRadius: 10 },
+  guideArm: { position: 'absolute', borderWidth: 2, borderRadius: 8 },
+  guideFeet: { position: 'absolute', left: 0, right: 0, height: 2, backgroundColor: 'rgba(255,253,248,0.5)' },
+  guideFeetLabel: { position: 'absolute', left: 16, fontFamily: fonts.sansSemi, fontSize: 10, letterSpacing: 0.6, color: 'rgba(255,253,248,0.75)' },
   scan: { position: 'absolute', left: 0, right: 0, top: 0, height: 2, backgroundColor: colors.greenBright },
   stillChip: { position: 'absolute', top: 12, left: 14, paddingVertical: 6, paddingHorizontal: 11, backgroundColor: colors.surface, borderRadius: radius.pill },
   stillChipText: { fontFamily: fonts.sansSemi, fontSize: 11, letterSpacing: 0.7, color: colors.ink },
@@ -367,6 +450,10 @@ const styles = StyleSheet.create({
   checkLabel: { flex: 1, fontFamily: fonts.sansMedium, fontSize: 14, color: colors.muted3 },
   checkValue: { fontFamily: fonts.sansSemi, fontSize: 14 },
   shutterRow: { paddingTop: 15, paddingHorizontal: 18, flexDirection: 'row', alignItems: 'center', gap: 16 },
+  uploadRow: { marginTop: 16, marginHorizontal: 18, flexDirection: 'row', alignItems: 'center', gap: 10 },
+  uploadDivider: { flex: 1, height: 1, backgroundColor: colors.border },
+  uploadOr: { fontFamily: fonts.sansMedium, fontSize: 12, color: colors.muted2 },
+  uploadBtnRow: { marginTop: 12, paddingHorizontal: 18 },
   shutterWrap: { width: 80, height: 80 },
   pulse: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, borderRadius: 40, backgroundColor: colors.green },
   shutter: { position: 'absolute', top: 0, left: 0, width: 80, height: 80, borderRadius: 40, borderWidth: 5, borderColor: colors.surface, alignItems: 'center', justifyContent: 'center', shadowColor: colors.border, shadowOpacity: 1, shadowRadius: 0, shadowOffset: { width: 0, height: 0 }, elevation: 1 },

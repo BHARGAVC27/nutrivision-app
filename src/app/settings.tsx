@@ -1,36 +1,79 @@
 import { useRouter } from 'expo-router';
 import * as Sharing from 'expo-sharing';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 
+import NutriVisionVision from '@modules/nutrivision-vision';
 import { LANG_ORDER, STR } from '@/i18n/strings';
+import { TABLES_VERSION } from '@/nutrition/plan';
 import { CALIBRATION } from '@/pipeline/calibration';
+import { buildRegisterReportHtml, renderPdf } from '@/pdf/report';
 import { useApp } from '@/store/app-state';
-import { exportCsv, registerSizeKb } from '@/store/records';
+import { registerSizeKb } from '@/store/records';
 import { brand } from '@/ui/brand';
 import { Btn, Card, Kicker, Note } from '@/ui/primitives';
 import { Screen } from '@/ui/screen';
 import { colors, fonts, radius } from '@/ui/theme';
 
-/** Storage bar: the register is tiny, so the bar is relative to a generous cap. */
-const STORAGE_CAP_KB = 7 * 1024;
+/** Storage bar: now dominated by kept photos rather than the tiny JSON register, so the cap is sized for that. */
+const STORAGE_CAP_KB = 300 * 1024;
 
 export default function SettingsScreen() {
   const router = useRouter();
-  const { L, X, lang, setLang, audio, setAudio, records, clearRecords, resetDraft } = useApp();
+  const { L, E, X, lang, setLang, audio, setAudio, records, clearRecords, resetDraft } = useApp();
   const [dataNote, setDataNote] = useState<string | null>(null);
+  const [exporting, setExporting] = useState(false);
   const sizeKb = registerSizeKb();
 
+  /**
+   * Whether the phone can speak the chosen language offline, right now.
+   * Indian-language voices are downloadable packs, not part of Android, so a
+   * phone that has never been online has none — and `Speech.speak` then fails
+   * silently. Checked here so the worker finds out in Settings, not in the
+   * field. `null` while the query is in flight (no warning shown).
+   */
+  const [voiceOk, setVoiceOk] = useState<boolean | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    setVoiceOk(null);
+    const wanted = STR[lang].code.slice(0, 2).toLowerCase();
+    // Native, not expo-speech: only voices that are downloaded and work offline count.
+    NutriVisionVision.offlineVoiceLanguages()
+      .then((tags) => {
+        if (cancelled) return;
+        // Tags come back as "hi-IN" (or "hin-IND" from some engines); match on the language part.
+        setVoiceOk(tags.some((t) => t.toLowerCase().replace('_', '-').startsWith(wanted)));
+      })
+      .catch(() => {
+        if (!cancelled) setVoiceOk(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [lang]);
+
   const exportData = async () => {
+    if (exporting) return;
+    setExporting(true);
     try {
-      const file = exportCsv(records);
+      const html = await buildRegisterReportHtml(
+        records.map((r) => ({ name: r.name, ageMonths: r.ageMonths, sex: r.sex, weightKg: r.weightKg, result: r.result, when: r.createdAt, photoPath: r.photoPath })),
+        L,
+        E,
+        X,
+        lang
+      );
+      const stamp = new Date().toISOString().slice(0, 10);
+      const file = await renderPdf(html, `nutrivision-register-${stamp}.pdf`);
       setDataNote(X.exported(file.name));
-      // Cable or Bluetooth: the share sheet is how the CSV leaves the phone.
+      // Cable or Bluetooth: the share sheet is how the PDF leaves the phone.
       if (await Sharing.isAvailableAsync()) {
-        await Sharing.shareAsync(file.uri, { mimeType: 'text/csv', dialogTitle: file.name });
+        await Sharing.shareAsync(file.uri, { mimeType: 'application/pdf', dialogTitle: file.name });
       }
     } catch (e) {
       setDataNote(e instanceof Error ? e.message : String(e));
+    } finally {
+      setExporting(false);
     }
   };
 
@@ -49,7 +92,7 @@ export default function SettingsScreen() {
   };
 
   return (
-    <Screen title={L.settings} subtitle="Language, data, about" contentStyle={styles.content}>
+    <Screen title={L.settings} subtitle={L.sub_settings} contentStyle={styles.content}>
       <Text style={styles.h1}>{L.settings}</Text>
 
       <Kicker style={styles.kicker}>{L.language}</Kicker>
@@ -82,6 +125,12 @@ export default function SettingsScreen() {
           <Text style={styles.audioBody}>{X.audio_s}</Text>
         </View>
       </Pressable>
+      {audio && voiceOk === false && (
+        <Note tone="amber" style={styles.voiceNote}>
+          <Text style={styles.voiceTitle}>{L.voice_missing_h}</Text>
+          <Text style={styles.voiceBody}>{X.voice_missing(STR[lang].name)}</Text>
+        </Note>
+      )}
 
       <Kicker style={styles.kicker}>{L.units}</Kicker>
       <View style={styles.units}>
@@ -99,7 +148,15 @@ export default function SettingsScreen() {
           <View style={[styles.storageFill, { width: `${Math.max(2, Math.min(100, (sizeKb / STORAGE_CAP_KB) * 100))}%` }]} />
         </View>
         <View style={styles.dataButtons}>
-          <Btn label={L.export} variant="outline" minHeight={56} labelStyle={{ fontSize: 14 }} style={{ flex: 1, width: undefined, borderRadius: radius.lg }} onPress={exportData} />
+          <Btn
+            label={L.export}
+            variant="outline"
+            minHeight={56}
+            labelStyle={{ fontSize: 14 }}
+            style={{ flex: 1, width: undefined, borderRadius: radius.lg }}
+            disabled={exporting || records.length === 0}
+            onPress={exportData}
+          />
           <Btn label={L.clear} variant="danger" minHeight={56} labelStyle={{ fontSize: 14 }} style={{ flex: 1, width: undefined, borderRadius: radius.lg }} onPress={clearData} disabled={records.length === 0} />
         </View>
         {dataNote && (
@@ -112,10 +169,11 @@ export default function SettingsScreen() {
       <Kicker style={styles.kicker}>{L.about}</Kicker>
       <Card style={styles.dataCard}>
         <Text style={styles.aboutMono}>
-          app v{brand.version}
+          {brand.name} v{brand.version}
           {'\n'}model {CALIBRATION.model} · {CALIBRATION.segmenter} · {CALIBRATION.frames} frame
           {'\n'}mean absolute error {CALIBRATION.maeCm.toFixed(4)} cm (this configuration, 20-seed CV)
           {'\n'}pose + segmentation run on device
+          {'\n'}food plan tables {TABLES_VERSION} (CNNS 2016–18, ICMR-NIN DGI 2024, IFCT 2017)
         </Text>
         <Text style={styles.aboutBody}>{X.about_s}</Text>
         <Text style={styles.disclaimer}>{L.disclaimer}</Text>
@@ -153,6 +211,9 @@ const styles = StyleSheet.create({
   checkboxMark: { fontFamily: fonts.sansSemi, fontSize: 16, color: colors.surface, includeFontPadding: false },
   audioTitle: { fontFamily: fonts.sansSemi, fontSize: 15, color: colors.ink },
   audioBody: { fontFamily: fonts.sans, fontSize: 13, lineHeight: 20, color: colors.muted2, marginTop: 2 },
+  voiceNote: { marginTop: 8 },
+  voiceTitle: { fontFamily: fonts.sansSemi, fontSize: 14, color: colors.ink },
+  voiceBody: { fontFamily: fonts.sans, fontSize: 13, lineHeight: 20, color: colors.muted2, marginTop: 4 },
   units: { marginTop: 9, padding: 16, backgroundColor: colors.tint, borderRadius: radius.lg, flexDirection: 'row', alignItems: 'center', gap: 12 },
   unitsTitle: { fontFamily: fonts.sansSemi, fontSize: 15, color: colors.muted3 },
   unitsBody: { fontFamily: fonts.sans, fontSize: 13, lineHeight: 20, color: colors.mutedWarm, marginTop: 2 },

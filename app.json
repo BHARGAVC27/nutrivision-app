@@ -2,7 +2,7 @@
   "expo": {
     "name": "NutriVision",
     "slug": "Nutrivison_App",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "nutrivisonapp",
@@ -11,7 +11,8 @@
       "icon": "./assets/expo.icon",
       "bundleIdentifier": "com.nutrivision.app",
       "infoPlist": {
-        "NSCameraUsageDescription": "NutriVision uses the camera to photograph a child for mid-upper-arm circumference screening."
+        "NSCameraUsageDescription": "NutriVision uses the camera to photograph a child for mid-upper-arm circumference screening.",
+        "NSPhotoLibraryUsageDescription": "NutriVision can use an existing photo from your library for mid-upper-arm circumference screening."
       }
     },
     "android": {
@@ -26,7 +27,13 @@
         "android.permission.CAMERA"
       ],
       "predictiveBackGestureEnabled": false,
-      "versionCode": 1
+      "versionCode": 3,
+      "blockedPermissions": [
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ]
     },
     "web": {
       "output": "static",
@@ -44,8 +51,15 @@
       ],
       "./plugins/with-nutrivision-assets.js",
       "expo-sharing",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "NutriVision can use an existing photo from your library for mid-upper-arm circumference screening."
+        }
+      ],
       "./plugins/with-cmake-version.js",
-      "./plugins/with-release-signing.js"
+      "./plugins/with-release-signing.js",
+      "./plugins/with-build-props.js"
     ],
     "experiments": {
       "typedRoutes": true,

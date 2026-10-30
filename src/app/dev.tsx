@@ -25,7 +25,7 @@ import { colors, fonts } from '@/ui/theme';
  */
 export default function DevScreen() {
   const router = useRouter();
-  const params = useLocalSearchParams<{ path?: string; age?: string; sex?: string; weight?: string; name?: string }>();
+  const params = useLocalSearchParams<{ path?: string; age?: string; sex?: string; weight?: string; name?: string; diet?: string }>();
   const { updateDraft, resetDraft, setOutcome, setViewingId } = useApp();
   const [status, setStatus] = useState('starting');
   // A second deep link while this screen is open re-runs with the new params.
@@ -53,7 +53,8 @@ export default function DevScreen() {
       const workPath = copy.uri.replace(/^file:\/\//, '');
 
       resetDraft();
-      updateDraft({ photoPath: workPath, ageMonths, sex, weight: String(weightKg), name: params.name ?? 'dev' });
+      const diet = params.diet === 'veg' || params.diet === 'egg' || params.diet === 'nonveg' ? params.diet : null;
+      updateDraft({ photoPath: workPath, ageMonths, sex, weight: String(weightKg), name: params.name ?? 'dev', diet });
       setStatus(`measuring ${workPath}`);
       const t0 = Date.now();
       const outcome = await runScreening(workPath, { ageMonths, sex, weightKg }, (s) => setStatus(s));

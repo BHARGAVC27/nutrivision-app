@@ -1,3 +1,4 @@
+import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
@@ -25,14 +26,13 @@ export default function HomeScreen() {
   };
 
   return (
-    <Screen title={brand.name} subtitle={brand.tagline} canGoBack={false} contentStyle={styles.content}>
+    <Screen title={brand.name} subtitle={L.tagline} canGoBack={false} contentStyle={styles.content}>
       <View style={styles.brandRow}>
-        <View style={styles.mark}>
-          <Text style={styles.markGlyph}>{brand.mark}</Text>
-        </View>
+        <Image source={brand.logo} style={styles.mark} contentFit="contain" accessibilityIgnoresInvertColors />
+
         <View>
           <Text style={styles.brandName}>{brand.name}</Text>
-          <Text style={styles.brandSub}>{brand.tagline} · v{brand.version}</Text>
+          <Text style={styles.brandSub}>{L.tagline} · v{brand.version}</Text>
         </View>
       </View>
 
@@ -105,8 +105,7 @@ function Stat({ value, label, color = colors.ink }: { value: number; label: stri
 const styles = StyleSheet.create({
   content: { paddingHorizontal: 18, paddingTop: 20 },
   brandRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  mark: { width: 46, height: 46, borderRadius: 14, backgroundColor: colors.green, alignItems: 'center', justifyContent: 'center' },
-  markGlyph: { fontFamily: fonts.serifBold, fontSize: 22, color: colors.surface, includeFontPadding: false },
+  mark: { width: 46, height: 46 },
   brandName: { fontFamily: fonts.serifSemi, fontSize: 21, color: colors.ink, letterSpacing: -0.2 },
   brandSub: { fontFamily: fonts.sans, fontSize: 12, color: colors.muted },
   offline: {

@@ -1,3 +1,4 @@
+import { Image } from 'expo-image';
 import type { ReactNode } from 'react';
 import { Pressable, StyleSheet, Text, View, type PressableProps, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 
@@ -82,6 +83,22 @@ export function Note({ children, style, tone = 'tint' }: { children: ReactNode; 
 }
 
 /** Striped dark placeholder standing in for a photo that no longer exists. */
+/**
+ * The screening's own photo as a thumbnail, or the striped placeholder when
+ * no photo is kept for it (older records, or a still that could not be moved
+ * into per-record storage).
+ */
+export function PhotoThumb({ path, size = 46, style }: { path: string | null | undefined; size?: number; style?: StyleProp<ViewStyle> }) {
+  if (!path) return <PhotoPlaceholder size={size} style={style} />;
+  const uri = path.startsWith('file://') ? path : `file://${path}`;
+  // The image sits inside the placeholder's frame so the outer style stays a ViewStyle.
+  return (
+    <View style={[styles.placeholder, { width: size, height: size }, style]}>
+      <Image source={{ uri }} style={StyleSheet.absoluteFill} contentFit="cover" cachePolicy="memory" />
+    </View>
+  );
+}
+
 export function PhotoPlaceholder({ size = 46, style }: { size?: number; style?: StyleProp<ViewStyle> }) {
   return (
     <View style={[styles.placeholder, { width: size, height: size }, style]}>

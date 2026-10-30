@@ -34,6 +34,37 @@ export const QualityThresholds = {
 } as const;
 
 /**
+ * Where `blurMin` comes from, honestly: `tools/stage1_quality_gate.py` scored
+ * each training photo at its own resolution (`cv2.imread`, no resize), and
+ * those photos were mostly 3000x4000. The still is therefore also scored
+ * before any resizing (PhotoAnalyzer.kt measures blur on the decoded photo,
+ * then normalises to 1920px for pose) — for a gallery photo that reproduces
+ * the desktop procedure exactly. A camera still is captured at 1920x1440
+ * (capture.tsx), so its score is taken at 1920px, below the training
+ * resolution, and `blurMin` there errs strict: sharp photos can read
+ * "too blurry". `scripts/blur-threshold-at-scale.py` re-derives the number
+ * for any target size from the dataset; run it before changing `blurMin`.
+ *
+ * This constant is the area the live-preview scaling below is relative to.
+ */
+export const BLUR_REFERENCE_AREA = 1920 * 1440;
+
+/**
+ * Variance-of-the-Laplacian scales roughly with pixel area (a downsample by
+ * linear factor k shrinks both the Laplacian response and its variance by
+ * about k², and area shrinks by k² too). The live camera preview is a
+ * different, device-dependent frame size — usually well under the still's
+ * normalized 1920x1440 — that is never resized before scoring (unlike the
+ * still, resizing every live frame in the worklet would be too slow to run
+ * at several times a second). Scaling the threshold by the live frame's own
+ * area keeps the same check meaningful there instead of reading "too blurry"
+ * on virtually every device regardless of actual focus.
+ */
+export function liveBlurThreshold(frameArea: number): number {
+  return QualityThresholds.blurMin * (frameArea / BLUR_REFERENCE_AREA);
+}
+
+/**
  * Standard MediaPipe / BlazePose 33-point indices. The Pose Landmarker Task
  * emits landmarks in this same order as the legacy `mp.solutions.pose`
  * solution, so the desktop pipeline's indices carry over unchanged.
@@ -81,8 +112,9 @@ export type QualityDecision = {
   statusText: string;
 };
 
-export function checkBlur(blurScore: number): CheckResult {
-  const passed = blurScore >= QualityThresholds.blurMin;
+/** `threshold` defaults to `blurMin` (the still's calibrated value); pass `liveBlurThreshold(frameArea)` for the live preview. */
+export function checkBlur(blurScore: number, threshold: number = QualityThresholds.blurMin): CheckResult {
+  const passed = blurScore >= threshold;
   return {
     name: 'blur',
     passed,
@@ -182,12 +214,20 @@ export function checkFraming(landmarks: readonly Landmark[] | null | undefined):
  * Combines the three checks. Failures are ordered by what the health worker
  * should fix first: get a person in shot, then the light, then hold steady.
  */
+/**
+ * `liveFrameArea` should be passed for the live preview only (its own pixel
+ * area, width * height) so blur is judged at the right scale — see
+ * `liveBlurThreshold`. Omit it for the still's authoritative check, which is
+ * already normalized to the reference scale before this is called.
+ */
 export function decide(
   blurScore: number,
   brightness: number,
-  landmarks: readonly Landmark[] | null | undefined
+  landmarks: readonly Landmark[] | null | undefined,
+  liveFrameArea?: number
 ): QualityDecision {
-  const checks = [checkBlur(blurScore), checkBrightness(brightness), checkFraming(landmarks)];
+  const blurThreshold = liveFrameArea ? liveBlurThreshold(liveFrameArea) : QualityThresholds.blurMin;
+  const checks = [checkBlur(blurScore, blurThreshold), checkBrightness(brightness), checkFraming(landmarks)];
 
   const order: CheckName[] = ['framing', 'brightness', 'blur'];
   const failures = order

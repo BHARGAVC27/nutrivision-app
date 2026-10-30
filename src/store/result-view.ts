@@ -1,4 +1,5 @@
 import type { Strings } from '@/i18n/strings';
+import type { Diet } from '@/nutrition/plan';
 import { CALIBRATION } from '@/pipeline/calibration';
 import type { DecisionKey } from '@/pipeline/decide';
 import type { ScreeningResult } from '@/pipeline/run';
@@ -20,8 +21,10 @@ export type ResultView = {
   when: string;
   /** Saved-record id, or null for a fresh result. */
   recordId: string | null;
-  /** The photo, only while the screening is unsaved. */
+  /** The still this screening used, while it still exists on disk. */
   photoPath: string | null;
+  /** Diet answer for the food plan, or null if not asked. */
+  diet: Diet | null;
 };
 
 export function useResultView(): ResultView | null {
@@ -29,7 +32,7 @@ export function useResultView(): ResultView | null {
   if (viewingId) {
     const r = records.find((x) => x.id === viewingId);
     if (!r) return null;
-    return { name: r.name, ageMonths: r.ageMonths, sex: r.sex, weightKg: r.weightKg, result: r.result, when: r.createdAt, recordId: r.id, photoPath: null };
+    return { name: r.name, ageMonths: r.ageMonths, sex: r.sex, weightKg: r.weightKg, result: r.result, when: r.createdAt, recordId: r.id, photoPath: r.photoPath, diet: r.diet ?? null };
   }
   if (outcome?.ok) {
     return {
@@ -41,6 +44,7 @@ export function useResultView(): ResultView | null {
       when: outcome.completedAt,
       recordId: null,
       photoPath: draft.photoPath,
+      diet: draft.diet,
     };
   }
   return null;

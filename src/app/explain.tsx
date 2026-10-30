@@ -31,7 +31,7 @@ export default function ExplainScreen() {
   const { result: r } = view;
 
   return (
-    <Screen title={L.explain} subtitle="Provenance and confidence" contentStyle={styles.content}>
+    <Screen title={L.explain} subtitle={L.sub_explain} contentStyle={styles.content}>
       <Text style={styles.h1}>{L.explain}</Text>
       {!!E.explain && <Text style={styles.h1En}>{E.explain}</Text>}
 

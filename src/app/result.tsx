@@ -1,12 +1,15 @@
 import { useNavigation, useRouter } from 'expo-router';
-import { useEffect } from 'react';
-import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
+import * as Sharing from 'expo-sharing';
+import { useEffect, useState } from 'react';
+import { ActivityIndicator, Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { discardPhoto, useApp } from '@/store/app-state';
+import { DIET } from '@/diet/strings';
+import { buildSingleReportHtml, renderPdf, slugify } from '@/pdf/report';
+import { useApp } from '@/store/app-state';
 import { formatWhen } from '@/ui/record-row';
 import { categoryText, decisionText, isCurrentModel, useResultView } from '@/store/result-view';
 import { ConfidenceBar } from '@/ui/charts';
-import { Btn, Card, Kicker, Note, PhotoPlaceholder, SpeakButton } from '@/ui/primitives';
+import { Btn, Card, Kicker, Note, PhotoThumb, SpeakButton } from '@/ui/primitives';
 import { Screen } from '@/ui/screen';
 import { colors, decisionColors, fonts, radius } from '@/ui/theme';
 
@@ -19,6 +22,7 @@ export default function ResultScreen() {
   const navigation = useNavigation();
   const { L, E, X, lang, say, addRecord, deleteRecord, setViewingId, updateDraft } = useApp();
   const view = useResultView();
+  const [sharing, setSharing] = useState(false);
 
   useEffect(() => {
     // Only the focused screen may bounce home; a stale copy lower in the stack must not.
@@ -32,20 +36,19 @@ export default function ResultScreen() {
   const tone = decisionColors[r.decision];
   const isSaved = view.recordId != null;
   const sexLabel = view.sex === 'F' ? L.girl : L.boy;
-  const inputsLine = `${view.ageMonths} mo · ${sexLabel} · ${view.weightKg} kg · z ${r.z >= 0 ? '+' : ''}${r.z.toFixed(2)}`;
+  const inputsLine = `${view.ageMonths} ${L.months} · ${sexLabel} · ${view.weightKg} kg · z ${r.z >= 0 ? '+' : ''}${r.z.toFixed(2)}`;
   const stamp = `${formatWhen(view.when, lang, true)} · ${r.model}`;
 
   const save = () => {
-    addRecord({ name: view.name.trim(), ageMonths: view.ageMonths, sex: view.sex, weightKg: view.weightKg, result: r });
-    // The photo is deleted as soon as the screening is saved. The rest of the
-    // draft is cleared when the next screening starts.
-    discardPhoto(view.photoPath);
+    // The photo moves into permanent per-record storage here, so it survives
+    // past this draft; it is only ever deleted when the record itself is.
+    addRecord({ name: view.name.trim(), ageMonths: view.ageMonths, sex: view.sex, weightKg: view.weightKg, diet: view.diet, result: r, photoPath: view.photoPath });
     updateDraft({ photoPath: null });
     router.dismissAll();
   };
 
   const edit = () => {
-    updateDraft({ name: view.name, ageMonths: view.ageMonths, sex: view.sex, weight: String(view.weightKg), photoPath: null });
+    updateDraft({ name: view.name, ageMonths: view.ageMonths, sex: view.sex, weight: String(view.weightKg), photoPath: null, diet: view.diet });
     setViewingId(null);
     router.push('/info');
   };
@@ -63,6 +66,29 @@ export default function ResultScreen() {
         },
       },
     ]);
+  };
+
+  const shareResult = async () => {
+    if (sharing) return;
+    setSharing(true);
+    try {
+      const html = await buildSingleReportHtml(
+        { name: view.name, ageMonths: view.ageMonths, sex: view.sex, weightKg: view.weightKg, diet: view.diet, result: r, when: view.when, photoPath: view.photoPath },
+        L,
+        E,
+        X,
+        lang
+      );
+      const stamp = view.when.slice(0, 10);
+      const file = await renderPdf(html, `nutrivision-${slugify(view.name)}-${stamp}.pdf`);
+      if (await Sharing.isAvailableAsync()) {
+        await Sharing.shareAsync(file.uri, { mimeType: 'application/pdf', dialogTitle: file.name });
+      }
+    } catch {
+      // Best effort — the result itself is unaffected if sharing fails.
+    } finally {
+      setSharing(false);
+    }
   };
 
   return (
@@ -93,7 +119,7 @@ export default function ResultScreen() {
 
       <View style={styles.body}>
         <View style={styles.subject}>
-          <PhotoPlaceholder size={52} />
+          <PhotoThumb path={view.photoPath} size={52} />
           <View style={{ flex: 1 }}>
             <Text style={styles.subjectName}>{view.name.trim() || '—'}</Text>
             <Text style={styles.subjectMeta}>{inputsLine}</Text>
@@ -120,6 +146,20 @@ export default function ResultScreen() {
         <Pressable accessibilityRole="button" onPress={() => router.push('/explain')} style={({ pressed }) => [styles.explain, pressed && { backgroundColor: colors.surfaceHover }]}>
           <Text style={styles.explainText}>{L.explain}</Text>
           <Text style={styles.explainChevron}>›</Text>
+        </Pressable>
+
+        <Pressable accessibilityRole="button" onPress={() => router.push('/diet')} style={({ pressed }) => [styles.explain, { marginTop: 10 }, pressed && { backgroundColor: colors.surfaceHover }]}>
+          <Text style={styles.explainText}>{DIET[lang].open}</Text>
+          <Text style={styles.explainChevron}>›</Text>
+        </Pressable>
+
+        <Pressable
+          accessibilityRole="button"
+          disabled={sharing}
+          onPress={shareResult}
+          style={({ pressed }) => [styles.explain, { marginTop: 10 }, pressed && !sharing && { backgroundColor: colors.surfaceHover }, sharing && { opacity: 0.6 }]}>
+          <Text style={styles.explainText}>{L.share_result}</Text>
+          {sharing ? <ActivityIndicator size="small" color={colors.muted3} /> : <Text style={styles.explainChevron}>›</Text>}
         </Pressable>
 
         {!isSaved ? (
@@ -166,5 +206,6 @@ const styles = StyleSheet.create({
   explain: { marginTop: 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, paddingVertical: 17, paddingHorizontal: 16, backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.ink, borderRadius: radius.lg },
   explainText: { fontFamily: fonts.sansSemi, fontSize: 16, color: colors.ink },
   explainChevron: { fontSize: 20, color: colors.muted3 },
+  food: { marginTop: 10 },
   editRow: { flexDirection: 'row', gap: 10, marginTop: 10 },
 });
